@@ -1,0 +1,185 @@
+<template>
+  <div class="portfolio" @mousemove="mousemove" @wheel="scroll">
+    <div class="bg">
+      <div
+        class="stars"
+        :style="`transform: translate(${mouse.x / 100}px, ${mouse.y / 100}px)`"
+      >
+        <img src="/background/star.svg" class="stars" alt="stars" />
+      </div>
+      <div
+        class="moonlight"
+        :style="`transform: translate(${-mouse.x / 50}px, ${-mouse.y / 50}px)`"
+      >
+        <img src="/background/moonlight.svg" alt="moonlight" />
+      </div>
+    </div>
+
+    <!-- start contant -->
+
+    <div class="contant">
+      <AsideComponent />
+
+      <main ref="content">
+        <Home :mouse="mouse" @animation="animationend" />
+        <Works @animation="animationend" />
+        <About @animation="animationend" />
+        <Contact @animation="animationend" />
+      </main>
+    </div>
+  </div>
+</template>
+
+<script>
+// componens
+import Home from '@/components/land/home'
+import Works from '@/components/land/works'
+import About from '@/components/land/about'
+import Contact from '@/components/land/contact'
+import AsideComponent from '@/components/layout/aside/index'
+
+// vuex
+import { mapState } from 'vuex'
+
+export default {
+  data() {
+    return {
+      mouse: {
+        x: 0,
+        y: 0,
+        wheelDeltaY: 0,
+      },
+      is_in_anmation: true,
+    }
+  },
+  computed: {
+    ...mapState(['links']),
+    hash: function () {
+      return this.$route.hash
+    },
+  },
+  methods: {
+    mousemove(e) {
+      this.mouse.x = e.clientX
+      this.mouse.y = e.clientY
+    },
+    scroll(e) {
+      this.mouse.wheelDeltaY = e.wheelDeltaY
+      if (
+        this.mouse.wheelDeltaY < 0 &&
+        this.is_in_anmation &&
+        this.hash != '#' + this.links[this.links.length - 1]
+      ) {
+        this.$router.push(
+          '#' + this.links[this.links.indexOf(this.hash.substring(1)) + 1]
+        )
+        this.colse_anmation()
+      } else if (
+        this.mouse.wheelDeltaY > 0 &&
+        this.is_in_anmation &&
+        this.hash != '#' + this.links[0]
+      ) {
+        this.$router.push(
+          '#' + this.links[this.links.indexOf(this.hash.substring(1)) - 1]
+        )
+        this.colse_anmation()
+      }
+    },
+    colse_anmation() {
+      this.is_in_anmation = false
+    },
+    animationend() {
+      this.is_in_anmation = true
+    },
+  },
+  mounted() {
+    if (this.hash == '') {
+      this.$router.push('#home')
+    }
+  },
+  watch: {
+    hash() {
+      this.$refs.content.querySelector(this.hash).scrollIntoView(this.hash)
+    },
+  },
+
+  components: {
+    AsideComponent,
+    Home,
+    Works,
+    About,
+    Contact,
+  },
+}
+</script>
+
+<style lang="scss" scoped>
+.portfolio {
+  width: 100vw;
+  height: 100vh;
+  background-image: linear-gradient(
+    to bottom,
+    #072142,
+    #061c37,
+    #07182b,
+    #061220,
+    #020b16
+  );
+
+  .bg {
+    height: 100vh;
+    top: 0;
+    right: 0;
+    position: fixed;
+    pointer-events: none;
+
+    @media (max-width: 500px) {
+      right: 0;
+    }
+
+    img {
+      right: -20vw;
+      position: fixed;
+      top: -20vw;
+      height: 90vw;
+
+      // @media (max-width: 500px) {
+      //   height: 100vw;
+      //   max-width: 100vh;
+      //   width: 100vw;
+      //   right: 50%;
+      // }
+
+      &.stars {
+        height: 100vh;
+        width: 100vw;
+        max-width: none;
+        opacity: 1;
+        top: 0;
+        right: 0;
+        object-fit: cover;
+      }
+    }
+
+    .stars {
+      opacity: 0.5;
+
+      img {
+        max-width: none;
+      }
+    }
+  }
+
+  .contant {
+    display: flex;
+    height: 100%;
+
+    main {
+      flex: 1;
+      height: 100vh;
+      overflow-y: hidden;
+      scroll-behavior: smooth;
+    }
+  }
+}
+</style>

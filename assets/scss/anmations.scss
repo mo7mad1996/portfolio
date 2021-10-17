@@ -1,0 +1,26 @@
+@keyframes aAnmation {
+  to {
+    transform: translateY(0em);
+  }
+}
+
+@keyframes openMenu {
+  40% {
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 0 20%);
+  }
+  100% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
+@keyframes fromLeft {
+  from {
+    left: -100%;
+  }
+}
+
+@keyframes fromRight {
+  from {
+    right: -100%;
+  }
+}
