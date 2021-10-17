@@ -3,7 +3,7 @@
     <div class="text">
       <h1 @animationend="animationend">
         Mohamed <br />
-        Ibrahem
+        Ibrahim
       </h1>
 
       <p>
