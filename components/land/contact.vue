@@ -33,7 +33,7 @@ export default {
     social: [
       {
         icon: 'facebook-f',
-        link: 'https://www.facebook.com/Mmo7mad1996',
+        link: 'https://web.facebook.com/Mmo7mad1996',
       },
       {
         icon: 'whatsapp',
@@ -41,7 +41,7 @@ export default {
       },
       {
         icon: 'twitter',
-        link: 'twitter.com/mo7mad369',
+        link: 'https://www.twitter.com/mo7mad369',
       },
     ],
   }),
