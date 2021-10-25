@@ -23,6 +23,13 @@
         </a>
       </div>
     </div>
+
+    <div class="img">
+      <div class="img-container">
+        <img src="/land/contact.jpg" alt="about me" />
+      </div>
+      <span data-n="03" />
+    </div>
   </section>
 </template>
 

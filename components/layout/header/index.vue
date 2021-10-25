@@ -29,7 +29,7 @@ header {
   color: white;
   width: 100%;
   top: 0;
-  z-index: 3;
+  z-index: 6;
   left: 0;
 
   > * {

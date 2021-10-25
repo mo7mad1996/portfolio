@@ -4,6 +4,13 @@
       <h1 @animationend="animationend">about me</h1>
       <p>I love Design, Technology, <br />and Programming.</p>
     </div>
+
+    <div class="img">
+      <div class="img-container">
+        <img src="/land/about.png" alt="about me" />
+      </div>
+      <span data-n="02" />
+    </div>
   </section>
 </template>
 

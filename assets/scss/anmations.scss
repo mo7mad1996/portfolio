@@ -24,3 +24,15 @@
     right: -100%;
   }
 }
+
+@keyframes imganmation {
+  0% {
+    right: 100%;
+  }
+  50% {
+    left: 0;
+  }
+  100% {
+    left: 100%;
+  }
+}

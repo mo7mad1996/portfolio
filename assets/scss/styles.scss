@@ -17,12 +17,35 @@ section {
     .text p {
       animation: fromLeft 1.5s ease;
     }
+
+    .img {
+      .img-container {
+        &::after,
+        &::before,
+        img {
+          opacity: 1;
+          transition: 1s;
+          transform: translateZ(10px) translateX(-40px);
+        }
+        &::before {
+          width: 0;
+        }
+        &::after {
+          right: 0;
+          animation: imganmation 1s ease;
+        }
+      }
+      span::after {
+        animation: aAnmation 1s ease forwards;
+      }
+    }
   }
 
   .text {
     display: flex;
     justify-content: center;
     flex-direction: column;
+    z-index: 5;
 
     h1 {
       margin-top: 10px;
@@ -71,7 +94,6 @@ section {
 
       &:hover {
         color: white;
-
         background: #ff2e3c;
         box-shadow: 0 0 2px #ff2e3c, 0 0 6px #ff2e3c, 0 0 16px #ff2e3c;
       }
@@ -81,5 +103,60 @@ section {
   .img,
   .text {
     flex: 1;
+  }
+
+  .img {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 100%;
+
+    .img-container {
+      perspective: 100px;
+      position: relative;
+
+      img {
+        transform-origin: right;
+        width: 100%;
+        opacity: 0;
+        transform: translateZ(-10px) translateX(10px);
+      }
+
+      &::after,
+      &::before {
+        position: absolute;
+        z-index: 2;
+        content: '';
+        top: 0;
+        height: 100%;
+      }
+
+      &::before {
+        width: 100%;
+        right: 0;
+        transform: translateZ(-10px) translateX(10px);
+
+        background-color: #072142;
+      }
+      &::after {
+        background: #ff2e3c;
+      }
+    }
+    span {
+      position: absolute;
+      bottom: calc(50% - 2em);
+      right: 20px;
+      font-size: 8vw;
+      font-weight: bold;
+      font-family: sans-serif;
+      overflow-y: hidden;
+
+      &::after {
+        content: attr(data-n);
+        transform: translateY(2em);
+        display: block;
+        z-index: 3;
+      }
+    }
   }
 }
