@@ -17,7 +17,7 @@
       <div class="img-container">
         <img src="/land/works.jpg" alt="lastworks" />
       </div>
-      <span data-n="01" />
+      <span data-n="01" class="b" />
     </div>
   </section>
 </template>

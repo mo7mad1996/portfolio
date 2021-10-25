@@ -35,7 +35,7 @@ section {
           animation: imganmation 1s ease;
         }
       }
-      span::after {
+      span.b::after {
         animation: aAnmation 1s ease forwards;
       }
     }
@@ -142,7 +142,7 @@ section {
         background: #ff2e3c;
       }
     }
-    span {
+    span.b {
       position: absolute;
       bottom: calc(50% - 2em);
       right: 20px;

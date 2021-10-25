@@ -32,6 +32,7 @@
       </div>
       <span
         :style="`transform: translate(${mouse.x / 100}px, ${mouse.y / 100}px)`"
+        class="t"
         >portfolio</span
       >
 
@@ -113,7 +114,7 @@ export default {
   align-items: center;
 }
 
-span {
+span.t {
   position: relative;
   color: #ff4d5a;
   font-weight: 800;

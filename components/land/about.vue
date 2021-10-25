@@ -9,7 +9,7 @@
       <div class="img-container">
         <img src="/land/about.png" alt="about me" />
       </div>
-      <span data-n="02" />
+      <span class="b" data-n="02" />
     </div>
   </section>
 </template>
