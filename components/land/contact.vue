@@ -26,7 +26,7 @@
 
     <div class="img">
       <div class="img-container">
-        <img src="/land/contact.jpg" alt="about me" />
+        <img src="/land/contact.jpg" alt="contact with me"  />
       </div>
       <span data-n="03"  class="b"/>
     </div>

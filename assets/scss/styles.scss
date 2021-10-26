@@ -117,7 +117,9 @@ section {
 
       img {
         transform-origin: right;
-        width: 100%;
+        object-fit: cover;
+        width: 500px;
+        height: 350px;
         opacity: 0;
         transform: translateZ(-10px) translateX(10px);
       }
