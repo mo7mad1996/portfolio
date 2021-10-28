@@ -131,12 +131,12 @@ section {
         content: '';
         top: 0;
         height: 100%;
+        transform: translateZ(-10px) translateX(10px);
       }
 
       &::before {
         width: 100%;
         right: 0;
-        transform: translateZ(-10px) translateX(10px);
 
         background-color: #072142;
       }

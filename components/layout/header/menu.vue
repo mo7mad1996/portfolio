@@ -94,7 +94,8 @@ export default {
           animation: aAnmation 0.5s ease 0.4s forwards;
           position: relative;
           display: inline-block;
-          transform: translateY(1.4em);
+          height: 100%;
+          transform: translateY(100%);
 
           &::before {
             content: '';

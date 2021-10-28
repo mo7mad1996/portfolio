@@ -3,6 +3,7 @@
     <div class="text">
       <h1 @animationend="animationend">about me</h1>
       <p>I love Design, Technology, <br />and Programming.</p>
+      <nuxt-link to="/works" class="btn">Let's see more</nuxt-link>
     </div>
 
     <div class="img">

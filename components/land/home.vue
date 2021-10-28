@@ -11,7 +11,7 @@
         full stack web developer.
       </p>
     </div>
-    <div class="img">
+    <div class="moon-img">
       <div
         class="cloud one"
         :style="`transform: translate(${mouse.x / 20}px, ${mouse.y / 20}px)`"
@@ -30,11 +30,15 @@
       >
         <img src="/land/cloud2.svg" alt="cloud" />
       </div>
+
+      <!-- start span -->
       <span
         :style="`transform: translate(${mouse.x / 100}px, ${mouse.y / 100}px)`"
         class="t"
-        >portfolio</span
       >
+        portfolio
+      </span>
+      <!-- end span -->
 
       <div
         class="cloud three"
@@ -71,7 +75,6 @@ export default {
 .image {
   height: 100%;
   position: absolute;
-
   right: 10vw;
   top: 10vw;
 
@@ -84,37 +87,36 @@ export default {
     }
   }
 }
-.cloud {
-  position: absolute;
-  width: 40vw;
-  transition: 1s ease-out;
 
-  img {
-    width: 100%;
-  }
+.moon-img {
+  flex: 1;
 
-  &.one {
-    top: 10vw;
-    right: 30vh;
-  }
-  &.two {
-    bottom: 0;
-    right: 0;
-    filter: contrast(0.6);
-  }
-  &.three {
-    top: 1px;
-    right: 20px;
-    filter: contrast(0.3);
-  }
-}
+  .cloud {
+    position: absolute;
+    width: 40vw;
+    transition: 1s ease-out;
 
-.img {
-  display: flex;
-  align-items: center;
+    &.one {
+      top: 10vw;
+      right: 30vh;
+    }
+    &.two {
+      bottom: 0;
+      right: 0;
+      filter: contrast(0.6);
+    }
+    &.three {
+      top: 1px;
+      right: 20px;
+      filter: contrast(0.3);
+    }
+  }
 }
 
 span.t {
+  display: flex;
+  align-items: center;
+  height: 100%;
   position: relative;
   color: #ff4d5a;
   font-weight: 800;
