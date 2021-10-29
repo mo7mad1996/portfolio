@@ -16,7 +16,6 @@
     </div>
 
     <!-- start contant -->
-
     <div class="contant">
       <AsideComponent />
 
@@ -42,6 +41,7 @@ import AsideComponent from '@/components/layout/aside/index'
 import { mapState } from 'vuex'
 
 export default {
+  scrollToTop: true,
   data() {
     return {
       mouse: {

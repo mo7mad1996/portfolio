@@ -15,7 +15,7 @@
 
     <div class="img">
       <div class="img-container">
-        <img src="/land/works.jpg" alt="lastworks" />
+        <img src="~assets/imgs/works.jpg" alt="lastworks" />
       </div>
       <span data-n="01" class="b" />
     </div>
