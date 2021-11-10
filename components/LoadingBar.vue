@@ -5,7 +5,7 @@
       <div class="progress">
         <div :style="`width: ${dasharray}%`"></div>
       </div>
-      {{ dasharray }}%
+      <div>{{ dasharray }}%</div>
     </div>
   </div>
 </template>
@@ -49,16 +49,17 @@ export default {
   .loading {
     text-align: center;
     font-size: 22px;
-    color: #061a31;
+    color: #072142;
 
     .progress {
       width: 150px;
-      border: 1px solid gray;
+      border: 1px solid #8c2b7a;
       margin: 10px auto;
+      background: #ff4d5a;
 
       div {
         height: 10px;
-        background: #ff4d5a;
+        background: #072142;
       }
     }
   }

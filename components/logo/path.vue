@@ -1,6 +1,6 @@
 <template>
   <svg
-    :stroke-dasharray="`${dasharray * 2} ${100 - dasharray}  `"
+    :stroke-dasharray="`${dasharray * 50} 2000`"
     x="0px"
     y="0px"
     :fill-opacity="(dasharray - 80) / 20"
