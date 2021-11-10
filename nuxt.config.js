@@ -25,6 +25,8 @@ export default {
     '~assets/scss/styles.scss',
   ],
 
+  loading: '~/components/LoadingBar.vue',
+
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [],
 

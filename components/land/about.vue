@@ -21,7 +21,6 @@ export default {
   methods: {
     animationend() {
       this.$emit('animation')
-      console.log('fkag')
     },
   },
 }
