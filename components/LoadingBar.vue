@@ -27,7 +27,7 @@ export default {
       this.loading = false
     },
     increase(num) {
-      // this.dasharray = num
+      this.dasharray = num
     },
   },
   components: {
