@@ -110,6 +110,11 @@ export default {
     About,
     Contact,
   },
+  head() {
+    return {
+      title: 'Home',
+    }
+  },
 }
 </script>
 
@@ -133,8 +138,11 @@ export default {
     position: fixed;
     pointer-events: none;
 
-    @media (max-width: 500px) {
-      right: 0;
+    @media (max-width: 578px) {
+      right: 50%;
+      transform: translateX(25%);
+      width: 100%;
+      display: red;
     }
 
     img {
@@ -143,7 +151,7 @@ export default {
       top: -20vw;
       height: 90vw;
 
-      // @media (max-width: 500px) {
+      // @media (max-width: 578px) {
       //   height: 100vw;
       //   max-width: 100vh;
       //   width: 100vw;
@@ -158,14 +166,11 @@ export default {
         top: 0;
         right: 0;
         object-fit: cover;
-      }
-    }
+        opacity: 0.5;
 
-    .stars {
-      opacity: 0.5;
-
-      img {
-        max-width: none;
+        img {
+          max-width: none;
+        }
       }
     }
   }

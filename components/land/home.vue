@@ -11,6 +11,7 @@
         full stack web developer.
       </p>
     </div>
+
     <div class="moon-img">
       <div
         class="cloud one"
@@ -63,6 +64,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+section {
+  padding: 0;
+
+  .text h1 {
+    @media (max-width: 578px) {
+      text-shadow: 0 0 4px #333;
+    }
+  }
+}
+
 .active {
   .image {
     animation: fromRight 1.4s ease;
@@ -78,12 +89,26 @@ export default {
   right: 10vw;
   top: 10vw;
 
+  @media (max-width: 578px) {
+    width: 100vw;
+    height: 100%;
+    right: 0;
+  }
+
   .moon {
     height: 30vw;
+    position: relative;
 
     img {
       height: 100%;
       display: block;
+
+      @media (max-width: 578px) {
+        position: absolute;
+        left: 50%;
+        height: 100%;
+        transform: translatex(-50%);
+      }
     }
   }
 }
@@ -91,24 +116,60 @@ export default {
 .moon-img {
   flex: 1;
 
+  @media (max-width: 578px) {
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+  }
+
   .cloud {
     position: absolute;
     width: 40vw;
-    transition: 1s ease-out;
+    transition: 0.3s ease-out;
+
+    @media (max-width: 578px) {
+      display: block;
+
+      img {
+        height: 140px;
+      }
+    }
+    @media (max-width: 420px) {
+      img {
+        height: 90px;
+      }
+    }
 
     &.one {
       top: 10vw;
       right: 30vh;
     }
+
     &.two {
       bottom: 0;
       right: 0;
       filter: contrast(0.6);
+
+      @media (max-width: 578px) {
+        right: 30%;
+        bottom: auto;
+        top: 40vh;
+      }
     }
+
     &.three {
       top: 1px;
       right: 20px;
       filter: contrast(0.3);
+      @media (max-width: 578px) {
+        top: 30vh;
+        right: 20vw;
+      }
+
+      @media (max-width: 420px) {
+        top: 15vh;
+        right: 15vw;
+      }
     }
   }
 }
@@ -124,5 +185,13 @@ span.t {
   font-size: 30px;
   z-index: 2;
   text-transform: uppercase;
+
+  @media (max-width: 578px) {
+    justify-content: end;
+    padding: 10px;
+  }
+  @media (max-width: 370px) {
+    display: none;
+  }
 }
 </style>
