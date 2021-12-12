@@ -84,19 +84,22 @@ export default {
         text-align: center;
         overflow: hidden;
         flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
 
         a {
           font-size: 70px;
           line-height: 1;
           letter-spacing: 0.1em;
           text-transform: uppercase;
-          padding: 10px;
           animation: aAnmation 0.5s ease 0.4s forwards;
           position: relative;
           display: inline-block;
-          height: 100%;
+          padding: 0 10px;
           transform: translateY(100%);
 
+          &::after,
           &::before {
             content: '';
             width: 0;
@@ -109,11 +112,16 @@ export default {
             );
 
             position: absolute;
-            top: 50%;
+            top: 60%;
             left: 0;
-            transform: translateY(-50%);
             transition: 0.3s ease;
           }
+          &::after {
+            bottom: 60%;
+            top: auto;
+          }
+
+          &:hover:after,
           &:hover:before {
             width: 100%;
             left: auto;

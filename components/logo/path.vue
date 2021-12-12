@@ -48,6 +48,8 @@ svg {
   path {
     stroke-width: 2;
     stroke: black;
+    stroke-linecap: round;
+    stroke-linejoin: round;
   }
   &.active path {
     stroke-width: 0;

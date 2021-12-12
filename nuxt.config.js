@@ -1,4 +1,9 @@
 export default {
+  // server
+  server: {
+    host: '0.0.0.0',
+  },
+
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     titleTemplate: 'Mohamed Ibrahim | %s ',
@@ -7,6 +12,7 @@ export default {
       lang: 'en',
     },
     meta: [
+      { name: 'theme-color', content: '#072142' },
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       {

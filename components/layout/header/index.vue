@@ -10,7 +10,7 @@
 
 <script>
 // components
-import MenuComponent from '@/components/layout/header/menu'
+import MenuComponent from '~/components/layout/header/menu'
 
 export default {
   name: 'HeaderComponent',

@@ -40,7 +40,7 @@ export default {
     social: [
       {
         icon: 'facebook-f',
-        link: 'https://web.facebook.com/Mmo7mad1996',
+        link: 'https://web.facebook.com/Mo7mad1996',
       },
       {
         icon: 'whatsapp',

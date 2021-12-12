@@ -134,6 +134,7 @@ section {
         height: 140px;
       }
     }
+
     @media (max-width: 420px) {
       img {
         height: 90px;
@@ -161,6 +162,7 @@ section {
       top: 1px;
       right: 20px;
       filter: contrast(0.3);
+
       @media (max-width: 578px) {
         top: 30vh;
         right: 20vw;

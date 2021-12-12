@@ -1,5 +1,12 @@
 <template>
-  <div class="portfolio" @mousemove="mousemove" @wheel="scroll">
+  <div
+    class="portfolio"
+    @mousemove="mousemove"
+    @wheel="scroll"
+    ref="a"
+    @touchstart="touch_start"
+    @touchend="touch_end"
+  >
     <div class="bg">
       <div
         class="stars"
@@ -49,6 +56,8 @@ export default {
         y: 0,
         wheelDeltaY: 0,
       },
+      touch_start_y: '',
+      touch_end_y: '',
       is_in_anmation: true,
     }
   },
@@ -63,10 +72,24 @@ export default {
       this.mouse.x = e.clientX
       this.mouse.y = e.clientY
     },
+
+    touch_start(e) {
+      this.touch_start_y = e.changedTouches[0].clientY
+    },
+    touch_end(e) {
+      this.touch_end_y = e.changedTouches[0].clientY
+    },
+
     scroll(e) {
       this.mouse.wheelDeltaY = e.wheelDeltaY
+      if (this.mouse.wheelDeltaY < 0) {
+        this.scroll_down()
+      } else if (this.mouse.wheelDeltaY > 0) {
+        this.scroll_up()
+      }
+    },
+    scroll_down() {
       if (
-        this.mouse.wheelDeltaY < 0 &&
         this.is_in_anmation &&
         this.hash != '#' + this.links[this.links.length - 1]
       ) {
@@ -74,11 +97,10 @@ export default {
           '#' + this.links[this.links.indexOf(this.hash.substring(1)) + 1]
         )
         this.colse_anmation()
-      } else if (
-        this.mouse.wheelDeltaY > 0 &&
-        this.is_in_anmation &&
-        this.hash != '#' + this.links[0]
-      ) {
+      }
+    },
+    scroll_up() {
+      if (this.is_in_anmation && this.hash != '#' + this.links[0]) {
         this.$router.push(
           '#' + this.links[this.links.indexOf(this.hash.substring(1)) - 1]
         )
@@ -99,7 +121,18 @@ export default {
   },
   watch: {
     hash() {
-      this.$refs.content.querySelector(this.hash).scrollIntoView(this.hash)
+      document.getElementById(this.hash.substring(1)).scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+        inline: 'nearest',
+      })
+    },
+    touch_end_y() {
+      if (this.touch_end_y > this.touch_start_y) {
+        this.scroll_up()
+      } else if (this.touch_end_y < this.touch_start_y) {
+        this.scroll_down()
+      }
     },
   },
 

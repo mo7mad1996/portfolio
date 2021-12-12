@@ -1,5 +1,5 @@
 <template>
-  <div>profile</div>
+  <div>Last works</div>
 </template>
 
 <script>
