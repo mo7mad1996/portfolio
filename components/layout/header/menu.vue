@@ -75,14 +75,14 @@ export default {
     ul {
       display: flex;
       flex-direction: column;
+      align-items: center;
       height: 100%;
       gap: 10px;
       padding: 40px;
 
       li {
-        overflow: hidden;
+        overflow-y: hidden;
         text-align: center;
-        overflow: hidden;
         flex: 1;
         display: flex;
         justify-content: center;

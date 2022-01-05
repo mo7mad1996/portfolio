@@ -1,23 +1,30 @@
 <template>
-  <div>
-    <div class="profile"><div class="img-content"></div></div>
+  <div class="profile-page">
+    <ProfileInterface path="/profile/personal" />
   </div>
 </template>
 
-<style scoped lang="scss">
-.profile {
-  height: 100vh;
-  background: linear-gradient(rgb(201, 32, 223), rgb(32, 153, 223));
+<script>
+import ProfileInterface from '~/components/profile/profile_interface'
 
-  // background styles
-  .img-content {
-    background-attachment: fixed;
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    text-transform: capitalize;
-    height: 100%;
-    background-image: url('/profile/personal.png');
-  }
+export default {
+  async asyncData({ $axios }) {
+    const { data } = await $axios.get('/data.json')
+    return { data }
+  },
+  components: {
+    ProfileInterface,
+  },
+  head() {
+    return {
+      title: 'Personal profile',
+    }
+  },
+}
+</script>
+
+<style scoped lang="scss">
+.profile-page {
+  background: rgb(32, 153, 223);
 }
 </style>

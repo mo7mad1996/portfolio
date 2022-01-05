@@ -1,23 +1,41 @@
 <template>
-  <div>
-    <div class="profile"><div class="img-content"></div></div>
+  <div class="profile-page">
+    <ProfileInterface path="/profile/technical" />
+
+    <section>
+      <h1></h1>
+      <table>
+        <tr v-for="(v, p) in data" :key="p">
+          <td>{{ p }}</td>
+
+          <td>: {{ v }}</td>
+        </tr>
+      </table>
+    </section>
   </div>
 </template>
 
-<style scoped lang="scss">
-.profile {
-  height: 100vh;
-  background: linear-gradient(rgb(201, 32, 223), rgb(32, 153, 223));
+<script>
+import ProfileInterface from '~/components/profile/profile_interface'
 
-  // background styles
-  .img-content {
-    background-attachment: fixed;
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    text-transform: capitalize;
-    height: 100%;
-    background-image: url('/profile/technical.png');
-  }
+export default {
+  async asyncData({ $axios }) {
+    const { data } = await $axios.get('/data.json')
+    return { data }
+  },
+  components: {
+    ProfileInterface,
+  },
+  head() {
+    return {
+      title: 'Technical profile',
+    }
+  },
+}
+</script>
+
+<style scoped lang="scss">
+.profile-page {
+  background: rgb(32, 153, 223);
 }
 </style>

@@ -2,6 +2,7 @@
   <div class="loading-page" v-if="loading">
     <div class="loading">
       <LogoPath :dasharray="dasharray" />
+
       <div class="progress">
         <div :style="`width: ${dasharray}%`"></div>
       </div>

@@ -2,10 +2,9 @@
   <div
     class="portfolio"
     @mousemove="mousemove"
-    @wheel="scroll"
-    ref="a"
-    @touchstart="touch_start"
-    @touchend="touch_end"
+    @wheel.prevent="scroll"
+    @touchstart="touchstart"
+    @touchend="touchend"
   >
     <div class="bg">
       <div
@@ -54,11 +53,12 @@ export default {
       mouse: {
         x: 0,
         y: 0,
-        wheelDeltaY: 0,
       },
-      touch_start_y: '',
-      touch_end_y: '',
       is_in_anmation: true,
+      Touch: {
+        start: 0,
+        end: 0,
+      },
     }
   },
   computed: {
@@ -73,19 +73,24 @@ export default {
       this.mouse.y = e.clientY
     },
 
-    touch_start(e) {
-      this.touch_start_y = e.changedTouches[0].clientY
-    },
-    touch_end(e) {
-      this.touch_end_y = e.changedTouches[0].clientY
-    },
-
     scroll(e) {
-      this.mouse.wheelDeltaY = e.wheelDeltaY
-      if (this.mouse.wheelDeltaY < 0) {
+      if (e.wheelDeltaY < 0) {
         this.scroll_down()
-      } else if (this.mouse.wheelDeltaY > 0) {
+      } else if (e.wheelDeltaY > 0) {
         this.scroll_up()
+      }
+    },
+    touchstart(e) {
+      var o = e.touches[0]
+      this.Touch.start = o.clientY
+    },
+    touchend(e) {
+      this.Touch.end = e.changedTouches[0].pageY
+
+      if (this.Touch.end - this.Touch.start > 0) {
+        this.scroll_up()
+      } else if (this.Touch.end - this.Touch.start < 0) {
+        this.scroll_down()
       }
     },
     scroll_down() {
@@ -96,7 +101,7 @@ export default {
         this.$router.push(
           '#' + this.links[this.links.indexOf(this.hash.substring(1)) + 1]
         )
-        this.colse_anmation()
+        this.is_in_anmation = false
       }
     },
     scroll_up() {
@@ -104,11 +109,8 @@ export default {
         this.$router.push(
           '#' + this.links[this.links.indexOf(this.hash.substring(1)) - 1]
         )
-        this.colse_anmation()
+        this.is_in_anmation = false
       }
-    },
-    colse_anmation() {
-      this.is_in_anmation = false
     },
     animationend() {
       this.is_in_anmation = true
@@ -121,18 +123,9 @@ export default {
   },
   watch: {
     hash() {
-      document.getElementById(this.hash.substring(1)).scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
-        inline: 'nearest',
-      })
-    },
-    touch_end_y() {
-      if (this.touch_end_y > this.touch_start_y) {
-        this.scroll_up()
-      } else if (this.touch_end_y < this.touch_start_y) {
-        this.scroll_down()
-      }
+      let scroll_to = document.getElementById(this.hash.substring(1)).offsetTop
+
+      this.$refs.content.scrollTo(0, scroll_to)
     },
   },
 
@@ -152,7 +145,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.test {
+  color: blue;
+  padding: 20px;
+  left: 90px;
+  position: relative;
+}
 .portfolio {
+  color: white;
   width: 100vw;
   height: 100vh;
   background-image: linear-gradient(

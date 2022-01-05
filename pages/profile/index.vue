@@ -49,8 +49,6 @@ export default {
 .profile {
   height: 100vh;
   display: flex;
-  overflow-x: hidden;
-  overflow-y: scroll;
 
   background: linear-gradient(rgb(201, 32, 223), rgb(32, 153, 223));
 

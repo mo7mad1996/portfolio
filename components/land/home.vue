@@ -66,6 +66,7 @@ export default {
 <style lang="scss" scoped>
 section {
   padding: 0;
+  overflow: visible;
 
   .text h1 {
     @media (max-width: 578px) {
@@ -98,6 +99,7 @@ section {
   .moon {
     height: 30vw;
     position: relative;
+    top: 42px;
 
     img {
       height: 100%;
