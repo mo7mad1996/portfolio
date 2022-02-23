@@ -1,12 +1,15 @@
 {
-  "name": "Mohamed Ibrahim",
+  "Name": "Mohamed Ibrahim Abd elmoghny",
   "Date of Birth": "20 May 1996",
-  "height": 185,
+  "Height": 185,
   "weight": "95 (Fat)",
-  "University degree": "Computer scince",
+  "University degree": "Computer Scince",
   "driving license": "Private",
   "military service": "Exemption",
   "Social status": "Unmarried",
+  "Mobile num": "(+2) 01090 524 505",
+  "Start learn": 2018,
+  "Smoking": "No",
   "p_skills": [
     {
       "name": "",
@@ -15,8 +18,19 @@
   ],
   "t_skills": [
     {
-      "name": "",
-      "degree": 10
+      "name": "HTML",
+      "degree": 10,
+      "image": "https://i.stack.imgur.com/PgcSR.png"
+    },
+    {
+      "name": "CSS",
+      "degree": 10,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/CSS.3.svg/730px-CSS.3.svg.png"
+    },
+    {
+      "name": "JavaScript",
+      "degree": 10,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/CSS.3.svg/730px-CSS.3.svg.png"
     }
   ]
 }

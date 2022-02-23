@@ -32,14 +32,14 @@
         <img src="/land/cloud2.svg" alt="cloud" />
       </div>
 
-      <!-- start span -->
+      <!-- start word -->
       <span
         :style="`transform: translate(${mouse.x / 100}px, ${mouse.y / 100}px)`"
         class="t"
       >
         portfolio
       </span>
-      <!-- end span -->
+      <!-- end word -->
 
       <div
         class="cloud three"
@@ -88,9 +88,10 @@ section {
   height: 100%;
   position: absolute;
   right: 10vw;
-  top: 10vw;
+  top: 6vw;
 
   @media (max-width: 578px) {
+    top: 1vw;
     width: 100vw;
     height: 100%;
     right: 0;

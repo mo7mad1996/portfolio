@@ -1,6 +1,7 @@
 <template>
   <div class="profile">
     <a
+      class="title"
       v-for="link in links"
       :key="link"
       :href="'/profile/' + link"
@@ -51,6 +52,7 @@ export default {
   display: flex;
 
   background: linear-gradient(rgb(201, 32, 223), rgb(32, 153, 223));
+  
 
   // background styles
   a {
@@ -79,6 +81,13 @@ export default {
     }
   }
 
+
+  a {
+    display: grid;
+    place-items: center;
+    font-size: 3em;
+    font-weight: bold;
+  }
   &.active {
     a {
       transition: 0.6s linear;

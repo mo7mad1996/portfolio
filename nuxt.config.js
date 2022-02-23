@@ -6,7 +6,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: 'Mohamed Ibrahim | %s ',
+    titleTemplate: '%s | Mohamed Ibrahim',
     title: 'Portfolio',
     htmlAttrs: {
       lang: 'en',
@@ -25,7 +25,7 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: 'Mohamed Ibrahem portfolio, useing nuxt.js',
+        content: 'Mohamed Ibrahim portfolio, useing nuxt.js',
       },
       {
         name: 'format-detection',

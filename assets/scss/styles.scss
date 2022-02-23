@@ -13,6 +13,7 @@ section {
         animation: fromLeft 1s ease;
       }
     }
+
     .text p {
       animation: fromLeft 1.5s ease;
     }
@@ -26,14 +27,17 @@ section {
           transition: 1s;
           transform: translateZ(10px) translateX(-40px);
         }
+
         &::before {
           width: 0;
         }
+
         &::after {
           right: 0;
           animation: imganmation 1s ease;
         }
       }
+
       span.b::after {
         animation: aAnmation 1s ease forwards;
       }
@@ -67,6 +71,7 @@ section {
         bottom: 0;
         left: 0;
       }
+
       &::before {
         transform: translate(0.4em, max(0.2em, 10px));
       }
@@ -141,6 +146,7 @@ section {
           width: 300px;
           height: 220px;
         }
+
         @media (max-width: 600px) {
           display: none;
         }
@@ -162,10 +168,12 @@ section {
 
         background-color: #072142;
       }
+
       &::after {
         background: #ff2e3c;
       }
     }
+
     span.b {
       position: absolute;
       bottom: calc(50% - 2em);
@@ -183,4 +191,42 @@ section {
       }
     }
   }
+}
+
+.title {
+  color: #3c312b;
+  text-shadow: 2px 0 0px #2297df, -2px 0 0px #c820df;
+}
+
+
+h2.title {
+  padding: 10px 0;
+  margin-bottom: 1em;
+
+  &::before {
+    content: '';
+    border-width: 10px;
+    border-style: solid;
+    display: inline-block;
+    transform: rotateX(45deg);
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+  }
+
+  &::after {
+    content: '_';
+    text-shadow: none;
+  }
+}
+
+.container {
+  max-width: 1200px;
+  width: 90%;
+  padding: 10px;
+  margin: 0 auto 2em;
+}
+
+.container:last-of-type {
+  margin: 0 auto;
 }

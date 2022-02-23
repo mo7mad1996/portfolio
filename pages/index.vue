@@ -2,7 +2,6 @@
   <div
     class="portfolio"
     @mousemove="mousemove"
-    @wheel.prevent="scroll"
     @touchstart="touchstart"
     @touchend="touchend"
   >
@@ -11,7 +10,7 @@
         class="stars"
         :style="`transform: translate(${mouse.x / 100}px, ${mouse.y / 100}px)`"
       >
-        <img src="/background/star.svg" class="stars" alt="stars" />
+        <img src="/background/star.svg" class="stars" alt="" />
       </div>
       <div
         class="moonlight"
@@ -25,7 +24,9 @@
     <div class="contant">
       <AsideComponent />
 
-      <main ref="content">
+      <main ref="content" 
+    @wheel.prevent="scroll"
+      >
         <Home :mouse="mouse" @animation="animationend" />
         <Works @animation="animationend" />
         <About @animation="animationend" />
@@ -123,9 +124,12 @@ export default {
   },
   watch: {
     hash() {
-      let scroll_to = document.getElementById(this.hash.substring(1)).offsetTop
+      // document.querySelector(this.hash).scrollIntoView()
 
-      this.$refs.content.scrollTo(0, scroll_to)
+      let scroll_to = document.getElementById(this.hash.substring(1)).offsetTop
+      // this.$refs.content.scrollTo(0, scroll_to)
+      this.$refs.content.scrollTop = scroll_to
+
     },
   },
 
@@ -145,12 +149,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.test {
-  color: blue;
-  padding: 20px;
-  left: 90px;
-  position: relative;
-}
 .portfolio {
   color: white;
   width: 100vw;
@@ -175,7 +173,6 @@ export default {
       right: 50%;
       transform: translateX(25%);
       width: 100%;
-      display: red;
     }
 
     img {
@@ -200,6 +197,7 @@ export default {
         right: 0;
         object-fit: cover;
         opacity: 0.5;
+        transform-origin: center;
 
         img {
           max-width: none;
@@ -214,8 +212,8 @@ export default {
 
     main {
       flex: 1;
-      height: 100vh;
       overflow-y: hidden;
+
       scroll-behavior: smooth;
     }
   }
