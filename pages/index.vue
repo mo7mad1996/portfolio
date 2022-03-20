@@ -4,6 +4,7 @@
     @mousemove="mousemove"
     @touchstart="touchstart"
     @touchend="touchend"
+    @wheel="scroll"
   >
     <div class="bg">
       <div
@@ -24,9 +25,7 @@
     <div class="contant">
       <AsideComponent />
 
-      <main ref="content" 
-    @wheel.prevent="scroll"
-      >
+      <main ref="content" >
         <Home :mouse="mouse" @animation="animationend" />
         <Works @animation="animationend" />
         <About @animation="animationend" />
@@ -129,7 +128,6 @@ export default {
       let scroll_to = document.getElementById(this.hash.substring(1)).offsetTop
       // this.$refs.content.scrollTo(0, scroll_to)
       this.$refs.content.scrollTop = scroll_to
-
     },
   },
 
