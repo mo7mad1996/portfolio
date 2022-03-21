@@ -210,7 +210,7 @@ export default {
 
     main {
       flex: 1;
-      overflow-y: hidden;
+      overflow: hidden;
 
       scroll-behavior: smooth;
     }
