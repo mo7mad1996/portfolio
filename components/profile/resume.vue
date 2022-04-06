@@ -1,6 +1,6 @@
 <template>
   <div class="resume container">
-    <a href="/download/Mohamed-Ibrahim.pdf" download @pointermove="move">
+    <a href="/download/Mohammed-Ibrahim.pdf" download @pointermove="move">
       <div class="background">
         <div
           class="pointer"

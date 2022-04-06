@@ -20,8 +20,9 @@ import Custemfooter from '~/components/profile/footer'
 export default {
   async asyncData({ $axios, req }) {
     if(process.server){
+      
+      const baseUrl = ''
 
-      const baseUrl = 'http' + process.env.NODE_ENV == 'development' || 's' + "://" + req.headers.host
         const res = await $axios.get( baseUrl +  '/data.json')
 
         let born = new Date(res.data['Date of Birth']).getFullYear(),
