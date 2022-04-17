@@ -1,10 +1,11 @@
 <template>
   <div class="resume container">
     <a href="/download/Mohammed-Ibrahim.pdf" download @pointermove="move">
+
       <div class="background">
         <div
           class="pointer"
-          :style="`top: calc(0px + ${y}px);left: calc(0px + ${x}px)`"
+          :style="`top: ${y}px;left: ${x}px`"
         ></div>
       </div>
 
@@ -14,6 +15,7 @@
           resume
         </span>
       </div>
+
     </a>
   </div>
 </template>
@@ -43,6 +45,7 @@ $secound-color: #5fffe1;
   display: flex;
   justify-content: flex-end;
   overflow: hidden;
+  pointer-events: none;
 
   a {
     padding: 10px 30px;
@@ -50,7 +53,8 @@ $secound-color: #5fffe1;
     position: relative;
     overflow: hidden;
     border: 1px solid $frist-color;
-    
+    pointer-events: all;
+
     .txt {
       position: relative;
       z-index: 2;

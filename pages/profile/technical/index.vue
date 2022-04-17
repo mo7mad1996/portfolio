@@ -23,15 +23,16 @@ export default {
       
       const baseUrl = ''
 
-        const res = await $axios.get( baseUrl +  '/data.json')
+      const res = await $axios.get( baseUrl +  '/data.json')
 
-        let born = new Date(res.data['Date of Birth']).getFullYear(),
-          naw = new Date().getFullYear()
+      let born = new Date(res.data['Date of Birth']).getFullYear(),
+          naw =  new Date().getFullYear()
         let Age = naw - born + ' Years',
+
         Total_Experiance = naw - res.data['Start learn'] + ' Years'
 
 
-        const data = Object.assign(res.data, {
+        const data = await Object.assign(res.data, {
           Age,
           "Total Experiance": Total_Experiance
         })
@@ -41,6 +42,10 @@ export default {
 
   data: () => ({
     info: ['Name', 'Age', 'University degree', "Mobile num", "Total Experiance"],
+    data: {
+      t_skills: [],
+      p_skills: []
+    }
   }),
   components: {
     ProfileInterface,

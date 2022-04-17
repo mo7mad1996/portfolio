@@ -20,17 +20,20 @@
     {
       "name": "HTML",
       "degree": 10,
-      "image": "https://i.stack.imgur.com/PgcSR.png"
+      "image": "https://i.stack.imgur.com/PgcSR.png",
+      "URL": "https://www.w3schools.com/html/html_intro.asp"
     },
     {
       "name": "CSS",
       "degree": 10,
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/CSS.3.svg/730px-CSS.3.svg.png"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/CSS.3.svg/730px-CSS.3.svg.png",
+      "URL": "https://www.w3schools.com/css/css_intro.asp"
     },
     {
       "name": "JavaScript",
       "degree": 10,
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/CSS.3.svg/730px-CSS.3.svg.png"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/javascript.svg",
+      "URL": "https://www.w3schools.com/js/js_intro.asp"
     }
   ]
 }

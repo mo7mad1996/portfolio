@@ -1,11 +1,15 @@
 <template>
   <div class="profile-page">
     <ProfileInterface path="/profile/personal" />
+    <Resume />
+    <Custemfooter />
   </div>
 </template>
 
 <script>
 import ProfileInterface from '~/components/profile/profile_interface'
+import Resume from '~/components/profile/resume.vue'
+import Custemfooter from '~/components/profile/footer'
 
 export default {
   async asyncData({ $axios }) {
@@ -14,7 +18,9 @@ export default {
   },
   components: {
     ProfileInterface,
-  },
+    Resume,
+    Custemfooter
+},
   head() {
     return {
       title: 'Personal profile',
