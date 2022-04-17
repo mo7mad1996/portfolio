@@ -1,7 +1,6 @@
 <template>
   <div class="profile-page">
     <ProfileInterface path="/profile/technical" />
-
     <Resume />
     <Info :info="info" :data="data" />
     <ProfileSkils :skills="data.t_skills" />
@@ -19,13 +18,13 @@ import Custemfooter from '~/components/profile/footer'
 
 export default {
   async asyncData({ $axios, req }) {
-    if(process.server){
       
       const baseUrl = ''
 
       const res = await $axios.get( baseUrl +  '/data.json')
 
-      let born = new Date(res.data['Date of Birth']).getFullYear(),
+
+      let born = await new Date(res.data['Date of Birth']).getFullYear(),
           naw =  new Date().getFullYear()
         let Age = naw - born + ' Years',
 
@@ -36,8 +35,8 @@ export default {
           Age,
           "Total Experiance": Total_Experiance
         })
+          console.log(data)
         return { data }
-      }
   },
 
   data: () => ({

@@ -13,7 +13,7 @@ import Custemfooter from '~/components/profile/footer'
 
 export default {
   async asyncData({ $axios }) {
-    const { data } = await $axios.get('/data.json')
+    const { data } = $axios.get('/data.json')
     return { data }
   },
   components: {
