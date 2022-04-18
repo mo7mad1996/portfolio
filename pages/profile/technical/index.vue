@@ -16,10 +16,11 @@ import ProfileSkils from '~/components/profile/skills'
 import Resume from '~/components/profile/resume'
 import Custemfooter from '~/components/profile/footer'
 
+
 export default {
   async asyncData({ $axios, req }) {
       
-      const baseUrl = ''
+      const baseUrl = 'http://' + req.headers.host
 
       const res = await $axios.get( baseUrl +  '/data.json')
 
@@ -35,7 +36,6 @@ export default {
           Age,
           "Total Experiance": Total_Experiance
         })
-          console.log(data)
         return { data }
   },
 
