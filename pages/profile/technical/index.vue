@@ -19,13 +19,9 @@ export default {
 
   async asyncData({ $axios, req }) {
    
-    const baseUrl = 
-      process.server ? 
-        (req.connection.encrypted ? 'https://' : 'http://' )+ req.headers.host : 
-        ""
 
     // const res = await $axios.get(baseUrl + '/data.json')
-    const res = await $axios.get(baseUrl + '/data.json')
+    const res = await $axios.get('/data.json')
 
       let born = await new Date(res.data['Date of Birth']).getFullYear(),
           naw =  new Date().getFullYear()

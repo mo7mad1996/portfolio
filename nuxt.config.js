@@ -1,4 +1,6 @@
-export default {
+export default ({dev}) => {
+  console.log(dev)
+  return {
   // server
   server: {
     host: '0.0.0.0',
@@ -74,9 +76,10 @@ export default {
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
-    // baseURL: '/data.json'
+    baseURL: dev ? "http://localhost:3000" : 'https://portfolio-mohamed-ibrahim.herokuapp.com'
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
+}
 }
