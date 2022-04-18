@@ -19,9 +19,9 @@ export default {
 
   async asyncData({ $axios, req }) {
    
-    // const baseUrl = 'http://' + req.headers.host
+    const baseUrl = process.env.NODE_ENV == 'production' && 'https://portfolio-mohamed-ibrahim.herokuapp.com'
     // const res = await $axios.get(baseUrl + '/data.json')
-    const res = await $axios.get('/data.json')
+    const res = await $axios.get(baseUrl + '/data.json')
 
       let born = await new Date(res.data['Date of Birth']).getFullYear(),
           naw =  new Date().getFullYear()

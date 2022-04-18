@@ -1,17 +1,14 @@
 <template>
-  <div v-if="error.statusCode === 404">
+  <div>
     <div id="notfound">
       <div class="notfound">
         <div class="notfound-404">
-          <h1>404</h1>
-          <h2>Page not found</h2>
+          <h1>{{error.statusCode}}</h1>
+          <h2>{{error.message}}</h2>
         </div>
         <nuxt-link to="/">Homepage</nuxt-link>
       </div>
     </div>
-  </div>
-  <div v-else>
-    {{error.statusCode}}: {{error.message}}
   </div>
 </template>
 
