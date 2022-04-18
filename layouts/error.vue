@@ -10,6 +10,9 @@
       </div>
     </div>
   </div>
+  <div v-else>
+    {{error.statusCode}}: {{error.message}}
+  </div>
 </template>
 
 <script>
@@ -24,6 +27,7 @@ export default {
 
 <style lang="scss" scoped>
 #notfound {
+  color: black;
   position: relative;
   height: 100vh;
   background: #030005;

@@ -25,7 +25,7 @@
     <div class="contant">
       <AsideComponent />
 
-      <main ref="content" >
+      <main ref="content">
         <Home :mouse="mouse" @animation="animationend" />
         <Works @animation="animationend" />
         <About @animation="animationend" />

@@ -3,9 +3,8 @@
     <ProfileInterface path="/profile/technical" />
     <Resume />
     <Info :info="info" :data="data" />
-    <ProfileSkils :skills="data.t_skills" />
-
-  <Custemfooter />
+    <ProfileSkils :skills="data.t_skills" /> 
+    <Custemfooter />
   </div>
 </template>
 
@@ -16,21 +15,18 @@ import ProfileSkils from '~/components/profile/skills'
 import Resume from '~/components/profile/resume'
 import Custemfooter from '~/components/profile/footer'
 
-
 export default {
+
   async asyncData({ $axios, req }) {
-      
-      const baseUrl = 'http://' + req.headers.host
-
-      const res = await $axios.get( baseUrl +  '/data.json')
-
+   
+    // const baseUrl = 'http://' + req.headers.host
+    // const res = await $axios.get(baseUrl + '/data.json')
+    const res = await $axios.get('/data.json')
 
       let born = await new Date(res.data['Date of Birth']).getFullYear(),
           naw =  new Date().getFullYear()
-        let Age = naw - born + ' Years',
-
-        Total_Experiance = naw - res.data['Start learn'] + ' Years'
-
+      let Age = naw - born + ' Years',
+          Total_Experiance = naw - res.data['Start learn'] + ' Years'
 
         const data = await Object.assign(res.data, {
           Age,
@@ -40,18 +36,24 @@ export default {
   },
 
   data: () => ({
-    info: ['Name', 'Age', 'University degree', "Mobile num", "Total Experiance"],
+    info: [
+      'Name',
+      'Age',
+      'University degree',
+      'Mobile num',
+      'Total Experiance',
+    ],
     data: {
       t_skills: [],
-      p_skills: []
-    }
+      p_skills: [],
+    },
   }),
   components: {
     ProfileInterface,
     Info,
     ProfileSkils,
     Resume,
-    Custemfooter
+    Custemfooter,
   },
   head() {
     return {
@@ -64,7 +66,6 @@ export default {
 <style scoped lang="scss">
 .profile-page {
   background: rgb(32, 153, 223);
-      color: #0f1816;
-
+  color: #0f1816;
 }
 </style>
