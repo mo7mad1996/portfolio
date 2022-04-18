@@ -1,10 +1,15 @@
 <template>
-  <div>
+  <div @mousemove="mousemove">
     <div id="notfound">
       <div class="notfound">
         <div class="notfound-404">
-          <h1>{{error.statusCode}}</h1>
-          <h2>{{error.message}}</h2>
+          <h1>
+            <span  :style="`transform: translate(${mouse.x}px, ${mouse.y}px)`">
+              {{error.statusCode}}
+              </span>
+              </h1>
+          <h2 v-if="error.statusCode == 404">Page Not found</h2>
+          <h2 v-else>{{error.message}}</h2>
         </div>
         <nuxt-link to="/">Homepage</nuxt-link>
       </div>
@@ -18,7 +23,16 @@ export default {
   head: () => ({
     title: 'Opps, NotFound',
   }),
+  data(){
+    return {mouse: {x: 0, y:0}}
+  },
   layout: 'blog',
+  methods: {
+    mousemove(e) {
+      this.mouse.x = -e.x  / 80
+      this.mouse.y = -e.y  / 80 
+    }
+  }
 }
 </script>
 
@@ -60,6 +74,10 @@ export default {
         text-transform: uppercase;
         text-shadow: -1px -1px 0px #8400ff, 1px 1px 0px #ff005a;
         letter-spacing: -20px;
+
+        span {
+          display: block;
+        }
       }
 
       h2 {
