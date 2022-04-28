@@ -1,13 +1,13 @@
 <template>
   <footer class="Custemfooter">
     <div class="container flex">
-      <span>
+      <nuxt-link to="/">
         Mohamed Ibrahim
-      </span>
+      </nuxt-link>
 
       <span>
         &copy;
-        All copy right reseved
+        All rights reserved {{new Date().getFullYear()}}
       </span>
     </div>
   </footer>
@@ -21,10 +21,17 @@
 
 <style lang="scss" scoped>
 .Custemfooter {
-  background: #300505;
+  background: #08162b;
   color: white ;
   padding: 10px;
-
+  padding-top: 100px;
+  clip-path:polygon(
+    0px 50px,
+    0 100%,
+    100% 100%, 
+    100% 60px,
+    75% 0
+  );
   .flex {
     display: flex;
     justify-content: space-between;

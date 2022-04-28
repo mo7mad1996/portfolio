@@ -30,10 +30,88 @@
       "URL": "https://www.w3schools.com/css/css_intro.asp"
     },
     {
+      "name": "Sass",
+      "degree": 10,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Sass_Logo_Color.svg/2560px-Sass_Logo_Color.svg.png",
+      "URL": "https://sass-lang.com/"
+    },
+    {
+      "name": "Bootstrap",
+      "degree": 9,
+      "image": "https://cdn.freelogovectors.net/wp-content/uploads/2016/12/bootstrap-logo.png",
+      "URL": "https://getbootstrap.com/"
+    },
+    {
       "name": "JavaScript",
       "degree": 10,
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1024px-Unofficial_JavaScript_logo_2.svg.png",
       "URL": "https://www.w3schools.com/js/js_intro.asp"
+    },
+    {
+      "name": "jQuery",
+      "degree": 7,
+      "image": "https://www.joykal.com/wp-content/uploads/2019/09/jquery.png",
+      "URL": "https://jquery.com/"
+    },
+    {
+      "name": "Nuxt.js",
+      "degree": 10,
+      "image": "https://nuxtjs.org/design-kit/colored-text.svg",
+      "URL": "https://www.nuxtjs.org/"
+    },
+    {
+      "name": "Vue.js",
+      "degree": 10,
+      "image": "https://ourcodeworld.com/public-media/gallery/vuejs2-5f9f2d1b78215.png",
+      "URL": "https://vuejs.org/"
+    },
+    {
+      "name": "Vuetify",
+      "degree": 9.4,
+      "image": "https://cdn.vuetifyjs.com/docs/images/logos/vuetify-logo-light-text.svg",
+      "URL": "https://vuetifyjs.com/"
+    },
+    {
+      "name": "Vuex",
+      "degree": 10,
+      "image": "https://user-images.githubusercontent.com/7110136/29002857-9e802f08-7ab4-11e7-9c31-604b5d0d0c19.png",
+      "URL": "https://vuex.vuejs.org/"
+    },
+    {
+      "name": "react.js",
+      "degree": 8,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png",
+      "URL": "https://reactjs.org/"
+    },
+    {
+      "name": "Redux",
+      "degree": 8,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/4/49/Redux.png",
+      "URL": "https://redux.js.org/"
+    },
+    {
+      "name": "git",
+      "degree": 97,
+      "image": "https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png",
+      "URL": "https://git-scm.com/"
+    },
+    {
+      "name": "Ajax & axios",
+      "degree": 10,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/AJAX_logo_by_gengns.svg/1280px-AJAX_logo_by_gengns.svg.png",
+      "URL": "https://www.w3schools.com/js/js_ajax_intro.asp"
+    },
+    {
+      "name": "php",
+      "degree": 8.3,
+      "image": "https://www.php.net/images/logos/php-logo.svg",
+      "URL": "https://www.php.net/"
+    },
+    {
+      "name": "Node.js",
+      "degree": 9.8,
+      "image": "https://seeklogo.com/images/N/nodejs-logo-FBE122E377-seeklogo.com.png",
+      "URL": "https://nodejs.org/"
     }
   ]
 }

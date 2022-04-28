@@ -2,7 +2,10 @@
   <div class="container">
     <h2 class="title">Info</h2>
 
-      <table class="table ">
+    <div class="content">
+      <div>
+
+      <table class="table">
         <tbody>
           <tr v-for="key in info" :key="key">
             <td>{{ key }}</td>
@@ -11,6 +14,9 @@
           </tr>
         </tbody>
       </table>
+      </div>
+
+    </div>
   </div>
 </template>
 
@@ -22,21 +28,25 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  .content {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 3em;
+    overflow-y: hidden;
+    position: relative;
+    
 
+    .table {
+      border-collapse: collapse;
 
-section {
-  height: auto;
-}
-  .table {
-  border-collapse: collapse;
-  flex: 1;
+      .list-item {
+        background: white;
+      }
 
-  .list-item {
-    background: white;
+      tr {
+        height: 2.2em;
+      }
+    }
+
   }
-
-  tr {
-    height: 2.2em;
-  }
-}
 </style>
