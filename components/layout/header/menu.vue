@@ -29,7 +29,6 @@ export default {
     background: none;
     border: none;
     display: block;
-    cursor: pointer;
     z-index: 3;
     position: relative;
 

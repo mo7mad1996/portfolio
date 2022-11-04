@@ -1,9 +1,9 @@
 <template>
   <svg
-    :stroke-dasharray="`${dasharray * 50} 2000`"
     x="0px"
     y="0px"
     :fill-opacity="(dasharray - 80) / 20"
+    :stroke-dasharray="`${dasharray * 10} ${1000 - dasharray * 10}`"
     viewBox="0 0 854.18492 854.18494"
     width="200"
     height="200"
@@ -45,6 +45,9 @@ export default {
 <style lang="scss">
 svg {
   fill: black;
+
+  transition: 0.2s;
+
   path {
     stroke-width: 2;
     stroke: black;
@@ -57,3 +60,4 @@ svg {
   }
 }
 </style>
+

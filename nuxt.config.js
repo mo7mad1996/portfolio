@@ -1,6 +1,6 @@
-export default ({dev}) => {
-  console.log(dev)
-  return {
+export default ({
+  dev
+}) => ({
   // server
   server: {
     host: '0.0.0.0',
@@ -27,11 +27,7 @@ export default ({dev}) => {
       {
         hid: 'description',
         name: 'description',
-        content: 'Mohamed Ibrahim portfolio, useing nuxt.js',
-      },
-      {
-        name: 'format-detection',
-        content: 'telephone=no'
+        content: 'Mohamed Ibrahim portfolio, The best fullStack web developer...',
       },
     ],
     link: [{
@@ -48,6 +44,7 @@ export default ({dev}) => {
     '~assets/scss/styles.scss',
   ],
 
+  // loading component
   loading: '~/components/LoadingBar.vue',
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -81,5 +78,4 @@ export default ({dev}) => {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
-}
-}
+})

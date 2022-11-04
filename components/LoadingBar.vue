@@ -6,7 +6,7 @@
       <div class="progress">
         <div :style="`width: ${dasharray}%`"></div>
       </div>
-      <div>{{ dasharray }}%</div>
+      <div class="value">{{ dasharray }}%</div>
     </div>
   </div>
 </template>
@@ -56,12 +56,39 @@ export default {
       width: 150px;
       border: 1px solid #8c2b7a;
       margin: 10px auto;
+      // padding: 0 10px;
       background: #ff4d5a;
+      border-radius: 20px;
 
       div {
-        height: 10px;
+        padding: 12px;
         background: #072142;
+        transition: width 0.2s;
+        // margin: 0 -10px;
+        border-radius: 20px;
+        position: relative;
+
+        &::before,
+        &::after {
+          content: '';
+          position: absolute;
+          top: 5px;
+          padding: 3px;
+          background: #fff2;
+          border-radius: 5px;
+        }
+        &::after {
+          right: 20px;
+          left: 10px;
+        }
+        &::before {
+          right: 10px;
+        }
       }
+    }
+
+    .value {
+      font-weight: bold;
     }
   }
 }

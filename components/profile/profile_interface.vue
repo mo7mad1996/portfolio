@@ -1,11 +1,13 @@
 <template>
-  <div class="profile_interface" ref="intro" @click="scroll" >
+  <div class="profile_interface" ref="intro" @click="scroll">
     <div
       class="img-content"
       :style="`background-image: url(${path}.png) ;`"
     ></div>
 
-    <div class="scroll"><fa :icon="['fas', 'angle-double-down']" class="icon" /></div>
+    <div class="scroll">
+      <fa :icon="['fas', 'angle-double-down']" class="icon" />
+    </div>
   </div>
 </template>
 
@@ -14,12 +16,14 @@ export default {
   name: 'ProfileInterface',
   props: ['path'],
   methods: {
-    scroll(){
-      if(process.client) {
-        this.$refs.intro.nextElementSibling.scrollIntoView({behavior: "smooth"})
+    scroll() {
+      if (process.client) {
+        this.$refs.intro.nextElementSibling.scrollIntoView({
+          behavior: 'smooth',
+        })
       }
-    }
-  }
+    },
+  },
 }
 </script>
 
@@ -28,7 +32,6 @@ export default {
   position: relative;
   height: 100vh;
   background: linear-gradient(rgb(201, 32, 223), rgb(32, 153, 223));
-  
 
   // background styles
   .img-content {
@@ -45,19 +48,17 @@ export default {
     bottom: 0;
     padding-bottom: 2em;
     width: 100%;
-    cursor: pointer;
 
     display: flex;
     justify-content: center;
-      filter: drop-shadow(0 0 1em #072142);
+    filter: drop-shadow(0 0 1em #072142);
 
     .icon {
       font-size: 3rem;
-      color : #c721df;
+      color: #c721df;
 
       animation: scroll 1s linear infinite;
     }
   }
 }
-
 </style>
