@@ -9,7 +9,7 @@ It contains all the necessary information about me, I am Mohamed Ibrahim, and th
 
 ### Live Demo :
 
-You can find the demo for this project in [this link](https://portfolio-mohamed-ibrahim.herokuapp.com/).
+You can find the demo for this project in [this link](https://portfolio-mohamed-ibrahim.onrender.com/).
 
 ---
 
@@ -20,4 +20,4 @@ You can find the demo for this project in [this link](https://portfolio-mohamed-
 λ npm run dev
 ```
 
-![Mohamed Ibrahim](https://portfolio-mohamed-ibrahim.herokuapp.com/logo.svg)
+![Mohamed Ibrahim](https://portfolio-mohamed-ibrahim.onrender.com

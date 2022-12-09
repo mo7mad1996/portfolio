@@ -73,7 +73,7 @@ export default ({
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
-    baseURL: dev ? "http://localhost:3000" : 'https://portfolio-mohamed-ibrahim.herokuapp.com'
+    baseURL: dev ? "http://localhost:3000" : 'https://portfolio-mohamed-ibrahim.onrender.com'
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
