@@ -112,6 +112,12 @@
       "degree": 9.8,
       "image": "https://seeklogo.com/images/N/nodejs-logo-FBE122E377-seeklogo.com.png",
       "URL": "https://nodejs.org/"
+    },
+    {
+      "name": "thee.js",
+      "degree": 7.8,
+      "image": "https://global.discourse-cdn.com/standard17/uploads/threejs/original/2X/b/be2f75f72751c11cbe1593c69a99a52900bf12cb.svg",
+      "URL": "https://threejs.org/"
     }
   ]
 }
