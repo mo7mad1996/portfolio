@@ -175,14 +175,25 @@ main {
   scroll-snap-align: center;
   display: flex;
 
+  @media (max-width: 1200px) {
+    flex-direction: column;
+  }
+
   > div {
     flex: 1;
     width: 50%;
+    @media (max-width: 1200px) {
+      flex: auto;
+      width: auto;
+    }
   }
   .disc {
     padding: 2em;
     height: 100%;
     transform: translateX(120px);
+    @media (max-width: 1200px) {
+      transform: translateX(0px);
+    }
 
     .bg {
       align-self: center;
@@ -205,6 +216,10 @@ main {
       text-align: center;
       display: block;
       margin: auto !important ;
+
+      @media (max-width: 550px) {
+        width: 30%;
+      }
     }
 
     h2 {

@@ -1,7 +1,7 @@
 <template>
   <div
     class="pointer"
-    :class="{ active, click }"
+    :class="{ active, click, opacity }"
     :style="`top: ${y}px; left: ${x}px`"
   ></div>
 </template>
@@ -13,12 +13,14 @@ export default {
     return {
       active: false,
       click: false,
+      opacity: true,
       x: 0,
       y: 0,
     }
   },
   mounted() {
     addEventListener('mousemove', (e) => {
+      this.opacity = true
       this.active = true
       this.x = e.clientX
       this.y = e.clientY
@@ -26,7 +28,10 @@ export default {
 
     addEventListener('pointerup', () => (this.click = false))
     addEventListener('pointerdown', () => (this.click = true))
-    addEventListener('touchstart', () => (this.active = false))
+    addEventListener('touchstart', () => {
+      this.active = false
+      this.opacity = false
+    })
   },
 }
 </script>
@@ -39,7 +44,11 @@ export default {
   width: 20px;
   height: 20px;
   pointer-events: none;
+  opacity: 0;
 
+  &.opacity {
+    opacity: 1;
+  }
   &::after,
   &::before {
     content: '';
