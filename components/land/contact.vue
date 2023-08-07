@@ -7,9 +7,9 @@
           <fa icon="envelope-open-text" class="svg" />
           mo7mad369@gmail.com </a
         ><br />
-        <a href="tel:201090524505">
+        <a href="tel:+201090524505">
           <fa icon="mobile-alt" class="svg" />
-          01090 524 505
+          01090 524 505 - 059 7989 478
         </a>
       </p>
       <div class="social">
