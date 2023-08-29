@@ -130,6 +130,38 @@ export default {
         color2: '#261e23',
       },
       {
+        logo: 'https://d33wubrfki0l68.cloudfront.net/f1f475a6fda1c2c4be4cac04033db5c3293032b4/513a4/assets/images/markdown-mark-white.svg',
+        images: [
+          '/proj9/1.png',
+          '/proj9/2.png',
+          '/proj9/3.png',
+          '/proj9/4.png',
+        ],
+        name: 'preview markdown',
+        description: `This is a simple project to preview the live markdown code. the github view the README.md file for every project.`,
+        link: 'https://preview-markdown-1.netlify.app/',
+        color1: '#ffffff',
+        color2: '#f1f5f8',
+      },
+      {
+        logo: 'https://numlock.onrender.com/imgs/9.jpg',
+        images: [
+          '/proj8/1.png',
+          '/proj8/2.png',
+          '/proj8/3.png',
+          '/proj8/4.png',
+          '/proj8/5.png',
+          '/proj8/6.png',
+        ],
+        name: 'Numlock',
+        description: `This site is simple.
+        Specialized in devices that do not contain numbers in the keyboard.
+        By using your phone, you can turn it into a number pad and benefit from it`,
+        link: 'https://numlock.onrender.com/',
+        color1: '#64046f',
+        color2: '#64046f',
+      },
+      {
         logo: require('~/assets/imgs/projects/proj7/trueemit.png'),
         images: [
           '/proj7/1.jpeg',
