@@ -12,7 +12,7 @@ You can find the demo for this project in [this link](https://portfolio-mohamed-
 
 > How to use this code
 
-```bat
+```bash
 λ npm install
 λ npm run dev
 ```
