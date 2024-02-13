@@ -47,3 +47,19 @@
     transform: translateY(1rem);
   }
 }
+
+@keyframes sendemail {
+  0% {
+    scale: 1;
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+  80% {
+    scale: 0.5;
+  }
+  100% {
+    opacity: 0;
+    scale: 0.5;
+    transform: translate(100vh, -500px);
+  }
+}
