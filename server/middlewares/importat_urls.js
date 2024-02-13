@@ -18,7 +18,6 @@ module.exports = (app) => {
       default:
         next();
     }
-    next();
   });
 };
 
