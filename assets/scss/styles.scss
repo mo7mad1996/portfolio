@@ -1,6 +1,6 @@
 section {
   padding: 50px 3vw;
-  height: 100vh;
+  height: 100vmin;
   overflow: hidden;
   position: relative;
   display: flex;
@@ -61,7 +61,7 @@ section {
 
       &::after,
       &::before {
-        content: '';
+        content: "";
         background: #ff4d5a;
         border-radius: 2px;
         display: block;
@@ -156,7 +156,7 @@ section {
       &::before {
         position: absolute;
         z-index: 2;
-        content: '';
+        content: "";
         top: 0;
         height: 100%;
         transform: translateZ(-10px) translateX(10px);
@@ -198,13 +198,12 @@ section {
   text-shadow: 2px 0 0px #2297df, -2px 0 0px #c820df;
 }
 
-
 h2.title {
   padding: 10px 0;
   margin-bottom: 1em;
 
   &::before {
-    content: '';
+    content: "";
     border-width: 10px;
     border-style: solid;
     display: inline-block;
@@ -215,7 +214,7 @@ h2.title {
   }
 
   &::after {
-    content: '_';
+    content: "_";
     text-shadow: none;
   }
 }

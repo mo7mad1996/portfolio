@@ -7,27 +7,27 @@
 </template>
 
 <script>
-import ProfileInterface from '~/components/profile/profile_interface'
-import Resume from '~/components/profile/resume.vue'
-import Custemfooter from '~/components/profile/footer'
+import ProfileInterface from "~/components/profile/profile_interface";
+import Resume from "~/components/profile/resume.vue";
+import Custemfooter from "~/components/profile/footer";
 
 export default {
   async asyncData({ $axios }) {
-    
-    const { data } = $axios.get('/data.json')
-    return { data }
+    const { data } = await $axios.get("/data.json");
+
+    return { data };
   },
   components: {
     ProfileInterface,
     Resume,
-    Custemfooter
-},
+    Custemfooter,
+  },
   head() {
     return {
-      title: 'Personal profile',
-    }
+      title: "Personal profile",
+    };
   },
-}
+};
 </script>
 
 <style scoped lang="scss">

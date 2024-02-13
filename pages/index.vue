@@ -37,14 +37,14 @@
 
 <script>
 // componens
-import Home from '@/components/land/home'
-import Works from '@/components/land/works'
-import About from '@/components/land/about'
-import Contact from '@/components/land/contact'
-import AsideComponent from '@/components/layout/aside/index'
+import Home from "@/components/land/home";
+import Works from "@/components/land/works";
+import About from "@/components/land/about";
+import Contact from "@/components/land/contact";
+import AsideComponent from "@/components/layout/aside/index";
 
 // vuex
-import { mapState } from 'vuex'
+import { mapState } from "vuex";
 
 export default {
   scrollToTop: true,
@@ -59,75 +59,76 @@ export default {
         start: 0,
         end: 0,
       },
-    }
+    };
   },
   computed: {
-    ...mapState(['links']),
+    ...mapState(["links"]),
     hash: function () {
-      return this.$route.hash
+      return this.$route.hash;
     },
   },
   methods: {
+    // mouse events
     mousemove(e) {
-      this.mouse.x = e.clientX
-      this.mouse.y = e.clientY
+      this.mouse.x = e.clientX;
+      this.mouse.y = e.clientY;
     },
 
     scroll(e) {
       if (e.wheelDeltaY < 0) {
-        this.scroll_down()
+        this.scroll_down();
       } else if (e.wheelDeltaY > 0) {
-        this.scroll_up()
+        this.scroll_up();
       }
     },
     touchstart(e) {
-      var o = e.touches[0]
-      this.Touch.start = o.clientY
+      var o = e.touches[0];
+      this.Touch.start = o.clientY;
     },
     touchend(e) {
-      this.Touch.end = e.changedTouches[0].pageY
+      this.Touch.end = e.changedTouches[0].pageY;
 
       if (this.Touch.end - this.Touch.start > 0) {
-        this.scroll_up()
+        this.scroll_up();
       } else if (this.Touch.end - this.Touch.start < 0) {
-        this.scroll_down()
+        this.scroll_down();
       }
     },
     scroll_down() {
       if (
         this.is_in_anmation &&
-        this.hash != '#' + this.links[this.links.length - 1]
+        this.hash != "#" + this.links[this.links.length - 1]
       ) {
         this.$router.push(
-          '#' + this.links[this.links.indexOf(this.hash.substring(1)) + 1]
-        )
-        this.is_in_anmation = false
+          "#" + this.links[this.links.indexOf(this.hash.substring(1)) + 1]
+        );
+        this.is_in_anmation = false;
       }
     },
     scroll_up() {
-      if (this.is_in_anmation && this.hash != '#' + this.links[0]) {
+      if (this.is_in_anmation && this.hash != "#" + this.links[0]) {
         this.$router.push(
-          '#' + this.links[this.links.indexOf(this.hash.substring(1)) - 1]
-        )
-        this.is_in_anmation = false
+          "#" + this.links[this.links.indexOf(this.hash.substring(1)) - 1]
+        );
+        this.is_in_anmation = false;
       }
     },
     animationend() {
-      this.is_in_anmation = true
+      this.is_in_anmation = true;
     },
   },
   mounted() {
-    if (this.hash == '') {
-      this.$router.push('#home')
+    if (this.hash == "") {
+      this.$router.push("#home");
     }
   },
   watch: {
     hash() {
       // document.querySelector(this.hash).scrollIntoView()
 
-      let scroll_to = document.getElementById(this.hash.substring(1)).offsetTop
+      let scroll_to = document.getElementById(this.hash.substring(1)).offsetTop;
       // this.$refs.content.scrollTo(0, scroll_to)
-      this.$refs.content.scrollTop = scroll_to
+      this.$refs.content.scrollTop = scroll_to;
     },
   },
 
@@ -140,10 +141,10 @@ export default {
   },
   head() {
     return {
-      title: 'Home',
-    }
+      title: "Home",
+    };
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>

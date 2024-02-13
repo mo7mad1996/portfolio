@@ -7,9 +7,9 @@
           <fa icon="envelope-open-text" class="svg" />
           mo7mad369@gmail.com </a
         ><br />
-        <a href="tel:+201090524505">
+        <a href="tel:+201063525389">
           <fa icon="mobile-alt" class="svg" />
-          01090 524 505 - 059 7989 478
+          0106 352 5389
         </a>
       </p>
       <div class="social">
@@ -35,29 +35,29 @@
 
 <script>
 export default {
-  name: 'Contact',
+  name: "Contact",
   data: () => ({
     social: [
       {
-        icon: 'facebook-f',
-        link: 'https://web.facebook.com/Mo7mad1996',
+        icon: "facebook-f",
+        link: "https://web.facebook.com/Mo7mad1996",
       },
       {
-        icon: 'whatsapp',
-        link: 'https://web.whatsapp.com/send?phone=+201090524505',
+        icon: "whatsapp",
+        link: "https://web.whatsapp.com/send?phone=+201063525389",
       },
       {
-        icon: 'twitter',
-        link: 'https://www.twitter.com/mo7mad369',
+        icon: "linkedin",
+        link: "https://www.linkedin.com/in/mo7mad1996",
       },
     ],
   }),
   methods: {
     animationend() {
-      this.$emit('animation')
+      this.$emit("animation");
     },
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>
