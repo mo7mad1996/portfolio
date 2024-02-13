@@ -5,15 +5,15 @@ module.exports = (app) => {
     switch (req.url) {
       case "/download/Mohamed-Ibrahim.pdf":
         // send downloaded your cv
-        send_SMS(get_client_data(req, "حد نزل الملف"));
-        // .then(() => next())
-        // .catch(() => next());
+        send_SMS(get_client_data(req, "حد نزل الملف"))
+          .then(() => next())
+          .catch(() => next());
         break;
       case "/email.png":
         // show your email
-        send_SMS(get_client_data(req, "حد شاف الايميل"));
-        // .then(() => next())
-        // .catch(() => next());
+        send_SMS(get_client_data(req, "حد شاف الايميل"))
+          .then(() => next())
+          .catch(() => next());
         break;
       default:
         next();
