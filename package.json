@@ -23,7 +23,8 @@
     "nodemailer": "^6.9.9",
     "nuxt": "^2.15.7",
     "sass": "^1.32.12",
-    "sass-loader": "^10.1.1"
+    "sass-loader": "^10.1.1",
+    "twilio": "^4.22.0"
   },
   "devDependencies": {
     "eslint-config-prettier": "^8.3.0",
