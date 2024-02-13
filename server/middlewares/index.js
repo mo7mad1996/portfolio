@@ -1,4 +1,4 @@
-const packages = ["cors", "bodyParser", "importat_urls", "dotenv"];
+const packages = ["cors", "bodyParser", "dotenv", "importat_urls"];
 
 module.exports = (app) =>
   packages.forEach((package) => require("./" + package)(app));
