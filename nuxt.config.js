@@ -80,7 +80,7 @@ module.exports = {
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
 
   axios: {
-    port,
+    baseurl: process.env.AXIOS_BASEURL,
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
