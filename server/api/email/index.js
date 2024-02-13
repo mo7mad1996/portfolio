@@ -33,7 +33,8 @@ async function main(req) {
 
 module.exports = (app) => {
   app.post("/send_mail", (req, res) => {
-    const data = main().catch(console.error);
-    res.json(data);
+    main(req)
+      .then((ok) => res.json(ok))
+      .catch((error) => res.status(301).json({ error }));
   });
 };

@@ -1,15 +1,4 @@
-module.exports = (app) => {
-  app.use((req, res, next) => {
-    switch (req.url) {
-      case "/download/Mohamed-Ibrahim.pdf":
-        // send downloaded your cv
-        break;
-      case "/email.png":
-        // show your email
-        break;
-      default:
-        return next();
-    }
-    next();
-  });
-};
+const packages = ["bodyParser", "importat_urls", "dotenv"];
+
+module.exports = (app) =>
+  packages.forEach((package) => require("./" + package)(app));

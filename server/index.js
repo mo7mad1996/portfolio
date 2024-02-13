@@ -3,7 +3,6 @@ console.clear();
 // ..:: packages ::..
 const express = require("express");
 const mongoose = require("mongoose");
-require("dotenv").config();
 
 // nuxt
 const { Nuxt, Builder } = require("nuxt");
