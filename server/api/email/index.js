@@ -1,6 +1,10 @@
 const nodemailer = require("nodemailer");
 const fs = require("fs");
-const html = fs.readFileSync("../../template.html", "utf-8");
+const path = require("path");
+
+const templatePath = path.join(__dirname, "template.html");
+
+const html = fs.readFileSync(templatePath, "utf-8");
 
 const transporter = nodemailer.createTransport({
   host: "smtp.gmail.com",
