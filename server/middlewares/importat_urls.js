@@ -7,7 +7,10 @@ module.exports = (app) => {
         // send downloaded your cv
         send_SMS(get_client_data(req, "حد نزل الملف"))
           .then(() => next())
-          .catch(() => next());
+          .catch((err) => {
+            console.log(err);
+            next();
+          });
         break;
       case "/email.png":
         // show your email
@@ -26,14 +29,14 @@ const authToken = process.env.TWILIO_TOKEN;
 
 function send_SMS(msg) {
   const client = require("twilio")(accountSid, authToken);
+
   return client.messages.create({
     body: msg,
-    from: "portfolio",
+    from: "+12292644354",
     to: "+201063525389",
   });
 }
-
-async function get_client_data(req, str) {
+function get_client_data(req, str) {
   const ip = req.ip;
   const time = new Date().toLocaleString();
 
