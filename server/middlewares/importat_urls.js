@@ -13,7 +13,9 @@ module.exports = (app) => {
     switch (req.url) {
       case "/download/Mohamed-Ibrahim.pdf":
         // send downloaded your cv
-        notification_me(req, "حد نزل ملف السيره الذاتيه", next);
+        notification_me(req, "حد نزل ملف السيره الذاتيه")
+          .then(() => next())
+          .catch(() => next());
 
         break;
 
@@ -23,7 +25,7 @@ module.exports = (app) => {
   });
 };
 
-function notification_me(req, msg, next) {
+async function notification_me(req, msg) {
   /**
    *
    * 1) get data location
@@ -33,20 +35,17 @@ function notification_me(req, msg, next) {
    */
 
   //  get IP address
-  const ip = requestIP.getClientIp(req);
-  // const ip = "41.235.141.81";
+  // const ip = requestIP.getClientIp(req);
+  const ip = "41.235.141.81";
 
   // get information about ip
   let url = `https://api.ip2location.io/?key=${api_key}&ip=${ip}&format=json`;
+  const { data } = await axios.get(url);
 
-  axios
-    .get(url)
-    .then(({ data }) => {
-      send_SMS(make_text(data, msg).then(next)).catch(next);
-    })
-    .catch((err) => {
-      err;
-    });
+  // create text message
+  const text = make_text(data, msg);
+
+  return send_SMS(text);
 }
 function make_text(data, msg) {
   const ip = data.ip;
@@ -55,13 +54,16 @@ function make_text(data, msg) {
   const google_map = `https://www.google.com/maps/search/?api=1&query=${data.latitude},${data.longitude}`;
 
   // text
-  return `
+  return (
+    msg +
+    `
   ip: ${ip}
   at: ${time}
   address: ${address}
 
   location: ${google_map}
-  `;
+  `
+  );
 }
 
 function send_SMS(msg) {
