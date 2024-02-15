@@ -86,4 +86,5 @@ module.exports = {
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
   telemetry: false,
+  target: "static",
 };
