@@ -13,10 +13,7 @@ module.exports = (app) => {
     switch (req.url) {
       case "/download/Mohamed-Ibrahim.pdf":
         // send downloaded your cv
-        notification_me(req, "حد نزل ملف السيره الذاتيه")
-          .then(() => next())
-          .catch(() => next());
-
+        notification_me(req, "حد نزل ملف السيره الذاتيه", next);
         break;
 
       default:
@@ -25,7 +22,7 @@ module.exports = (app) => {
   });
 };
 
-async function notification_me(req, msg) {
+async function notification_me(req, msg, next) {
   /**
    *
    * 1) get data location
@@ -35,8 +32,7 @@ async function notification_me(req, msg) {
    */
 
   //  get IP address
-  // const ip = requestIP.getClientIp(req);
-  const ip = "41.235.141.81";
+  const ip = requestIP.getClientIp(req);
 
   // get information about ip
   let url = `https://api.ip2location.io/?key=${api_key}&ip=${ip}&format=json`;
@@ -45,7 +41,8 @@ async function notification_me(req, msg) {
   // create text message
   const text = make_text(data, msg);
 
-  return send_SMS(text);
+  send_SMS(text);
+  next();
 }
 function make_text(data, msg) {
   const ip = data.ip;
@@ -66,9 +63,9 @@ function make_text(data, msg) {
   );
 }
 
-function send_SMS(msg) {
+async function send_SMS(msg) {
   const client = require("twilio")(accountSid, authToken);
-  return client.messages.create({
+  return await client.messages.create({
     body: msg,
     from: "+12292644354",
     to: "+201063525389",
