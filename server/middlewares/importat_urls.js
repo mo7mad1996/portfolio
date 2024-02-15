@@ -1,12 +1,14 @@
 const geoip = require("geoip-lite");
 const requestIP = require("request-ip");
 
+var https = require("https");
+
 module.exports = (app) => {
   app.use((req, res, next) => {
     switch (req.url) {
       case "/download/Mohamed-Ibrahim.pdf":
         // send downloaded your cv
-        send_SMS(get_client_data(req, "حد نزل الملف"))
+        get_client_data(req, "حد نزل الملف")
           .then(() => next())
           .catch((err) => {
             console.log(err);
@@ -37,19 +39,39 @@ function send_SMS(msg) {
     to: "+201063525389",
   });
 }
-function get_client_data(req, str) {
+async function get_client_data(req, str) {
   // const ip = req.socket.remoteAddress;
   const ip = requestIP.getClientIp(req);
+
+  let url = `https://api.ip2location.io/?key=${process.env.IP2LOCATION_API_KEY}&ip=${ip}&format=json`;
 
   const time = new Date().toLocaleString();
 
   const geo = geoip.lookup(ip);
+  let latitude, longitude;
 
-  let text = `${str}
+  let response = "";
+  https.get(url, function (res) {
+    res.on("data", (chunk) => (response = response + chunk));
+    res.on("end", function () {
+      {
+        latitude = response.latitude;
+        longitude = response.longitude;
+      }
+    });
+  });
+
+  if (latitude) {
+    let text = `${str}
     ip: ${ip}
     Time: ${time}
     ${JSON.stringify(geo)}
+    ${JSON.stringify(response)}
+
+    https://www.google.com/maps/search/?api=1&query=${latitude},${longitude} 
+    
     `;
 
-  return text;
+    send_SMS(text);
+  }
 }
