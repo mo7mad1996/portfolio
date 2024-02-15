@@ -1,77 +1,75 @@
-const geoip = require("geoip-lite");
+// packages
+// const geoip = require("geoip-lite");
 const requestIP = require("request-ip");
+const axios = require("axios");
 
-var https = require("https");
+// constants
+const accountSid = process.env.TWILIO_SID;
+const authToken = process.env.TWILIO_TOKEN;
+const api_key = process.env.IP2LOCATION_API_KEY;
 
 module.exports = (app) => {
   app.use((req, res, next) => {
     switch (req.url) {
       case "/download/Mohamed-Ibrahim.pdf":
         // send downloaded your cv
-        get_client_data(req, "حد نزل الملف")
+        notification_me(req, "حد نزل ملف السيره الذاتيه")
           .then(() => next())
-          .catch((err) => {
-            console.log(err);
-            next();
-          });
+          .catch(() => next)();
         break;
-      // case "/email.png":
-      //   // show your email
-      //   send_SMS(get_client_data(req, "حد شاف الايميل"))
-      //     .then(() => next())
-      //     .catch(() => next());
-      //   break;
+
       default:
         next();
     }
   });
 };
 
-const accountSid = process.env.TWILIO_SID;
-const authToken = process.env.TWILIO_TOKEN;
+function notification_me(req, msg) {
+  /**
+   *
+   * 1) get data location
+   * 2) create my message's text
+   * 3) send SMS
+   *
+   */
+
+  //  get IP address
+  const ip = requestIP.getClientIp(req);
+  // const ip = "41.235.141.81";
+
+  // get information about ip
+  let url = `https://api.ip2location.io/?key=${api_key}&ip=${ip}&format=json`;
+
+  axios
+    .get(url)
+    .then(({ data }) => {
+      send_SMS(make_text(data, msg));
+    })
+    .catch((err) => {
+      err;
+    });
+}
+function make_text(data, msg) {
+  const ip = data.ip;
+  const time = new Date().toLocaleString("ar-EG");
+  const address = `${data.country_name} - ${data.region_name}`;
+  const google_map = `https://www.google.com/maps/search/?api=1&query=${data.latitude},${data.longitude}`;
+
+  // text
+  return `
+  ip: ${ip}
+  at: ${time}
+  address: ${address}
+
+  location: ${google_map}
+  `;
+}
 
 function send_SMS(msg) {
   const client = require("twilio")(accountSid, authToken);
-
   return client.messages.create({
     body: msg,
     from: "+12292644354",
     to: "+201063525389",
   });
-}
-async function get_client_data(req, str) {
-  // const ip = req.socket.remoteAddress;
-  const ip = requestIP.getClientIp(req);
-
-  let url = `https://api.ip2location.io/?key=${process.env.IP2LOCATION_API_KEY}&ip=${ip}&format=json`;
-
-  const time = new Date().toLocaleString();
-
-  const geo = geoip.lookup(ip);
-  let latitude, longitude;
-
-  let response = "";
-  https.get(url, function (res) {
-    res.on("data", (chunk) => (response = response + chunk));
-    res.on("end", function () {
-      {
-        latitude = response.latitude;
-        longitude = response.longitude;
-      }
-    });
-  });
-
-  if (latitude) {
-    let text = `${str}
-    ip: ${ip}
-    Time: ${time}
-    ${JSON.stringify(geo)}
-    ${JSON.stringify(response)}
-
-    https://www.google.com/maps/search/?api=1&query=${latitude},${longitude} 
-    
-    `;
-
-    send_SMS(text);
-  }
 }
