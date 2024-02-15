@@ -197,14 +197,14 @@ export default {
 
 main {
   background: #1a2b6e;
-  height: 100vh;
+  height: 100dvh;
   overflow-x: hidden;
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
 }
 .proj {
   align-items: center;
-  min-height: 100vh;
+  min-height: 100dvh;
   height: auto;
   background: linear-gradient(30deg, var(--color-1), var(--color-2));
   scroll-snap-align: center;

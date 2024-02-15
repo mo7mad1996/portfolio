@@ -20,32 +20,32 @@
 
 <script>
 // mouse
-import Pointer from '@/components/layout/Pointer'
+import Pointer from "@/components/layout/Pointer";
 
 export default {
-  props: ['error'],
+  props: ["error"],
   head: () => ({
-    title: 'Opps, NotFound',
+    title: "Opps, NotFound",
   }),
   data() {
-    return { mouse: { x: 0, y: 0 } }
+    return { mouse: { x: 0, y: 0 } };
   },
-  layout: 'blog',
+  layout: "blog",
   methods: {
     mousemove(e) {
-      this.mouse.x = -e.x / 80
-      this.mouse.y = -e.y / 80
+      this.mouse.x = -e.x / 80;
+      this.mouse.y = -e.y / 80;
     },
   },
   components: { Pointer },
-}
+};
 </script>
 
 <style lang="scss" scoped>
 #notfound {
   color: black;
   position: relative;
-  height: 100vh;
+  height: 100dvh;
   background: #030005;
 
   .notfound {
@@ -65,7 +65,7 @@ export default {
       z-index: -1;
 
       h1 {
-        font-family: 'Montserrat', sans-serif;
+        font-family: "Montserrat", sans-serif;
         position: absolute;
         left: 50%;
         top: 50%;
@@ -86,7 +86,7 @@ export default {
       }
 
       h2 {
-        font-family: 'Montserrat', sans-serif;
+        font-family: "Montserrat", sans-serif;
         position: absolute;
         left: 0;
         right: 0;
@@ -102,7 +102,7 @@ export default {
     }
 
     a {
-      font-family: 'Montserrat', sans-serif;
+      font-family: "Montserrat", sans-serif;
       display: inline-block;
       text-transform: uppercase;
       color: #ff005a;

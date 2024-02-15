@@ -16,43 +16,42 @@
 
 <script>
 export default {
-  layout: 'none',
+  layout: "none",
   data() {
     return {
-      toGo: '',
-      links: ['personal', 'technical'],
-    }
+      toGo: "",
+      links: ["personal", "technical"],
+    };
   },
   head() {
     return {
       link: [
         {
-          href: 'https://fonts.googleapis.com/css?family=Arbutus+Slab|Lora:400,400i,700,700i',
-          rel: 'stylesheet',
+          href: "https://fonts.googleapis.com/css?family=Arbutus+Slab|Lora:400,400i,700,700i",
+          rel: "stylesheet",
         },
       ],
-    }
+    };
   },
   methods: {
     startAnmation(v) {
-      this.$refs[v][0].classList.add('active')
-      this.$refs[v][0].parentElement.classList.add('active')
-      this.toGo = this.$refs[v][0].getAttribute('href')
+      this.$refs[v][0].classList.add("active");
+      this.$refs[v][0].parentElement.classList.add("active");
+      this.toGo = this.$refs[v][0].getAttribute("href");
     },
     goTo() {
-      this.$router.push(this.toGo)
+      this.$router.push(this.toGo);
     },
   },
-}
+};
 </script>
 
 <style scoped lang="scss">
 .profile {
-  height: 100vh;
+  height: 100dvh;
   display: flex;
 
   background: linear-gradient(rgb(201, 32, 223), rgb(32, 153, 223));
-  
 
   // background styles
   a {
@@ -64,10 +63,10 @@ export default {
     height: 100%;
 
     &:first-of-type {
-      background-image: url('/profile/personal.png');
+      background-image: url("/profile/personal.png");
     }
     &:last-of-type {
-      background-image: url('/profile/technical.png');
+      background-image: url("/profile/technical.png");
     }
   }
 
@@ -80,7 +79,6 @@ export default {
       flex: auto;
     }
   }
-
 
   a {
     display: grid;

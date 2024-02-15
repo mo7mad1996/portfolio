@@ -32,6 +32,7 @@ export default {
       this.$axios.post("/api/send_mail", { emails: [this.to] }).then((data) => {
         console.log({ data });
         this.loading = false;
+        this.to = "";
       });
     },
   },

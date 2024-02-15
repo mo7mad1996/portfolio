@@ -13,24 +13,24 @@
 
 <script>
 export default {
-  name: 'ProfileInterface',
-  props: ['path'],
+  name: "ProfileInterface",
+  props: ["path"],
   methods: {
     scroll() {
       if (process.client) {
         this.$refs.intro.nextElementSibling.scrollIntoView({
-          behavior: 'smooth',
-        })
+          behavior: "smooth",
+        });
       }
     },
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>
 .profile_interface {
   position: relative;
-  height: 100vh;
+  height: 100dvh;
   background: linear-gradient(rgb(201, 32, 223), rgb(32, 153, 223));
 
   // background styles

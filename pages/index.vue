@@ -151,7 +151,7 @@ export default {
 .portfolio {
   color: white;
   width: 100vw;
-  height: 100vh;
+  height: 100dvh;
   background-image: linear-gradient(
     to bottom,
     #072142,
@@ -162,7 +162,7 @@ export default {
   );
 
   .bg {
-    height: 100vh;
+    height: 100dvh;
     top: 0;
     right: 0;
     position: fixed;
@@ -182,13 +182,13 @@ export default {
 
       // @media (max-width: 578px) {
       //   height: 100vw;
-      //   max-width: 100vh;
+      //   max-width: 100dvh;
       //   width: 100vw;
       //   right: 50%;
       // }
 
       &.stars {
-        height: 100vh;
+        height: 100dvh;
         width: 100vw;
         max-width: none;
         opacity: 1;

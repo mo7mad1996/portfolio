@@ -14,13 +14,13 @@
 
 <script>
 // vuex
-import { mapState } from 'vuex'
+import { mapState } from "vuex";
 
 export default {
-  name: 'MenuComponent',
+  name: "MenuComponent",
   data: () => ({ open: false }),
-  computed: mapState(['links']),
-}
+  computed: mapState(["links"]),
+};
 </script>
 
 <style lang="scss" scoped>
@@ -34,7 +34,7 @@ export default {
 
     &::before,
     &::after {
-      content: '';
+      content: "";
       width: 30px;
       display: block;
       height: 4px;
@@ -61,7 +61,7 @@ export default {
   }
   menu {
     width: 100vw;
-    height: 100vh;
+    height: 100dvh;
     position: fixed;
     top: 0;
     left: 0;
@@ -100,7 +100,7 @@ export default {
 
           &::after,
           &::before {
-            content: '';
+            content: "";
             width: 0;
             height: 4px;
             background-image: linear-gradient(

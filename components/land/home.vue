@@ -53,14 +53,14 @@
 
 <script>
 export default {
-  props: ['mouse'],
-  name: 'Home',
+  props: ["mouse"],
+  name: "Home",
   methods: {
     animationend() {
-      this.$emit('animation')
+      this.$emit("animation");
     },
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>
@@ -121,7 +121,7 @@ section {
 
   @media (max-width: 578px) {
     position: absolute;
-    height: 100vh;
+    height: 100dvh;
     width: 100%;
   }
 
@@ -146,7 +146,7 @@ section {
 
     &.one {
       top: 10vw;
-      right: 30vh;
+      right: 30dvh;
     }
 
     &.two {
@@ -157,7 +157,7 @@ section {
       @media (max-width: 578px) {
         right: 30%;
         bottom: auto;
-        top: 40vh;
+        top: 40dvh;
       }
     }
 
@@ -167,12 +167,12 @@ section {
       filter: contrast(0.3);
 
       @media (max-width: 578px) {
-        top: 30vh;
+        top: 30dvh;
         right: 20vw;
       }
 
       @media (max-width: 420px) {
-        top: 15vh;
+        top: 15dvh;
         right: 15vw;
       }
     }
