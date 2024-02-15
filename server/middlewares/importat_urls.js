@@ -1,4 +1,5 @@
-var geoip = require("geoip-lite");
+const geoip = require("geoip-lite");
+const requestIP = require("request-ip");
 
 module.exports = (app) => {
   app.use((req, res, next) => {
@@ -37,7 +38,9 @@ function send_SMS(msg) {
   });
 }
 function get_client_data(req, str) {
-  const ip = req.ip;
+  // const ip = req.socket.remoteAddress;
+  const ip = requestIP.getClientIp(req);
+
   const time = new Date().toLocaleString();
 
   const geo = geoip.lookup(ip);
