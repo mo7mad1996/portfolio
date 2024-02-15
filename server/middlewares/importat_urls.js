@@ -13,9 +13,8 @@ module.exports = (app) => {
     switch (req.url) {
       case "/download/Mohamed-Ibrahim.pdf":
         // send downloaded your cv
-        notification_me(req, "حد نزل ملف السيره الذاتيه")
-          .then(() => next())
-          .catch(() => next)();
+        notification_me(req, "حد نزل ملف السيره الذاتيه", next);
+
         break;
 
       default:
@@ -24,7 +23,7 @@ module.exports = (app) => {
   });
 };
 
-function notification_me(req, msg) {
+function notification_me(req, msg, next) {
   /**
    *
    * 1) get data location
@@ -43,7 +42,7 @@ function notification_me(req, msg) {
   axios
     .get(url)
     .then(({ data }) => {
-      send_SMS(make_text(data, msg));
+      send_SMS(make_text(data, msg).then(next)).catch(next);
     })
     .catch((err) => {
       err;
