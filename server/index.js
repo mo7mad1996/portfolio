@@ -25,7 +25,6 @@ require("./models");
 
 // ..:: routes ::..
 app.use("/api", require("./api"));
-app.listen();
 
 // ..:: start function ::..
 async function start() {

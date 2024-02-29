@@ -41,6 +41,11 @@ module.exports = {
         href: "/logo.svg",
       },
     ],
+    script: [
+      {
+        src: "https://cdn.jsdelivr.net/npm/swiper@10/swiper-element-bundle.min.js",
+      },
+    ],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css

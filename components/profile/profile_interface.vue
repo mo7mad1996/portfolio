@@ -1,9 +1,6 @@
 <template>
   <div class="profile_interface" ref="intro" @click="scroll">
-    <div
-      class="img-content"
-      :style="`background-image: url(${path}.png) ;`"
-    ></div>
+    <div class="img-content" :style="`background-image: url(${path}) ;`"></div>
 
     <div class="scroll">
       <fa :icon="['fas', 'angle-double-down']" class="icon" />

@@ -1,15 +1,15 @@
 <template>
   <div class="profile-page">
-    <ProfileInterface path="/profile/personal" />
+    <ProfileInterface :path="require('~/assets/imgs/profile/personal.png')" />
     <Resume />
-    <Custemfooter />
+    <CustemFooter />
   </div>
 </template>
 
 <script>
 import ProfileInterface from "~/components/profile/profile_interface";
 import Resume from "~/components/profile/resume.vue";
-import Custemfooter from "~/components/profile/footer";
+import CustemFooter from "~/components/profile/footer";
 
 export default {
   async asyncData({ $axios }) {
@@ -20,7 +20,7 @@ export default {
   components: {
     ProfileInterface,
     Resume,
-    Custemfooter,
+    CustemFooter,
   },
   head() {
     return {

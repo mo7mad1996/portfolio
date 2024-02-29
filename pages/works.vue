@@ -36,13 +36,7 @@ import SwiperComponent from "@/components/lastworks/SwiperComponent.vue";
 
 export default {
   name: "last-works",
-  head: {
-    script: [
-      {
-        src: "https://cdn.jsdelivr.net/npm/swiper@10/swiper-element-bundle.min.js",
-      },
-    ],
-  },
+
   data: () => ({
     workes: [
       {
@@ -104,6 +98,17 @@ export default {
         link: "https://aimm-2.netlify.app/",
         color1: "#c1a5d3",
         color2: "#66afe0",
+      },
+      {
+        logo: "https://todo-mohamed.netlify.app/favicon.ico",
+        images: ["/proj10/1.png", "/proj10/2.png", "/proj10/3.png"],
+        name: "Todo",
+        description: `Todo app with react.js, 
+        simple app to create a todo list with modern design,
+        using localStorage to store the data`,
+        link: "https://todo-mohamed.netlify.app/",
+        color1: "#e99e97",
+        color2: "#59498c",
       },
       {
         logo: "https://isometric.netlify.app/img/isometric__logo.png",
