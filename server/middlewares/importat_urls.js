@@ -1,5 +1,6 @@
 // packages
 // const geoip = require("geoip-lite");
+const nodemailer = require("nodemailer");
 const requestIP = require("request-ip");
 const axios = require("axios");
 
@@ -51,23 +52,59 @@ function make_text(data, msg) {
   const google_map = `https://www.google.com/maps/search/?api=1&query=${data.latitude},${data.longitude}`;
 
   // text
-  return (
-    msg +
-    `
+  return `
+  <H1>${msg}</H1>
+  <ul>
+  <li>
   ip: ${ip}
+  </li>
+  <li>
   at: ${time}
+  </li>
+  <li>
   address: ${address}
-
-  location: ${google_map}
-  `
-  );
+  </li>
+  
+  <li>
+  <a href='${google_map}'>location</a>
+  </li>
+  </ul>
+  `;
 }
 
 async function send_SMS(msg) {
-  const client = require("twilio")(accountSid, authToken);
-  return await client.messages.create({
-    body: msg,
-    from: "+12292644354",
-    to: "+201063525389",
+  // // don't use twilio there is no Adequate
+  // const client = require("twilio")(accountSid, authToken);
+  // return await client.messages.create({
+  //   body: msg,
+  //   from: "+12292644354",
+  //   to: "+201063525389",
+  // });
+
+  useEmail(msg);
+}
+
+const transporter = nodemailer.createTransport({
+  host: "smtp.gmail.com",
+  port: 465,
+  secure: true,
+
+  auth: {
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS,
+  },
+});
+
+async function useEmail(msg) {
+  // send mail with defined transport object
+  const info = await transporter.sendMail({
+    from: '"Mohamed Ibrahim 🙋‍♂️" <mo7mad369@gmail.com>',
+    to: "mo7mad96@outlook.com",
+    subject: "cv notification ✔",
+    text: "downloading done",
+    html: msg,
   });
+  const { accepted, rejected } = info;
+
+  return { accepted, rejected };
 }
