@@ -3,8 +3,13 @@
     <h2 class="title">Skills</h2>
 
     <div class="skills">
-
-      <a v-for="skill in skills" :href="skill.URL" target="_blank" class="skill"  :key="skill.name">
+      <a
+        v-for="skill in skills"
+        :href="skill.URL"
+        target="_blank"
+        class="skill"
+        :key="skill.name"
+      >
         <div class="content">
           <img :src="skill.image" :alt="skill.name" class="img" />
 
@@ -14,7 +19,6 @@
           </div>
         </div>
 
-
         <div class="title">{{ skill.name }}</div>
       </a>
     </div>
@@ -23,22 +27,19 @@
 
 <script>
 export default {
-  name: 'ProfileSkils',
-  props: ['skills'],
-}
+  name: "ProfileSkils",
+  props: ["skills"],
+};
 </script>
 
 <style scoped lang="scss">
 .skills {
   margin-bottom: 50px;
-
-
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
 
   .skill {
     transition: 0.2s;
@@ -65,13 +66,12 @@ export default {
 
       &::after,
       &::before {
-        content: '';
+        content: "";
         position: absolute;
         height: 100px;
         width: 100px;
         border-radius: 50px;
-        background: 
-         linear-gradient(0deg, #a708c077, transparent);
+        background: linear-gradient(0deg, #a708c077, transparent);
         top: -40px;
         left: -50px;
         z-index: 1;
@@ -84,21 +84,21 @@ export default {
         right: -10px;
       }
     }
-      .title {
-        position: absolute;
+    .title {
+      position: absolute;
 
-        width: 100%;
-        text-align: center;
-        background: black;
-        color: wheat;
-        padding: 10px;
-        border-radius: 3px;
-        left: 0;
-        top: calc(100% + 10px);
-        text-shadow: none;
-        display: none;
-        font-family: sans-serif;
-      }
+      width: 100%;
+      text-align: center;
+      background: black;
+      color: wheat;
+      padding: 10px;
+      border-radius: 3px;
+      left: 0;
+      top: calc(100% + 10px);
+      text-shadow: none;
+      display: none;
+      font-family: sans-serif;
+    }
 
     &:hover {
       opacity: 1;
@@ -107,17 +107,17 @@ export default {
       .content {
         box-shadow: 0 0 12px rgb(140, 126, 126);
       }
-      .img{
-        opacity: .8;
+      .img {
+        opacity: 0.8;
       }
 
       .title {
         display: block;
         z-index: 3;
       }
-    .d-flex {
-      bottom: 0;
-    }
+      .d-flex {
+        bottom: 0;
+      }
     }
 
     .img {
@@ -133,8 +133,7 @@ export default {
       font-size: 2em;
       font-weight: 700;
       color: #d111a7;
-      text-shadow: 0 0 10px  black;
-
+      text-shadow: 0 0 10px black;
     }
 
     .d-flex {
@@ -145,14 +144,14 @@ export default {
       left: 0;
       padding: 0 10px;
       bottom: -100%;
-      transition: .3s;
+      transition: 0.3s;
       padding: 10px;
-      background-image: linear-gradient(to top, #8711d1 ,transparent) ;
+      background-image: linear-gradient(to top, #8711d1, transparent);
 
       h3 {
         font-weight: normal;
       }
     }
-    }
   }
+}
 </style>

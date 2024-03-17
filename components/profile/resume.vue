@@ -1,12 +1,8 @@
 <template>
   <div class="resume container">
     <a href="/download/Mohamed-Ibrahim.pdf" download @pointermove="move">
-
       <div class="background">
-        <div
-          class="pointer"
-          :style="`top: ${y}px;left: ${x}px`"
-        ></div>
+        <div class="pointer" :style="`top: ${y}px;left: ${x}px`"></div>
       </div>
 
       <div class="txt">
@@ -15,22 +11,21 @@
           resume
         </span>
       </div>
-
     </a>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Resume',
+  name: "Resume",
   data: () => ({ x: -100, y: 0 }),
   methods: {
     move(e) {
-      this.x = e.layerX
-      this.y = e.layerY
+      this.x = e.layerX;
+      this.y = e.layerY;
     },
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>

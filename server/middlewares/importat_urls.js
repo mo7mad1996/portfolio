@@ -55,19 +55,10 @@ function make_text(data, msg) {
   return `
   <H1>${msg}</H1>
   <ul>
-  <li>
-  ip: ${ip}
-  </li>
-  <li>
-  at: ${time}
-  </li>
-  <li>
-  address: ${address}
-  </li>
-  
-  <li>
-  <a href='${google_map}'>location</a>
-  </li>
+    <li>ip: ${ip}</li>
+    <li>at: ${time}</li>
+    <li>address: ${address}</li>
+    <li><a href='${google_map}'>location</a></li>
   </ul>
   `;
 }
