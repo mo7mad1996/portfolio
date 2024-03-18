@@ -42,7 +42,7 @@ export default {
 <style lang="scss" scoped>
 .email {
   background: linear-gradient(#54b8d6, #bda1ff);
-  padding: 220px;
+  padding: 220px 0;
   position: relative;
   margin-bottom: 120px;
 
