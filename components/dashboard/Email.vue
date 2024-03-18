@@ -40,11 +40,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+* {
+  font-size: inherit;
+}
+
 .email {
   background: linear-gradient(#54b8d6, #bda1ff);
   padding: 220px 0;
-  position: relative;
   margin-bottom: 120px;
+  position: relative;
 
   &::after {
     width: 100%;
@@ -116,6 +120,7 @@ export default {
     color: #333;
     text-align: center;
     margin: 2em auto;
+    font-size: 2em;
     font-family: "Futura LT", sans-serif;
     font-weight: normal;
   }
@@ -124,19 +129,23 @@ export default {
     margin: auto;
     display: flex;
     width: fit-content;
+    max-width: 90%;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
       rgba(0, 0, 0, 0.3) 0px 8px 16px -8px,
       inset rgba(255, 255, 255, 0.3) 0 10px 10px;
-
+    font-size: 1.7em;
     padding: 20px 40px;
     gap: 20px;
     background: #fff3;
     border-radius: 100px;
     align-items: center;
 
+    @media (max-width: 720px) {
+      font-size: 1.2em;
+    }
+
     label {
       color: #333;
-      font-size: 20px;
       text-transform: capitalize;
     }
 
@@ -144,10 +153,9 @@ export default {
       background: none;
       outline: none;
       border: none;
-      font-size: 24px;
+      flex: 1;
     }
     button {
-      font-size: 24px;
       height: 50px;
       aspect-ratio: 1/ 1;
       border-radius: 50%;
