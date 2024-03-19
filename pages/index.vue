@@ -51,10 +51,10 @@ export default {
   data() {
     return {
       mouse: {
-        x: 0,
-        y: 0,
+        x: -1,
+        y: -1,
       },
-      is_in_anmation: true,
+      is_in_anmation: false,
       Touch: {
         start: 0,
         end: 0,
@@ -121,6 +121,10 @@ export default {
     if (this.hash == "") {
       this.$router.push("#home");
     }
+    this.mouse = {
+      x: 0,
+      y: 0,
+    };
   },
   watch: {
     hash() {
