@@ -212,9 +212,8 @@ main {
   min-height: 100dvh;
   height: auto;
   background: linear-gradient(30deg, var(--color-1), var(--color-2));
-  scroll-snap-align: center;
   display: flex;
-  scroll-snap-align: start none;
+  scroll-snap-align: start;
   scroll-margin-block-start: 0px;
 
   @media (max-width: 1200px) {
