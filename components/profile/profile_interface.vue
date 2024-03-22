@@ -35,7 +35,32 @@ export default {
     background-position: center;
     background-repeat: no-repeat;
     text-transform: capitalize;
+    z-index: 0;
+    position: relative;
     height: 100%;
+  }
+
+  &::before {
+    content: "Mohamed";
+    text-transform: uppercase;
+    color: #fff2;
+    font-family: sans-serif;
+    font-size: 13em;
+    font-weight: bolder;
+    position: absolute;
+    z-index: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+
+    @media (max-width: 1160px) {
+      font-size: 10em;
+    }
+    @media (max-width: 760px) {
+      display: none;
+    }
   }
 }
 </style>
