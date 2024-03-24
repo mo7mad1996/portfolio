@@ -30,8 +30,19 @@ module.exports = {
       {
         hid: "description",
         name: "description",
-        content:
-          "Mohamed Ibrahim portfolio, The best fullStack web developer...",
+        content: `
+        السيره الذاتيه،
+        مطور برمجيات محترف،محمد ابراهيم خريج علوم الحاسب، مصري ، يجيد تطوير المواقع وبناء و تصميم المواقع الالكترونيه
+          , Professional fullstack web developer in Egypt, Mohamed Ibrhim portfolio website
+          `,
+      },
+      {
+        name: "keywords",
+        content: `مبرمج، مصمم، تطوير المواقع، بناء موقع الكتروني، website، محمد ابراهيم، مصري، تصميم، برمجه، fullstack, frontend , backend, node.js, react.js, next.js, vue.js , nuxt.js`,
+      },
+      {
+        name: "google-site-verification",
+        content: "cOJq1Ce5BlzFFqOji8aC1Sy_602TuQVawU6Uib6bSE0",
       },
     ],
     link: [
@@ -44,6 +55,7 @@ module.exports = {
     script: [
       {
         src: "https://cdn.jsdelivr.net/npm/swiper@10/swiper-element-bundle.min.js",
+        async: true,
       },
     ],
   },

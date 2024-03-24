@@ -194,6 +194,22 @@ export default {
   components: {
     SwiperComponent,
   },
+
+  head() {
+    return {
+      title: "Best web projects",
+      mata: [
+        {
+          hid: "description",
+          name: "description",
+          content: `
+          portfolio Mohamed Ibrahim, Professional web developer works, best designs for web site portfolio,
+سابقة اعمال محمد ابراهيم،  اعمال مطور ويب محترف ، افضل التصاميم لبناء المواقع
+          `,
+        },
+      ],
+    };
+  },
 };
 </script>
 
