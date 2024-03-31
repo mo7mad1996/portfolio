@@ -74,10 +74,7 @@ export default {
     margin: 1em 0;
     font-size: 5em;
     letter-spacing: 0.05em;
-
-    &::after {
-      content: attr(id);
-    }
+    text-transform: uppercase;
   }
 }
 </style>
