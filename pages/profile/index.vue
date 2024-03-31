@@ -61,9 +61,23 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 .profile-page {
   background: rgb(32, 153, 223);
   color: #0f1816;
+
+  h2.title {
+    color: transparent;
+    -webkit-text-stroke: 0.7px #030202;
+    font-family: sans-serif;
+    font-weight: bold;
+    margin: 1em 0;
+    font-size: 5em;
+    letter-spacing: 0.05em;
+
+    &::after {
+      content: attr(id);
+    }
+  }
 }
 </style>

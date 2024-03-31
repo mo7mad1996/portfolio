@@ -214,7 +214,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import url("https://fonts.googleapis.com/css2?family=Cairo+Play:wght@400;700&family=Cairo:wght@400;600;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Cairo:wght@400;600;900&display=swap");
 
 main {
   background: #1a2b6e;

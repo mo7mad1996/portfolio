@@ -32,6 +32,7 @@ export default {
   padding-left: 3em;
   overflow-y: hidden;
   position: relative;
+  font-size: 1.2em;
 
   .table {
     border-collapse: collapse;
@@ -42,6 +43,10 @@ export default {
 
     tr {
       height: 2.2em;
+    }
+    td,
+    th {
+      padding: 0.3em;
     }
   }
 }

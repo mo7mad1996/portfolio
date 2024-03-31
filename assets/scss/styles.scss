@@ -193,32 +193,6 @@ section {
   }
 }
 
-.title {
-  color: #3c312b;
-  text-shadow: 2px 0 0px #2297df, -2px 0 0px #c820df;
-}
-
-h2.title {
-  padding: 10px 0;
-  margin-bottom: 1em;
-
-  &::before {
-    content: "";
-    border-width: 10px;
-    border-style: solid;
-    display: inline-block;
-    transform: rotateX(45deg);
-    border-top-color: transparent;
-    border-right-color: transparent;
-    border-bottom-color: transparent;
-  }
-
-  &::after {
-    content: "_";
-    text-shadow: none;
-  }
-}
-
 .container {
   max-width: 1200px;
   width: 90%;

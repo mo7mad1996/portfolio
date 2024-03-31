@@ -11,7 +11,12 @@
         :key="skill.name"
       >
         <div class="content">
-          <img :src="skill.image" :alt="skill.name" class="img" />
+          <img
+            :src="skill.image"
+            :alt="skill.name"
+            class="img"
+            loading="lazy"
+          />
 
           <div class="d-flex">
             <h3>{{ skill.name }}</h3>
@@ -96,8 +101,9 @@ export default {
       left: 0;
       top: calc(100% + 10px);
       text-shadow: none;
-      display: none;
+      opacity: 0;
       font-family: sans-serif;
+      transform: translateY(-30px);
     }
 
     &:hover {
@@ -112,8 +118,10 @@ export default {
       }
 
       .title {
-        display: block;
         z-index: 3;
+        transition: 0.3s;
+        transform: translateY(-8px);
+        opacity: 1;
       }
       .d-flex {
         bottom: 0;
