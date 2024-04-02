@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "nodemon server",
-    "build": "npm -v && nuxt build",
+    "build": "npm install -g npm@8.19.2 && nuxt build",
     "start": "node server",
     "generate": "nuxt generate"
   },
