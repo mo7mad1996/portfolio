@@ -41,6 +41,6 @@ export default {
 
 <style scoped lang="scss">
 .profile-page {
-  background: rgb(32, 153, 223);
+  background: #051c29;
 }
 </style>

@@ -54,6 +54,7 @@ $secound-color: #5fffe1;
       position: relative;
       z-index: 2;
       pointer-events: none;
+      color: purple;
     }
 
     .background {

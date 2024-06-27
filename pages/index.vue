@@ -45,6 +45,7 @@ import AsideComponent from "@/components/layout/aside/index";
 
 // vuex
 import { mapState } from "vuex";
+import { gsap } from "gsap";
 
 export default {
   scrollToTop: true,
@@ -116,11 +117,23 @@ export default {
     animationend() {
       this.is_in_anmation = true;
     },
+    startScroll() {
+      let scroll_to = document.getElementById(this.hash.substring(1)).offsetTop;
+
+      // this.$refs.content.scrollTo(0, scroll_to);
+      gsap.to(this.$refs.content, {
+        scrollTop: scroll_to,
+        duration: 0.5,
+        ease: "expoScale(0.5,7,none)",
+      });
+    },
   },
   mounted() {
     if (this.hash == "") {
       this.$router.push("#home");
     }
+    this.startScroll();
+
     this.mouse = {
       x: 0,
       y: 0,
@@ -128,11 +141,9 @@ export default {
   },
   watch: {
     hash() {
-      // document.querySelector(this.hash).scrollIntoView()
+      // document.querySelector(this.hash).scrollIntoView();
 
-      let scroll_to = document.getElementById(this.hash.substring(1)).offsetTop;
-      // this.$refs.content.scrollTo(0, scroll_to)
-      this.$refs.content.scrollTop = scroll_to;
+      this.startScroll();
     },
   },
 
@@ -156,6 +167,7 @@ export default {
   color: white;
   width: 100vw;
   height: 100dvh;
+  overscroll-behavior: contain;
   background-image: linear-gradient(
     to bottom,
     #072142,
@@ -216,8 +228,8 @@ export default {
     main {
       flex: 1;
       overflow: hidden;
-
-      scroll-behavior: smooth;
+      overscroll-behavior: contain;
+      // scroll-behavior: smooth;
     }
   }
 }

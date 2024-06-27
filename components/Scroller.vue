@@ -1,10 +1,26 @@
 <template>
-  <div class="scroller"></div>
+  <div class="scroller" v-if="active"></div>
 </template>
 
 <script>
 export default {
   name: "Scroller",
+  data() {
+    return {
+      active: true,
+    };
+  },
+  mounted() {
+    addEventListener("scroll", this.scroll);
+  },
+  beforeDestroy() {
+    removeEventListener("scroll", this.scroll);
+  },
+  methods: {
+    scroll() {
+      this.active = false;
+    },
+  },
 };
 </script>
 

@@ -22,7 +22,7 @@ export default {
     let born = await new Date(res.data["Date of Birth"]).getFullYear(),
       naw = new Date().getFullYear(); // this year
 
-    let Age = naw - born + " Years";
+    let Age = naw - born + " Years Old";
     let Experience = naw - res.data["Start learn"] + " Years";
 
     const data = await Object.assign(res.data, {
@@ -63,13 +63,14 @@ export default {
 
 <style lang="scss">
 .profile-page {
-  background: rgb(32, 153, 223);
-  color: #0f1816;
+  background: #103f5a;
+  color: #7bb6a9;
 
   h2.title {
     color: transparent;
-    -webkit-text-stroke: 0.7px #030202;
+    -webkit-text-stroke: 0.5px #68e9e9;
     font-family: sans-serif;
+    text-shadow: 0 0 12px #60b5b5, 0 0 22px #b4ecec;
     font-weight: bold;
     margin: 1em 0;
     font-size: 5em;

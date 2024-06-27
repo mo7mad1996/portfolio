@@ -19,14 +19,15 @@
     "cors": "^2.8.5",
     "dotenv": "^16.4.3",
     "express": "^4.18.2",
+    "geoip-lite": "^1.4.9",
+    "gsap": "^3.12.5",
     "mongoose": "^8.1.2",
     "nodemailer": "^6.9.9",
-    "twilio": "^4.22.0",
-    "request-ip": "^3.3.0",
-    "geoip-lite": "^1.4.9",
     "nuxt": "^2.15.7",
+    "request-ip": "^3.3.0",
     "sass": "^1.32.12",
-    "sass-loader": "^10.1.1"
+    "sass-loader": "^10.1.1",
+    "twilio": "^4.22.0"
   },
   "devDependencies": {
     "eslint-config-prettier": "^8.3.0",

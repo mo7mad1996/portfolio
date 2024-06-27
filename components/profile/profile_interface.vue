@@ -26,7 +26,7 @@ export default {
 .profile_interface {
   position: relative;
   height: 100dvh;
-  background: linear-gradient(#c920df, #2099df);
+  background: linear-gradient(#c920df, #103f5a);
 
   // background styles
   .img-content {

@@ -2,14 +2,16 @@
   <div class="container">
     <h2 class="title">Skills</h2>
 
-    <div class="skills">
+    <div class="skills" @mousemove="parent_mousemove">
       <a
+        @mousemove="mouseMove"
         v-for="skill in skills"
         :href="skill.URL"
         target="_blank"
         class="skill"
         :key="skill.name"
       >
+        <div class="border"></div>
         <div class="content">
           <img
             :src="skill.image"
@@ -23,8 +25,6 @@
             <span>{{ skill.degree * 10 }}%</span>
           </div>
         </div>
-
-        <div class="title">{{ skill.name }}</div>
       </a>
     </div>
   </div>
@@ -32,134 +32,141 @@
 
 <script>
 export default {
-  name: "ProfileSkils",
+  name: "ProfileSkills",
   props: ["skills"],
+  methods: {
+    mouseMove(e) {
+      const { currentTarget: target } = e;
+
+      const rect = target.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      target.style.setProperty("--mouse-x", `${x}px`);
+      target.style.setProperty("--mouse-y", `${y}px`);
+    },
+    parent_mousemove(e) {
+      const { currentTarget: target } = e;
+
+      for (const skill of target.querySelectorAll(".skill")) {
+        const rect = skill.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        skill.style.setProperty("--mouse-x", `${x}px`);
+        skill.style.setProperty("--mouse-y", `${y}px`);
+      }
+    },
+  },
 };
 </script>
 
 <style scoped lang="scss">
 .skills {
   margin-bottom: 50px;
+  padding: 1em 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 6px;
   flex-wrap: wrap;
 
   .skill {
-    transition: 0.2s;
-    width: 220px;
-    align-self: stretch;
-    opacity: 1;
+    display: block;
+    width: 320px;
+    height: 200px;
+    background-color: rgba($color: #000, $alpha: 0.1);
+    border-radius: 10px;
     position: relative;
 
-    .content {
-      padding: 10px;
-      background-color: #c721df77;
-      border-radius: 10px;
-      position: relative;
-      overflow: hidden;
+    .border,
+    &::before {
+      content: "";
+      border-radius: inherit;
       height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-
-      * {
-        z-index: 2;
-        position: relative;
-      }
-
-      &::after,
-      &::before {
-        content: "";
-        position: absolute;
-        height: 100px;
-        width: 100px;
-        border-radius: 50px;
-        background: linear-gradient(0deg, #a708c077, transparent);
-        top: -40px;
-        left: -50px;
-        z-index: 1;
-      }
-      &::after {
-        background: linear-gradient(100deg, #fff7, transparent);
-        top: auto;
-        left: auto;
-        bottom: -10px;
-        right: -10px;
-      }
-    }
-    .title {
-      position: absolute;
-
       width: 100%;
-      text-align: center;
-      background: black;
-      color: wheat;
-      padding: 10px;
-      border-radius: 3px;
+      pointer-events: none;
+      position: absolute;
+      top: 0;
       left: 0;
-      top: calc(100% + 10px);
-      text-shadow: none;
+
       opacity: 0;
-      font-family: sans-serif;
-      transform: translateY(-30px);
+      transition: opacity 500ms;
+    }
+    .border {
+      background-image: radial-gradient(
+        400px circle at var(--mouse-x) var(--mouse-y),
+        rgba($color: #fdffff, $alpha: 1),
+        transparent 40%
+      );
+      z-index: 1;
     }
 
-    &:hover {
+    &::before {
+      background-image: radial-gradient(
+        100px circle at var(--mouse-x) var(--mouse-y),
+        rgba($color: #fafafa, $alpha: 0.1),
+        transparent
+      );
+      z-index: 3;
+    }
+    &:hover::before {
       opacity: 1;
+    }
+    .content {
+      height: calc(100% - 2px);
       position: relative;
+      width: calc(100% - 2px);
+      background-color: rgba($color: #483b5d, $alpha: 0.95);
+      border-radius: inherit;
+      margin: 1px;
+      overflow: hidden;
+      z-index: 2;
 
-      .content {
-        box-shadow: 0 0 12px rgb(140, 126, 126);
-      }
       .img {
-        opacity: 0.8;
+        width: 80%;
+        height: 80%;
+        object-fit: contain;
+        display: grid;
+        align-items: center;
+        font-size: 4em;
+        opacity: 0.7;
+        transform: translate(-50%, -50%);
+        top: 50%;
+        left: 50%;
+        text-align: center;
+        position: absolute;
       }
 
-      .title {
-        z-index: 3;
-        transition: 0.3s;
-        transform: translateY(-8px);
-        opacity: 1;
-      }
       .d-flex {
-        bottom: 0;
+        display: flex;
+        justify-content: flex-end;
+        padding: 1em;
+        flex-direction: column;
+        height: 100%;
+        background-image: linear-gradient(
+          transparent 60%,
+          rgba($color: #926acd, $alpha: 0.5)
+        );
+        transition: transform 0.4s;
+        transform: translateY(100%);
+        position: relative;
+        color: #27072b;
+
+        h3 {
+          margin-bottom: 0.6em;
+          color: white;
+          font-weight: 100;
+        }
+      }
+
+      &:hover .d-flex {
+        transform: translateY(0);
       }
     }
-
-    .img {
-      display: flex;
-      width: 100%;
-      margin-bottom: 10px;
-      height: 100px;
-      object-fit: contain;
-
-      // placeholder
-      align-items: center;
-      justify-content: center;
-      font-size: 2em;
-      font-weight: 700;
-      color: #d111a7;
-      text-shadow: 0 0 10px black;
-    }
-
-    .d-flex {
-      display: flex;
-      justify-content: space-between;
-      position: absolute;
-      width: 100%;
-      left: 0;
-      padding: 0 10px;
-      bottom: -100%;
-      transition: 0.3s;
-      padding: 10px;
-      background-image: linear-gradient(to top, #8711d1, transparent);
-
-      h3 {
-        font-weight: normal;
-      }
-    }
+  }
+  // &:hover > .skill::before {
+  &:hover > .skill > .border {
+    opacity: 1;
   }
 }
 </style>
