@@ -42,5 +42,7 @@ export default {
 <style scoped lang="scss">
 .profile-page {
   background: #051c29;
+  height: 100dvh;
+  overflow: auto;
 }
 </style>
