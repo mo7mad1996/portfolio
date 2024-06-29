@@ -4,12 +4,12 @@
     <form @submit.prevent="submit">
       <label for="to">to:</label>
       <input
-        type="email"
-        id="to"
         v-model="to"
+        id="to"
+        type="email"
+        placeholder="mail@example.com"
         autofocus
         required
-        placeholder="mail@example.com"
       />
 
       <button :disabled="loading" :class="{ loading }">
@@ -134,8 +134,7 @@ export default {
       rgba(0, 0, 0, 0.3) 0px 8px 16px -8px,
       inset rgba(255, 255, 255, 0.3) 0 10px 10px;
     font-size: 1.7em;
-    padding: 20px 40px;
-    gap: 20px;
+    padding: 0px 20px;
     background: #fff3;
     border-radius: 100px;
     align-items: center;
@@ -144,8 +143,16 @@ export default {
       font-size: 1.2em;
     }
 
+    &:has(:focus) {
+      box-shadow: rgba(153, 153, 239, 0.595) 0px 13px 27px -5px,
+        rgba(146, 146, 146, 0.89) 0px 8px 16px -8px,
+        inset rgba(255, 255, 255, 0.3) 0 4px 20px -6px,
+        0 5px 60px -15px rgb(235, 206, 214);
+    }
+
     label {
       color: #333;
+      padding: 0 10px;
       text-transform: capitalize;
     }
 
@@ -153,12 +160,13 @@ export default {
       background: none;
       outline: none;
       border: none;
+      padding: 20px 0px;
       flex: 1;
     }
     button {
-      height: 50px;
-      aspect-ratio: 1/ 1;
-      border-radius: 50%;
+      // height: 50px;
+      padding: 10px;
+      // aspect-ratio: 1/ 1;
       background: none;
       color: #4e1388;
       border: none;

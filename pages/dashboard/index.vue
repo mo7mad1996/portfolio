@@ -15,4 +15,3 @@ export default {
   components: { Email, Custemfooter },
 };
 </script>
-<style scoped lang="scss"></style>
