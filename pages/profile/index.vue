@@ -65,6 +65,8 @@ export default {
 .profile-page {
   background: #103f5a;
   color: #7bb6a9;
+  overflow: auto;
+  height: 100dvh;
 
   h2.title {
     color: transparent;
