@@ -31,6 +31,7 @@ export default {
     display: block;
     z-index: 3;
     position: relative;
+    padding: 1em;
 
     &::before,
     &::after {

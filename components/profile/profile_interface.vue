@@ -1,12 +1,19 @@
 <template>
   <div class="profile_interface" ref="intro" @click="scroll">
-    <div class="img-content" :style="`background-image: url(${path}) ;`"></div>
+    <Clouds>
+      <div
+        class="img-content"
+        :style="`background-image: url(${path}) ;`"
+      ></div>
+    </Clouds>
 
     <Scroller />
   </div>
 </template>
 
 <script>
+import Clouds from "~/components/profile/Clouds";
+
 export default {
   name: "ProfileInterface",
   props: ["path"],
@@ -19,6 +26,7 @@ export default {
       }
     },
   },
+  components: { Clouds },
 };
 </script>
 
@@ -37,9 +45,11 @@ export default {
     text-transform: capitalize;
     z-index: 0;
     position: relative;
+    pointer-events: none;
     height: 100%;
   }
 
+  &::after,
   &::before {
     content: "Mohamed";
     text-transform: uppercase;
@@ -48,10 +58,12 @@ export default {
     font-size: 13em;
     font-weight: bolder;
     position: absolute;
+    inset: 0;
     z-index: 0;
     display: flex;
     align-items: center;
     justify-content: center;
+    pointer-events: none;
     width: 100%;
     height: 100%;
 
@@ -61,6 +73,11 @@ export default {
     @media (max-width: 760px) {
       display: none;
     }
+  }
+  &::after {
+    color: transparent;
+    -webkit-text-stroke: 1px #fff2;
+    z-index: 2;
   }
 }
 </style>
