@@ -1,7 +1,11 @@
 <template>
   <div class="profile_interface" ref="intro" @click="scroll">
-    <!-- <Clouds> </Clouds> -->
-    <div class="img-content" :style="`background-image: url(${path}) ;`"></div>
+    <Clouds>
+      <div
+        class="img-content"
+        :style="`background-image: url(${path}) ;`"
+      ></div>
+    </Clouds>
 
     <Scroller />
   </div>
