@@ -34,7 +34,11 @@ export default {
 .profile_interface {
   position: relative;
   height: 100dvh;
-  background: linear-gradient(#c920df, #103f5a);
+
+  --pink-color: #c920df;
+  --blue-color: #103f5a;
+
+  background: linear-gradient(var(--pink-color), var(--blue-color));
 
   // background styles
   .img-content {
@@ -73,6 +77,11 @@ export default {
     @media (max-width: 760px) {
       display: none;
     }
+  }
+  &::before {
+    background: linear-gradient(-200deg, var(--pink-color), var(--blue-color));
+    background-clip: text;
+    color: transparent;
   }
   &::after {
     color: transparent;

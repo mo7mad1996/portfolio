@@ -33,7 +33,7 @@ export default {
     // display: none;
 
     &:nth-of-type(1) {
-      transform: translate(10%, 20%);
+      transform: translate(20%, 10%);
       animation-duration: 10s;
     }
     &:nth-of-type(2) {
