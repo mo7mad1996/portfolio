@@ -90,7 +90,7 @@ async function useEmail(msg) {
   // send mail with defined transport object
   const info = await transporter.sendMail({
     from: '"Mohamed Ibrahim 🙋‍♂️" <mo7mad369@gmail.com>',
-    to: "mo7mad96@outlook.com",
+    to: "mo7mad369@gmail.com",
     subject: "cv notification ✔",
     text: "downloading done",
     html: msg,
