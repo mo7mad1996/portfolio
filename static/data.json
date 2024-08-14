@@ -20,7 +20,7 @@
     {
       "name": "HTML",
       "degree": 10,
-      "image": "https://i.stack.imgur.com/PgcSR.png",
+      "image": "https://www.w3.org/html/logo/downloads/HTML5_Logo.svg",
       "URL": "https://www.w3schools.com/html/html_intro.asp"
     },
     {
@@ -34,6 +34,12 @@
       "degree": 10,
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Sass_Logo_Color.svg/2560px-Sass_Logo_Color.svg.png",
       "URL": "https://sass-lang.com/"
+    },
+    {
+      "name": "tailwindcss",
+      "degree": 9,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/512px-Tailwind_CSS_Logo.svg.png",
+      "URL": "https://tailwindcss.com/"
     },
     {
       "name": "Bootstrap",
@@ -54,16 +60,16 @@
       "URL": "https://jquery.com/"
     },
     {
-      "name": "NuxtJs",
-      "degree": 10,
-      "image": "https://nuxtjs.org/design-kit/colored-text.svg",
-      "URL": "https://www.nuxtjs.org/"
+      "name": "thee.js",
+      "degree": 8.8,
+      "image": "https://global.discourse-cdn.com/standard17/uploads/threejs/original/2X/b/be2f75f72751c11cbe1593c69a99a52900bf12cb.svg",
+      "URL": "https://threejs.org/"
     },
     {
-      "name": "NextJs",
+      "name": "Ajax & axios",
       "degree": 10,
-      "image": "https://static-00.iconduck.com/assets.00/nextjs-icon-512x309-yynfidez.png",
-      "URL": "https://www.nextjs.org/"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/AJAX_logo_by_gengns.svg/1280px-AJAX_logo_by_gengns.svg.png",
+      "URL": "https://www.w3schools.com/js/js_ajax_intro.asp"
     },
     {
       "name": "react.js",
@@ -72,16 +78,28 @@
       "URL": "https://reactjs.org/"
     },
     {
-      "name": "Vue.js",
+      "name": "NextJs",
       "degree": 10,
-      "image": "https://ourcodeworld.com/public-media/gallery/vuejs2-5f9f2d1b78215.png",
-      "URL": "https://vuejs.org/"
+      "image": "https://static-00.iconduck.com/assets.00/nextjs-icon-512x309-yynfidez.png",
+      "URL": "https://www.nextjs.org/"
     },
     {
       "name": "Redux",
       "degree": 8,
       "image": "https://upload.wikimedia.org/wikipedia/commons/4/49/Redux.png",
       "URL": "https://redux.js.org/"
+    },
+    {
+      "name": "Vue.js",
+      "degree": 10,
+      "image": "https://ourcodeworld.com/public-media/gallery/vuejs2-5f9f2d1b78215.png",
+      "URL": "https://vuejs.org/"
+    },
+    {
+      "name": "NuxtJs",
+      "degree": 10,
+      "image": "https://nuxtjs.org/design-kit/colored-text.svg",
+      "URL": "https://www.nuxtjs.org/"
     },
     {
       "name": "Vuetify",
@@ -95,17 +113,12 @@
       "image": "https://user-images.githubusercontent.com/7110136/29002857-9e802f08-7ab4-11e7-9c31-604b5d0d0c19.png",
       "URL": "https://vuex.vuejs.org/"
     },
+
     {
       "name": "git",
       "degree": 9.9,
       "image": "https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png",
       "URL": "https://git-scm.com/"
-    },
-    {
-      "name": "Ajax & axios",
-      "degree": 10,
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/AJAX_logo_by_gengns.svg/1280px-AJAX_logo_by_gengns.svg.png",
-      "URL": "https://www.w3schools.com/js/js_ajax_intro.asp"
     },
     {
       "name": "php",
@@ -114,16 +127,22 @@
       "URL": "https://www.php.net/"
     },
     {
+      "name": "Laravel",
+      "degree": 8.3,
+      "image": "https://laravel.com/img/logomark.min.svg",
+      "URL": "https://laravel.com/"
+    },
+    {
       "name": "Node.js",
       "degree": 10,
       "image": "https://seeklogo.com/images/N/nodejs-logo-FBE122E377-seeklogo.com.png",
       "URL": "https://nodejs.org/"
     },
     {
-      "name": "thee.js",
+      "name": "mongoDB",
       "degree": 8.8,
-      "image": "https://global.discourse-cdn.com/standard17/uploads/threejs/original/2X/b/be2f75f72751c11cbe1593c69a99a52900bf12cb.svg",
-      "URL": "https://threejs.org/"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/MongoDB_Logo.svg/512px-MongoDB_Logo.svg.png",
+      "URL": "https://www.mongodb.com/"
     }
   ]
 }
