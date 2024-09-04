@@ -60,6 +60,12 @@
       "URL": "https://jquery.com/"
     },
     {
+      "name": "TypeScript",
+      "degree": 10,
+      "image": "https://cdn.worldvectorlogo.com/logos/typescript.svg",
+      "URL": "https://www.typescriptlang.org/"
+    },
+    {
       "name": "thee.js",
       "degree": 8.8,
       "image": "https://global.discourse-cdn.com/standard17/uploads/threejs/original/2X/b/be2f75f72751c11cbe1593c69a99a52900bf12cb.svg",
@@ -113,7 +119,12 @@
       "image": "https://user-images.githubusercontent.com/7110136/29002857-9e802f08-7ab4-11e7-9c31-604b5d0d0c19.png",
       "URL": "https://vuex.vuejs.org/"
     },
-
+    {
+      "name": "Angular",
+      "degree": 10,
+      "image": "https://cdn.worldvectorlogo.com/logos/angular-icon.svg",
+      "URL": "https://angular.dev/"
+    },
     {
       "name": "git",
       "degree": 9.9,
