@@ -55,7 +55,7 @@ export default {
   },
   head() {
     return {
-      title: "Technical profile",
+      title: "Profile",
     };
   },
 };

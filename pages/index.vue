@@ -118,7 +118,9 @@ export default {
       this.is_in_anmation = true;
     },
     startScroll() {
-      let scroll_to = document.getElementById(this.hash.substring(1)).offsetTop;
+      let scroll_to = document.getElementById(
+        this.hash.substring(1)
+      )?.offsetTop;
 
       // this.$refs.content.scrollTo(0, scroll_to);
       gsap.to(this.$refs.content, {
