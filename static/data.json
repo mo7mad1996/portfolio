@@ -122,7 +122,7 @@
     {
       "name": "Pinia",
       "degree": 10,
-      "image": "hhttps://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Pinialogo.svg/319px-Pinialogo.svg.png",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Pinialogo.svg/319px-Pinialogo.svg.png",
       "URL": "https://pinia.vuejs.org/"
     },
     {
