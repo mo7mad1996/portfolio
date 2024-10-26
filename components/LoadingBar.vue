@@ -4,7 +4,7 @@
       <LogoPath :dasharray="dasharray" />
 
       <div class="progress">
-        <div :style="`width: ${dasharray}%`"></div>
+        <div :style="`width: ${dasharray + 20}%`"></div>
       </div>
       <div class="value">{{ dasharray }}%</div>
     </div>
@@ -13,7 +13,7 @@
 
 <script>
 // components
-import LogoPath from '@/components/logo/path'
+import LogoPath from "@/components/logo/path";
 
 export default {
   data: () => ({
@@ -22,19 +22,19 @@ export default {
   }),
   methods: {
     start() {
-      this.loading = true
+      this.loading = true;
     },
     finish() {
-      this.loading = false
+      this.loading = false;
     },
     increase(num) {
-      this.dasharray = num
+      this.dasharray = num;
     },
   },
   components: {
     LogoPath,
   },
-}
+};
 </script>
 
 <style scoped lang="scss">
@@ -56,6 +56,7 @@ export default {
       width: 150px;
       border: 1px solid #8c2b7a;
       margin: 10px auto;
+      overflow: hidden;
       // padding: 0 10px;
       background: #ff4d5a;
       border-radius: 20px;
@@ -63,14 +64,14 @@ export default {
       div {
         padding: 12px;
         background: #072142;
-        transition: width 0.2s;
+        transition: width 0.2s linear;
         // margin: 0 -10px;
         border-radius: 20px;
         position: relative;
 
         &::before,
         &::after {
-          content: '';
+          content: "";
           position: absolute;
           top: 5px;
           padding: 3px;

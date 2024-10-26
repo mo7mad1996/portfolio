@@ -2,7 +2,7 @@
   <svg
     x="0px"
     y="0px"
-    :fill-opacity="(dasharray - 80) / 20"
+    :fill-opacity="(dasharray - 100) / -60"
     :stroke-dasharray="`${dasharray * 10} ${1000 - dasharray * 10}`"
     viewBox="0 0 854.18492 854.18494"
     width="200"
@@ -37,9 +37,9 @@
 
 <script>
 export default {
-  props: ['dasharray'],
-  name: 'LogoPath',
-}
+  props: ["dasharray"],
+  name: "LogoPath",
+};
 </script>
 
 <style lang="scss">

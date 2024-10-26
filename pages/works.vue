@@ -74,14 +74,29 @@ export default {
         color2: "#9175bf",
       },
       {
-        logo: require("~/assets/imgs/projects/proj3/chat.avif"),
+        logo: require("~/assets/imgs/projects/proj11/logo.png"),
+        images: [
+          "/proj11/1.png",
+          "/proj11/2.png",
+          "/proj11/3.png",
+          "/proj11/4.png",
+          "/proj11/5.png",
+        ],
+        name: "دردشات ومكالمات",
+        description: `موفع للدردشات بين المستخدمين النشطين في الموقع كما يحتوي على دردشات جماعيه مع امكانيه مكالمات فتح المايك للدردشات الصوتيه وارسال الرسائل الصوتيه كما ان الموقع متعدد الغات`,
+        link: "https://java.drdsh.net/",
+        color1: "#ffc1c2",
+        color2: "#3986b7",
+      },
+      {
+        logo: require("~/assets/imgs/projects/proj3/logo.png"),
         images: ["/proj3/1.png", "/proj3/2.png", "/proj3/3.png"],
         name: "دردشة",
         description: `تطبيق دردشة لا يحتاج لتسجيل دخول،
         سري جداً ولا يقوم بحفظ الدردشات،
         يمكن انشاء دردشة جديده او الدخول لدردشة موجوده`,
         link: "https://caht.onrender.com/",
-        color1: "#ffc1c2",
+        color1: "#69e1ba",
         color2: "#e3e3e3",
       },
       {
