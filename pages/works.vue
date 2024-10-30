@@ -74,6 +74,18 @@ export default {
         color2: "#9175bf",
       },
       {
+        logo: require("~/assets/imgs/projects/proj12/logo.svg"),
+        images: ["/proj12/1.png", "/proj12/2.png", "/proj12/3.png"],
+        name: "Calculator Drag and Drop",
+        description: `مجرد اله حاسبه لكن
+        تكون مكوناتها متحركه ويمكن ترتيبها بطريقه مناسبه
+        كما يمكن تحريكها وتغديلها وتعديل اي قيمه من المكونات
+        والحصول على النتيجه المناسبه مع سهولة الاستخدام`,
+        link: "https://calculator-drag-and-drop.netlify.app/",
+        color1: "#0099ff",
+        color2: "#ffffff",
+      },
+      {
         logo: require("~/assets/imgs/projects/proj11/logo.png"),
         images: [
           "/proj11/1.png",
@@ -83,7 +95,10 @@ export default {
           "/proj11/5.png",
         ],
         name: "دردشات ومكالمات",
-        description: `موفع للدردشات بين المستخدمين النشطين في الموقع كما يحتوي على دردشات جماعيه مع امكانيه مكالمات فتح المايك للدردشات الصوتيه وارسال الرسائل الصوتيه كما ان الموقع متعدد الغات`,
+        description: `موقع للدردشات بين المستخدمين النشطين في الموقع
+        كما يحتوي على دردشات جماعيه
+        مع امكانيه فتح المايك للدردشات الصوتيه وارسال الرسائل الصوتيه
+        كما ان الموقع متعدد الغات`,
         link: "https://java.drdsh.net/",
         color1: "#ffc1c2",
         color2: "#3986b7",
@@ -108,7 +123,7 @@ export default {
           "/proj4/4.png",
           "/proj4/5.png",
         ],
-        name: "aimm",
+        name: "Aimm",
         description: `simple CSS project`,
         link: "https://aimm-2.netlify.app/",
         color1: "#c1a5d3",
@@ -279,6 +294,8 @@ main {
       padding: 2em;
       border-radius: 50px;
       box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+      min-width: min(90vw, 350px);
+}
     }
 
     > .bg * {
