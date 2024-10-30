@@ -295,7 +295,6 @@ main {
       border-radius: 50px;
       box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
       min-width: min(90vw, 350px);
-}
     }
 
     > .bg * {
