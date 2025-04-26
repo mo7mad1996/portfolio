@@ -33,12 +33,60 @@
 
 <script>
 import SwiperComponent from "@/components/lastworks/SwiperComponent.vue";
+import hfs from "~/assets/imgs/projects/hfs/logo.png";
+import ts from "~/assets/imgs/projects/TS/logo.png";
+import ramadan from "~/assets/imgs/projects/proj13/logo.svg";
 
 export default {
   name: "last-works",
 
   data: () => ({
     workes: [
+      {
+        logo: ramadan,
+        images: [
+          "/proj13/3.png",
+          "/proj13/5.png",
+          "/proj13/1.png",
+          "/proj13/2.png",
+        ],
+        name: "التحدي الرمضاني",
+        description: `موقع التحدي الرمضاني هو منصة خيرية تهدف إلى جمع التبرعات ودعم الحملات الإنسانية خلال شهر رمضان. يركز الموقع على مساعدة المجتمعات المحتاجة حول العالم من خلال مبادرات مثل توفير الغذاء، المأوى،
+         والرعاية الصحية للاجئين والمحرومين. ​`,
+        link: "https://ramadanchallenges.com/",
+        color1: "#262f26",
+        color2: "#9db523",
+      },
+      {
+        logo: ts,
+        images: [
+          "/TS/1.png",
+          "/TS/2.png",
+          "/TS/3.png",
+          "/TS/4.png",
+          "/TS/5.png",
+        ],
+        name: "Trading Society",
+        description: `TradingSociety.net is a platform dedicated to empowering individuals through education in trading, 
+        investment strategies, and personal development. It offers structured learning programs,
+         market analysis tools, and a supportive community to help users achieve financial independence.
+          The platform also provides a comprehensive calendar of events, 
+        including webinars and workshops, to keep members engaged and informed.​`,
+        link: "https://tradingsociety.net/",
+        color1: "#000000",
+        color2: "#d0a61d",
+      },
+      {
+        logo: hfs,
+        images: ["/hfs/1.png", "/hfs/2.png", "/hfs/3.png", "/hfs/4.png"],
+        name: "HFS",
+        description: `HFSSociety focuses on network marketing, trading, and providing global investment opportunities.
+        It aims to build a supportive community for individuals seeking to generate additional income through modern strategies.
+        The platform also offers training courses and strategies to help members succeed in digital entrepreneurship and investment.`,
+        link: "https://www.hfssociety.com/",
+        color1: "#0b080c",
+        color2: "#d467ab",
+      },
       {
         logo: "https://eltorgman.onrender.com/images/general/logo.svg",
         images: [
@@ -133,7 +181,7 @@ export default {
         logo: "https://todo-mohamed.netlify.app/favicon.ico",
         images: ["/proj10/1.png", "/proj10/2.png", "/proj10/3.png"],
         name: "Todo",
-        description: `Todo app with react.js, 
+        description: `Todo app with react.js,
         simple app to create a todo list with modern design,
         using localStorage to store the data`,
         link: "https://todo-mohamed.netlify.app/",

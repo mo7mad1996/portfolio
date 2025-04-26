@@ -37,7 +37,7 @@
     },
     {
       "name": "tailwindcss",
-      "degree": 9,
+      "degree": 10,
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/512px-Tailwind_CSS_Logo.svg.png",
       "URL": "https://tailwindcss.com/"
     },
@@ -79,7 +79,7 @@
     },
     {
       "name": "react.js",
-      "degree": 10,
+      "degree": 9,
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png",
       "URL": "https://reactjs.org/"
     },
@@ -109,7 +109,7 @@
     },
     {
       "name": "Vuetify",
-      "degree": 9.4,
+      "degree": 10,
       "image": "https://cdn.vuetifyjs.com/docs/images/logos/vuetify-logo-light-text.svg",
       "URL": "https://vuetifyjs.com/"
     },
@@ -127,7 +127,7 @@
     },
     {
       "name": "Angular",
-      "degree": 10,
+      "degree": 7,
       "image": "https://cdn.worldvectorlogo.com/logos/angular-icon.svg",
       "URL": "https://angular.dev/"
     },
@@ -139,13 +139,13 @@
     },
     {
       "name": "php",
-      "degree": 8.3,
+      "degree": 6.3,
       "image": "https://www.php.net/images/logos/php-logo.svg",
       "URL": "https://www.php.net/"
     },
     {
       "name": "Laravel",
-      "degree": 8.3,
+      "degree": 4.3,
       "image": "https://laravel.com/img/logomark.min.svg",
       "URL": "https://laravel.com/"
     },
