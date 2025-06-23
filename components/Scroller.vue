@@ -7,10 +7,11 @@ export default {
   name: "Scroller",
   data() {
     return {
-      active: true,
+      active: false,
     };
   },
   mounted() {
+    this.active = true;
     addEventListener("scroll", this.scroll);
   },
   beforeDestroy() {
@@ -36,11 +37,11 @@ export default {
   background: transparent;
 
   &::after {
+    content: "";
     height: 30px;
     background: white;
     width: 100%;
     display: block;
-    content: "";
     transform: translateY(-30px);
     animation: scroller ease 1s 4s 5;
   }

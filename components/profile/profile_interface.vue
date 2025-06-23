@@ -50,7 +50,7 @@ export default {
     z-index: 0;
     position: relative;
     pointer-events: none;
-    height: 100%;
+    height: 100dvh;
   }
 
   &::after,

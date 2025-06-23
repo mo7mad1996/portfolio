@@ -107,11 +107,16 @@ export default {
       }
     },
     scroll_up() {
-      if (this.is_in_anmation && this.hash != "#" + this.links[0]) {
-        this.$router.push(
-          "#" + this.links[this.links.indexOf(this.hash.substring(1)) - 1]
-        );
-        this.is_in_anmation = false;
+      if (this.is_in_anmation) {
+        if (this.hash != "#" + this.links[0]) {
+          const hash =
+            this.links[this.links.indexOf(this.hash.substring(1)) - 1];
+          this.$router.push("#" + hash);
+          this.is_in_anmation = false;
+        } else {
+          this.is_in_anmation = false;
+          window.location.reload();
+        }
       }
     },
     animationend() {

@@ -135,6 +135,10 @@ export default {
         left: 50%;
         text-align: center;
         position: absolute;
+
+        @media (max-width: 626px) {
+          padding: 30px;
+        }
       }
 
       .d-flex {

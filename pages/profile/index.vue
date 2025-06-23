@@ -19,13 +19,13 @@ export default {
   async asyncData({ $axios, req }) {
     const res = await $axios.get("/data.json");
 
-    let born = await new Date(res.data["Date of Birth"]).getFullYear(),
+    let born = new Date(res.data["Date of Birth"]).getFullYear(),
       naw = new Date().getFullYear(); // this year
 
     let Age = naw - born + " Years Old";
     let Experience = naw - res.data["Start learn"] + " Years";
 
-    const data = await Object.assign(res.data, {
+    const data = Object.assign(res.data, {
       Age,
       "Total Experience": Experience,
     });
@@ -74,10 +74,14 @@ export default {
     font-family: sans-serif;
     text-shadow: 0 0 12px #60b5b5, 0 0 22px #b4ecec;
     font-weight: bold;
-    margin: 1em 0;
+    margin: 0.3em 0;
     font-size: 5em;
     letter-spacing: 0.05em;
     text-transform: uppercase;
+
+    @media (max-width: 720px) {
+      font-size: 2em;
+    }
   }
 }
 </style>

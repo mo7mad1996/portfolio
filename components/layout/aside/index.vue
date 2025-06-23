@@ -2,9 +2,9 @@
   <aside>
     <nav>
       <nuxt-link
-        v-for="link in links"
+        v-for="(link, n) in links"
         :key="link"
-        :class="{ active: '#' + link == $route.hash }"
+        :class="{ active: $route.hash ? '#' + link == $route.hash : n == 0 }"
         :to="'/#' + link"
         :title="link.toUpperCase()"
       />
@@ -14,12 +14,12 @@
 
 <script>
 // vuex
-import { mapState } from 'vuex'
+import { mapState } from "vuex";
 
 export default {
-  name: 'AsideComponent',
-  computed: mapState(['links']),
-}
+  name: "AsideComponent",
+  computed: mapState(["links"]),
+};
 </script>
 
 <style lang="scss" scoped>
@@ -35,11 +35,16 @@ aside {
     a {
       display: block;
       width: 30px;
-      height: 3px;
-      margin: 30px 0;
-      background: white;
+      height: 30px;
       transition: 0.3s;
 
+      &::after {
+        content: "";
+        height: 3px;
+        display: block;
+        background: white;
+        width: 100%;
+      }
       &.active {
         width: 50px;
       }

@@ -10,12 +10,12 @@
 
 <script>
 // components
-import MenuComponent from '~/components/layout/header/menu'
+import MenuComponent from "~/components/layout/header/menu";
 
 export default {
-  name: 'HeaderComponent',
+  name: "HeaderComponent",
   components: { MenuComponent },
-}
+};
 </script>
 
 <style lang="scss" scoped>
@@ -31,6 +31,11 @@ header {
   top: 0;
   z-index: 6;
   left: 0;
+
+  @media (max-width: 720px) {
+    font-size: 20px;
+    padding: 20px;
+  }
 
   > * {
     display: block;

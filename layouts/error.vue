@@ -98,6 +98,10 @@ export default {
         text-shadow: 0px 2px 0px #8400ff;
         letter-spacing: 13px;
         margin: 0;
+
+        @media (max-width: 720px) {
+          font-size: 32px;
+        }
       }
     }
 

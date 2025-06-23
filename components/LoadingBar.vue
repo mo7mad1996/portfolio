@@ -40,6 +40,8 @@ export default {
 <style scoped lang="scss">
 .loading-page {
   position: fixed;
+  user-select: none;
+  pointer-events: none;
   inset: 0;
   z-index: 200;
   background-image: linear-gradient(#072142, #8c2b7a 42%, #ff4d5a);

@@ -1,20 +1,23 @@
 <template>
-  <div class="container">
-    <h2 class="title">Info</h2>
+  <div>
+    <div class="container">
+      <h2 class="title">Info</h2>
 
-    <div class="content">
-      <div>
-        <table class="table">
-          <tbody>
-            <tr v-for="key in info" :key="key">
-              <td>{{ key }}</td>
+      <div class="content">
+        <div>
+          <table class="table">
+            <tbody>
+              <tr v-for="key in info" :key="key">
+                <td>{{ key }}</td>
 
-              <td>: {{ data[key] }}</td>
-            </tr>
-          </tbody>
-        </table>
+                <td>: {{ data[key] }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
+    <hr class="container" />
   </div>
 </template>
 
@@ -33,6 +36,9 @@ export default {
   overflow-y: hidden;
   position: relative;
   font-size: 1.2em;
+  @media (max-width: 626px) {
+    padding-left: 1em;
+  }
 
   .table {
     border-collapse: collapse;
@@ -47,7 +53,18 @@ export default {
     td,
     th {
       padding: 0.3em;
+
+      @media (max-width: 626px) {
+        padding: 0.1em;
+      }
     }
   }
+}
+
+hr {
+  margin: 30px auto !important;
+  opacity: 0.5;
+  height: 1px;
+  padding: 0;
 }
 </style>

@@ -8,7 +8,7 @@
 
 <script>
 export default {
-  name: 'Pointer',
+  name: "Pointer",
   data() {
     return {
       active: false,
@@ -16,24 +16,24 @@ export default {
       opacity: true,
       x: 0,
       y: 0,
-    }
+    };
   },
   mounted() {
-    addEventListener('mousemove', (e) => {
-      this.opacity = true
-      this.active = true
-      this.x = e.clientX
-      this.y = e.clientY
-    })
+    addEventListener("mousemove", (e) => {
+      this.opacity = true;
+      this.active = true;
+      this.x = e.clientX;
+      this.y = e.clientY;
+    });
 
-    addEventListener('pointerup', () => (this.click = false))
-    addEventListener('pointerdown', () => (this.click = true))
-    addEventListener('touchstart', () => {
-      this.active = false
-      this.opacity = false
-    })
+    addEventListener("pointerup", () => (this.click = false));
+    addEventListener("pointerdown", () => (this.click = true));
+    addEventListener("touchstart", () => {
+      this.active = false;
+      this.opacity = false;
+    });
   },
-}
+};
 </script>
 
 <style scoped lang="scss">
@@ -46,12 +46,13 @@ export default {
   pointer-events: none;
   opacity: 0;
 
-  &.opacity {
-    opacity: 1;
+  @media (max-width: 720px) {
+    opacity: 0 !important;
   }
+
   &::after,
   &::before {
-    content: '';
+    content: "";
     display: block;
     position: absolute;
     top: 0;

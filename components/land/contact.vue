@@ -39,12 +39,12 @@ export default {
   data: () => ({
     social: [
       {
-        icon: "facebook-f",
-        link: "https://web.facebook.com/Mo7mad1996",
+        icon: "github",
+        link: "https://www.github.com/mo7mad1996",
       },
       {
         icon: "whatsapp",
-        link: "https://web.whatsapp.com/send?phone=+201063525389",
+        link: "https://wa.me/201063525389",
       },
       {
         icon: "linkedin",

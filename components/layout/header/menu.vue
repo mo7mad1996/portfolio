@@ -99,6 +99,10 @@ export default {
           padding: 0 10px;
           transform: translateY(100%);
 
+          @media (max-width: 726px) {
+            font-size: 2em;
+          }
+
           &::after,
           &::before {
             content: "";

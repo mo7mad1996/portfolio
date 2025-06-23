@@ -10,6 +10,7 @@
         placeholder="mail@example.com"
         autofocus
         required
+        inputmode="email"
       />
 
       <button :disabled="loading" :class="{ loading }">
@@ -123,13 +124,18 @@ export default {
     font-size: 2em;
     font-family: "Futura LT", sans-serif;
     font-weight: normal;
+
+    @media (max-width: 720px) {
+      margin: 10px auto;
+      font-size: 1.2em;
+    }
   }
 
   form {
     margin: auto;
     display: flex;
-    width: fit-content;
-    max-width: 90%;
+    max-width: 720px;
+    width: 90vw;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
       rgba(0, 0, 0, 0.3) 0px 8px 16px -8px,
       inset rgba(255, 255, 255, 0.3) 0 10px 10px;
@@ -141,6 +147,7 @@ export default {
 
     @media (max-width: 720px) {
       font-size: 1.2em;
+      padding: 0px 10px;
     }
 
     &:has(:focus) {
@@ -162,6 +169,7 @@ export default {
       border: none;
       padding: 20px 0px;
       flex: 1;
+      width: 0;
     }
     button {
       // height: 50px;
