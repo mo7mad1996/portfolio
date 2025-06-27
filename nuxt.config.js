@@ -68,7 +68,6 @@ module.exports = {
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     "~assets/scss/reset.scss",
-
     "~assets/scss/anmations.scss",
     "~assets/scss/styles.scss",
     "vue-toast-notification/dist/theme-sugar.css",

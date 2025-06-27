@@ -1,5 +1,6 @@
 <template>
   <div class="email">
+    <client-only>{{ email }}</client-only>
     <h3>Send an email</h3>
     <form @submit.prevent="submit" @touchstart="setS">
       <label for="to_email">to:</label>
@@ -47,7 +48,7 @@ export default {
           });
 
           this.loading = false;
-          this.to = "";
+          this.email = "";
         });
     },
 
@@ -55,7 +56,11 @@ export default {
       this.elementRef?.focus();
     },
   },
-  mounted() {},
+  mounted() {
+    navigator?.clipboard?.readText().then((v) => {
+      this.email = v;
+    });
+  },
 };
 </script>
 

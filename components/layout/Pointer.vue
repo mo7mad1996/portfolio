@@ -1,12 +1,15 @@
 <template>
-  <div class="pointer_area">
-    <!-- @mousemove="mousemove"
+  <div
+    class="pointer_area"
+    @mousemove="mousemove"
     @pointerup="pointerup"
     @pointerdown="pointerdown"
-    @touchstart="touchstart" -->
+    @touchstart="touchstart"
+  >
     <div class="app">
       <slot />
     </div>
+
     <div
       class="pointer"
       :class="{ active, click, opacity }"
@@ -95,9 +98,6 @@ export default {
 
     &.active {
       display: block;
-    }
-    &.opacity {
-      opacity: 1;
     }
     &.click::after {
       clip-path: polygon(0 0, 6px 18px, 10px 10px, 18px 6px);
