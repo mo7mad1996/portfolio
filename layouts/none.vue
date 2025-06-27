@@ -1,11 +1,10 @@
 <template>
-  <div>
-    <Pointer />
+  <Pointer>
     <Nuxt />
-  </div>
+  </Pointer>
 </template>
 
 <script>
-import Pointer from '@/components/layout/Pointer'
-export default { components: { Pointer } }
+import Pointer from "@/components/layout/Pointer";
+export default { components: { Pointer } };
 </script>

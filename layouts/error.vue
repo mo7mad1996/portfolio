@@ -1,20 +1,21 @@
 <template>
   <div @mousemove="mousemove">
-    <Pointer />
-    <div id="notfound">
-      <div class="notfound">
-        <div class="notfound-404">
-          <h1>
-            <span :style="`transform: translate(${mouse.x}px, ${mouse.y}px)`">
-              {{ error.statusCode }}
-            </span>
-          </h1>
-          <h2 v-if="error.statusCode == 404">Page Not found</h2>
-          <h2 v-else>{{ error.message }}</h2>
+    <Pointer>
+      <div id="notfound">
+        <div class="notfound">
+          <div class="notfound-404">
+            <h1>
+              <span :style="`transform: translate(${mouse.x}px, ${mouse.y}px)`">
+                {{ error.statusCode }}
+              </span>
+            </h1>
+            <h2 v-if="error.statusCode == 404">Page Not found</h2>
+            <h2 v-else>{{ error.message }}</h2>
+          </div>
+          <nuxt-link to="/">Homepage</nuxt-link>
         </div>
-        <nuxt-link to="/">Homepage</nuxt-link>
       </div>
-    </div>
+    </Pointer>
   </div>
 </template>
 

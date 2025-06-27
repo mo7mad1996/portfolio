@@ -7,12 +7,14 @@
   color: inherit;
   list-style: none;
   font-family: "Futura LT", sans-serif;
-  user-select: none;
   text-decoration: none;
   scrollbar-width: none;
   cursor: none;
 }
 
+input {
+  background: saddlebrown;
+}
 ::-webkit-scrollbar {
   display: none;
   width: 0;

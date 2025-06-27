@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "nodemon server",
+    "front": "nuxt dev",
     "build": "nuxt build",
     "start": "node server",
     "generate": "nuxt generate"
@@ -12,6 +13,7 @@
     "@fortawesome/free-brands-svg-icons": "^5.15.4",
     "@fortawesome/free-regular-svg-icons": "^5.15.4",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
+    "@fortawesome/vue-fontawesome": "^0.1.9",
     "@nuxtjs/axios": "^5.13.6",
     "@nuxtjs/fontawesome": "^1.1.2",
     "body-parser": "^1.20.2",
@@ -27,7 +29,7 @@
     "request-ip": "^3.3.0",
     "sass": "^1.32.12",
     "sass-loader": "^10.1.1",
-    "twilio": "^4.22.0"
+    "vue-toast-notification": "^1.0.1"
   },
   "devDependencies": {
     "eslint-config-prettier": "^8.3.0",

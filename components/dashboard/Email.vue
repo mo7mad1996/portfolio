@@ -1,14 +1,15 @@
 <template>
   <div class="email">
     <h3>Send an email</h3>
-    <form @submit.prevent="submit">
-      <label for="to">to:</label>
+    <form @submit.prevent="submit" @touchstart="setS">
+      <label for="to_email">to:</label>
       <input
-        v-model="to"
-        id="to"
+        v-model="email"
+        id="to_email"
         type="email"
         placeholder="mail@example.com"
         autofocus
+        ref="elementRef"
         required
         inputmode="email"
       />
@@ -21,22 +22,40 @@
 </template>
 
 <script>
+import * as d from "vue-toast-notification";
+
 export default {
   name: "Email",
   data() {
-    return { to: "", loading: false };
+    return { email: "", loading: false, elementRef: null };
   },
   methods: {
     submit() {
       this.loading = true;
 
-      this.$axios.post("/api/send_mail", { emails: [this.to] }).then((data) => {
-        console.log({ data });
-        this.loading = false;
-        this.to = "";
-      });
+      this.$axios
+        .post("/api/send_mail", { emails: [this.email] })
+        .then(({ data }) => {
+          const { accepted, rejected } = data;
+
+          accepted.forEach((element) => {
+            this.$toast.success(element);
+          });
+
+          rejected.forEach((element) => {
+            this.$toast.error(element);
+          });
+
+          this.loading = false;
+          this.to = "";
+        });
+    },
+
+    setS() {
+      this.elementRef?.focus();
     },
   },
+  mounted() {},
 };
 </script>
 
@@ -59,6 +78,7 @@ export default {
     content: "";
     background: #bda1ff;
     height: 120px;
+    pointer-events: none;
     display: block;
     clip-path: polygon(
       100% 0%,
@@ -152,7 +172,7 @@ export default {
 
     &:has(:focus) {
       box-shadow: rgba(153, 153, 239, 0.595) 0px 13px 27px -5px,
-        rgba(146, 146, 146, 0.89) 0px 8px 16px -8px,
+        rgba(99, 230, 230, 0.89) 0px 8px 16px -8px,
         inset rgba(255, 255, 255, 0.3) 0 4px 20px -6px,
         0 5px 60px -15px rgb(235, 206, 214);
     }

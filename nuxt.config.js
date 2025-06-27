@@ -11,6 +11,8 @@ module.exports = {
   // is in development mode?
   dev,
 
+  plugins: ["~/plugins/toast"],
+
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     titleTemplate: "%s | Mohamed Ibrahim",
@@ -66,15 +68,17 @@ module.exports = {
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     "~assets/scss/reset.scss",
+
     "~assets/scss/anmations.scss",
     "~assets/scss/styles.scss",
+    "vue-toast-notification/dist/theme-sugar.css",
   ],
 
   // loading component
   loading: "~/components/LoadingBar.vue",
 
   // Auto import components: https://go.nuxtjs.dev/config-components
-  components: true,
+  components: false,
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: ["@nuxtjs/fontawesome"],

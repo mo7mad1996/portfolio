@@ -44,7 +44,6 @@ import Contact from "@/components/land/contact";
 import AsideComponent from "@/components/layout/aside/index";
 
 // vuex
-import { mapState } from "vuex";
 import { gsap } from "gsap";
 
 export default {
@@ -60,10 +59,10 @@ export default {
         start: 0,
         end: 0,
       },
+      links: ["home", "works", "about", "contact"],
     };
   },
   computed: {
-    ...mapState(["links"]),
     hash: function () {
       return this.$route.hash;
     },

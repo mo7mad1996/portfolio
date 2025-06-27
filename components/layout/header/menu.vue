@@ -14,12 +14,10 @@
 
 <script>
 // vuex
-import { mapState } from "vuex";
 
 export default {
   name: "MenuComponent",
-  data: () => ({ open: false }),
-  computed: mapState(["links"]),
+  data: () => ({ open: false, links: ["home", "works", "about", "contact"] }),
 };
 </script>
 

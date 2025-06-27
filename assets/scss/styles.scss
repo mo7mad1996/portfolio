@@ -1,6 +1,8 @@
 html,
 body {
-  overflow: hidden;
+  &:not(:has(.email)) {
+    overflow: hidden;
+  }
 
   &:hover .pointer.opacity {
     opacity: 1;

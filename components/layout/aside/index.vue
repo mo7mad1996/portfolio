@@ -14,11 +14,12 @@
 
 <script>
 // vuex
-import { mapState } from "vuex";
 
 export default {
   name: "AsideComponent",
-  computed: mapState(["links"]),
+  data: () => ({
+    links: ["home", "works", "about", "contact"],
+  }),
 };
 </script>
 

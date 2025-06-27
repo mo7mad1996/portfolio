@@ -1,9 +1,10 @@
 <template>
   <div class="app">
-    <Pointer />
-    <HeaderComponent />
+    <Pointer>
+      <HeaderComponent />
 
-    <Nuxt />
+      <Nuxt />
+    </Pointer>
   </div>
 </template>
 

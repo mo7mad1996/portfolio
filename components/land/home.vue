@@ -188,6 +188,7 @@ span.t {
   position: relative;
   color: #ff4d5a;
   font-weight: 800;
+  // background: blue;
   letter-spacing: 1.5px;
   font-size: 30px;
   z-index: 2;
@@ -196,6 +197,13 @@ span.t {
   @media (max-width: 578px) {
     justify-content: end;
     padding: 10px;
+    font-size: 20px;
+
+    height: 40%;
+    bottom: 0;
+    justify-content: start;
+    width: 100dvw;
+    position: absolute;
   }
   @media (max-width: 370px) {
     display: none;
