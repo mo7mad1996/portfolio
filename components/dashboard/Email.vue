@@ -1,6 +1,5 @@
 <template>
   <div class="email">
-    <client-only>{{ email }}</client-only>
     <h3>Send an email</h3>
     <form @submit.prevent="submit" @touchstart="setS">
       <label for="to_email">to:</label>
