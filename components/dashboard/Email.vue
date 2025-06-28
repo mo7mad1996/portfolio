@@ -34,7 +34,7 @@ export default {
       this.loading = true;
 
       this.$axios
-        .post("/api/send_mail", { emails: [this.email] })
+        .post("/api/send_mail", { emails: this.email.split(",") })
         .then(({ data }) => {
           const { accepted, rejected } = data;
 
