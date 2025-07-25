@@ -1,19 +1,11 @@
-const port = process.env.PORT,
-  dev = process.env.NODE_ENV == "development";
-
 module.exports = {
   // server
-  server: {
-    host: "0.0.0.0",
-    port,
-  },
+  server: { port: process.env.PORT },
 
-  // is in development mode?
-  dev,
+  dev: process.env.NODE_ENV == "development",
 
   plugins: ["~/plugins/toast"],
 
-  // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     titleTemplate: "%s | Mohamed Ibrahim",
     title: "Portfolio",
@@ -21,12 +13,10 @@ module.exports = {
       lang: "en",
     },
     meta: [
+      { charset: "utf-8" },
       {
         name: "theme-color",
         content: "#072142",
-      },
-      {
-        charset: "utf-8",
       },
       {
         name: "viewport",
@@ -45,6 +35,8 @@ module.exports = {
         name: "keywords",
         content: `مبرمج، مصمم، تطوير المواقع، بناء موقع الكتروني، website، محمد ابراهيم، مصري، تصميم، برمجه، fullstack, frontend , backend, node.js, react.js, next.js, vue.js , nuxt.js`,
       },
+
+      // google seo
       {
         name: "google-site-verification",
         content: "cOJq1Ce5BlzFFqOji8aC1Sy_602TuQVawU6Uib6bSE0",
@@ -65,10 +57,9 @@ module.exports = {
     ],
   },
 
-  // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     "~assets/scss/reset.scss",
-    "~assets/scss/anmations.scss",
+    "~assets/scss/animations.scss",
     "~assets/scss/styles.scss",
     "vue-toast-notification/dist/theme-sugar.css",
   ],
@@ -76,11 +67,18 @@ module.exports = {
   // loading component
   loading: "~/components/LoadingBar.vue",
 
-  // Auto import components: https://go.nuxtjs.dev/config-components
-  components: false,
+  // Auto import components
+  components: true,
 
-  // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
+  modules: ["@nuxtjs/axios"],
   buildModules: ["@nuxtjs/fontawesome"],
+
+  postcss: {
+    plugins: {
+      tailwindcss: {},
+      autoprefixer: {},
+    },
+  },
 
   fontawesome: {
     component: "fa",
@@ -91,18 +89,11 @@ module.exports = {
     },
   },
 
-  // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [
-    // https://go.nuxtjs.dev/axios
-    "@nuxtjs/axios",
-  ],
-
-  // Axios module configuration: https://go.nuxtjs.dev/config-axios
-
   axios: {
     baseURL: process.env.AXIOS_BASEURL,
   },
 
   telemetry: false,
+
   target: "static",
 };

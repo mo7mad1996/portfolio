@@ -1,0 +1,86 @@
+@keyframes aAnmation {
+  to {
+    transform: translateY(0em);
+  }
+}
+
+@keyframes openMenu {
+  40% {
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 0 20%);
+  }
+  100% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
+@keyframes fromLeft {
+  from {
+    left: -100%;
+  }
+}
+
+@keyframes fromRight {
+  from {
+    right: -100%;
+  }
+}
+
+@keyframes imganmation {
+  0% {
+    right: 100%;
+  }
+  50% {
+    left: 0;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+@keyframes scroll {
+  from,
+  to {
+    transform: translateY(0rem);
+  }
+
+  50% {
+    transform: translateY(1rem);
+  }
+}
+
+@keyframes sendemail {
+  0% {
+    scale: 1;
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+  80% {
+    scale: 0.5;
+  }
+  100% {
+    opacity: 0;
+    scale: 0.5;
+    transform: translate(100vh, -500px);
+  }
+}
+
+@keyframes scroller {
+  to {
+    transform: translateY(200px);
+  }
+}
+
+@keyframes scrollerContainer {
+  0% {
+    background: transparent;
+  }
+  5% {
+    background: gray;
+  }
+  95% {
+    background: gray;
+  }
+  100% {
+    background: transparent;
+  }
+}

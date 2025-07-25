@@ -15,16 +15,16 @@
     autoplay-disable-on-interaction="false"
   >
     <swiper-slide v-for="n in images" :key="n">
-      <img :src="require(`~/assets/imgs/projects${n}`)" />
+      <img :src="require(`~/assets/imgs/projects${n}`)" loading="lazy" />
     </swiper-slide>
   </swiper-container>
 </template>
 
 <script>
 export default {
-  name: 'SwiperComponent',
-  props: ['images'],
-}
+  name: "SwiperComponent",
+  props: ["images"],
+};
 </script>
 
 <style scoped>

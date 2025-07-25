@@ -1,12 +1,9 @@
 // packages
-// const geoip = require("geoip-lite");
 const nodemailer = require("nodemailer");
 const requestIP = require("request-ip");
 const axios = require("axios");
 
 // constants
-const accountSid = process.env.TWILIO_SID;
-const authToken = process.env.TWILIO_TOKEN;
 const api_key = process.env.IP2LOCATION_API_KEY;
 
 module.exports = (app) => {
@@ -42,7 +39,7 @@ async function notification_me(req, msg, next) {
   // create text message
   const text = make_text(data, msg);
 
-  send_SMS(text);
+  useEmail(text);
   next();
 }
 function make_text(data, msg) {
@@ -61,18 +58,6 @@ function make_text(data, msg) {
     <li><a href='${google_map}'>location</a></li>
   </ul>
   `;
-}
-
-async function send_SMS(msg) {
-  // // don't use twilio there is no Adequate
-  // const client = require("twilio")(accountSid, authToken);
-  // return await client.messages.create({
-  //   body: msg,
-  //   from: "+12292644354",
-  //   to: "+201063525389",
-  // });
-
-  useEmail(msg);
 }
 
 const transporter = nodemailer.createTransport({

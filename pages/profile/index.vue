@@ -9,6 +9,7 @@
 </template>
 
 <script>
+// components
 import ProfileInterface from "~/components/profile/profile_interface";
 import Info from "~/components/profile/info";
 import ProfileSkills from "~/components/profile/skills";
@@ -16,7 +17,7 @@ import Resume from "~/components/profile/resume";
 import CustomFooter from "~/components/profile/footer";
 
 export default {
-  async asyncData({ $axios, req }) {
+  async asyncData({ $axios }) {
     const res = await $axios.get("/data.json");
 
     let born = new Date(res.data["Date of Birth"]).getFullYear(),
@@ -41,10 +42,6 @@ export default {
       "Mobile num",
       "Total Experience",
     ],
-    data: {
-      t_skills: [],
-      p_skills: [],
-    },
   }),
   components: {
     ProfileInterface,

@@ -4,8 +4,10 @@
       <nuxt-link
         v-for="(link, n) in links"
         :key="link"
-        :class="{ active: $route.hash ? '#' + link == $route.hash : n == 0 }"
-        :to="'/#' + link"
+        :class="{
+          active: $route.query.section ? link == $route.query.section : n == 0,
+        }"
+        :to="'/?section=' + link"
         :title="link.toUpperCase()"
       />
     </nav>
@@ -34,20 +36,24 @@ aside {
     width: 50px;
 
     a {
-      display: block;
-      width: 30px;
-      height: 30px;
-      transition: 0.3s;
+      display: flex;
+      align-items: center;
+      padding: 15px 0;
 
       &::after {
         content: "";
+        transition: 0.3s;
+        width: 30px;
         height: 3px;
         display: block;
+        border-radius: 30px;
         background: white;
-        width: 100%;
       }
-      &.active {
+      &.active::after {
         width: 50px;
+      }
+      &:hover::after {
+        opacity: 0.6;
       }
     }
   }

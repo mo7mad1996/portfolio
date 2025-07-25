@@ -1,5 +1,5 @@
 <template>
-  <section id="contact" :class="{ active: $route.hash == '#contact' }">
+  <section id="contact" :class="{ active: $route.query.section == 'contact' }">
     <div class="text">
       <h1 @animationend="animationend">contact</h1>
       <p>

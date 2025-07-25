@@ -5,7 +5,7 @@
     <menu v-if="open">
       <ul>
         <li v-for="link in links" :key="link">
-          <nuxt-link :to="'/#' + link">{{ link }}</nuxt-link>
+          <nuxt-link :to="'/?section=' + link">{{ link }}</nuxt-link>
         </li>
       </ul>
     </menu>

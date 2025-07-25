@@ -21,8 +21,8 @@
       </div>
     </div>
 
-    <!-- start contant -->
-    <div class="contant">
+    <!-- start content -->
+    <div class="content">
       <AsideComponent />
 
       <main ref="content">
@@ -36,7 +36,7 @@
 </template>
 
 <script>
-// componens
+// components
 import Home from "@/components/land/home";
 import Works from "@/components/land/works";
 import About from "@/components/land/about";
@@ -49,22 +49,24 @@ import { gsap } from "gsap";
 export default {
   scrollToTop: true,
   data() {
+    const links = ["home", "works", "about", "contact"];
     return {
       mouse: {
         x: -1,
         y: -1,
       },
-      is_in_anmation: false,
+      is_in_animation: false,
       Touch: {
         start: 0,
         end: 0,
       },
-      links: ["home", "works", "about", "contact"],
+      links,
+      section: Math.max(0, links.indexOf(this.$route.query.section)),
     };
   },
   computed: {
-    hash: function () {
-      return this.$route.hash;
+    target_id() {
+      return this.links[this.section];
     },
   },
   methods: {
@@ -95,36 +97,33 @@ export default {
       }
     },
     scroll_down() {
-      if (
-        this.is_in_anmation &&
-        this.hash != "#" + this.links[this.links.length - 1]
-      ) {
-        this.$router.push(
-          "#" + this.links[this.links.indexOf(this.hash.substring(1)) + 1]
-        );
-        this.is_in_anmation = false;
+      if (this.is_in_animation) return;
+
+      if (this.section < this.links.length - 1) {
+        this.section += 1;
+        this.is_in_animation = true;
       }
     },
     scroll_up() {
-      if (this.is_in_anmation) {
-        if (this.hash != "#" + this.links[0]) {
-          const hash =
-            this.links[this.links.indexOf(this.hash.substring(1)) - 1];
-          this.$router.push("#" + hash);
-          this.is_in_anmation = false;
-        } else {
-          this.is_in_anmation = false;
-          window.location.reload();
-        }
+      if (this.is_in_animation) return;
+
+      if (this.section) {
+        this.is_in_animation = true;
+        this.section -= 1;
+      } else {
+        this.is_in_animation = true; // to stop many times reload
+        window.location.reload();
       }
     },
     animationend() {
-      this.is_in_anmation = true;
+      this.is_in_animation = false;
     },
     startScroll() {
-      let scroll_to = document.getElementById(
-        this.hash.substring(1)
-      )?.offsetTop;
+      if (!process.client) return;
+      const target_section = document.getElementById(this.target_id);
+
+      if (!target_section) return;
+      const scroll_to = target_section.offsetTop;
 
       // this.$refs.content.scrollTo(0, scroll_to);
       gsap.to(this.$refs.content, {
@@ -133,23 +132,41 @@ export default {
         ease: "expoScale(0.5,7,none)",
       });
     },
+    changeQuery() {
+      const currentQuery = this.$route.query.section;
+      const newQuery = this.links[this.section];
+
+      if (currentQuery == newQuery) return;
+      this.$router.replace({
+        query: {
+          section: this.links[this.section],
+        },
+      });
+    },
   },
   mounted() {
-    if (this.hash == "") {
-      this.$router.push("#home");
-    }
-    this.startScroll();
-
     this.mouse = {
       x: 0,
       y: 0,
     };
   },
   watch: {
-    hash() {
-      // document.querySelector(this.hash).scrollIntoView();
+    section: {
+      handler() {
+        this.changeQuery();
+        this.startScroll();
+      },
+      immediate: true,
+    },
+    $route: {
+      handler(v) {
+        if (!v || !v.query.section) return;
 
-      this.startScroll();
+        const section = v.query.section;
+        this.section = this.links.indexOf(section);
+      },
+      immediate: true,
+      deep: true,
     },
   },
 
@@ -227,7 +244,7 @@ export default {
     }
   }
 
-  .contant {
+  .content {
     display: flex;
     height: 100%;
 

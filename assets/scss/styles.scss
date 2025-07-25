@@ -111,14 +111,17 @@ section {
     }
 
     a.btn {
-      background: #ff4d5a;
+      background: #ff2e3c;
       text-align: center;
       display: inline-block;
       border-radius: 2em;
       padding: 1em 2em;
       transition: 0.2s;
       width: 220px;
-      color: rgb(255, 205, 255);
+      position: relative;
+      color: white;
+      font-weight: bold;
+      overflow: hidden;
 
       @media (max-width: 976px) {
         width: 170px;
@@ -128,10 +131,37 @@ section {
       @media (max-width: 720px) {
         margin-top: 1em;
       }
+
+      span {
+        position: relative;
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        transition: inset 0.5s, border-radius 0.5s, transform 0.5s;
+
+        background: #09213d;
+        inset: 1px 50%;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+        border-top-right-radius: 50%;
+        border-top-left-radius: 100px 50%;
+        transform: translateY(150%);
+        margin: auto;
+      }
+
       &:hover {
-        color: white;
-        background: #ff2e3c;
-        box-shadow: 0 0 2px #ff2e3c, 0 0 6px #ff2e3c, 0 0 16px #ff2e3c;
+        &::before {
+          transition: inset 0.3s, border-radius 0.3s, transform 0s;
+          inset: 1px;
+
+          border-radius: 2em;
+          transform: translateY(0%);
+
+          // color: white;
+          // background: #ff2e3c;
+        }
+        box-shadow: 0 0 22px #ff2e3c, 0 0 1px #ff2e3c;
       }
     }
   }

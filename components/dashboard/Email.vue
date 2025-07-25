@@ -6,7 +6,6 @@
       <input
         v-model="email"
         id="to_email"
-        type="email"
         placeholder="mail@example.com"
         autofocus
         ref="elementRef"
