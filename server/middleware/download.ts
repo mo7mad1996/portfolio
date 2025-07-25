@@ -1,8 +1,5 @@
-import type { IncomingMessage } from "http";
-import requestIP from "request-ip";
 import axios from "axios";
 import nodemailer from "nodemailer";
-import { getRequestIP } from "h3";
 
 // read .env file
 const env = useRuntimeConfig();
@@ -10,7 +7,6 @@ const api_key = env.IP2LOCATION_API_KEY;
 
 export default defineEventHandler(async (event) => {
   const { req } = event.node;
-
   if (env.NODE_ENV == "development") return;
 
   // 1) Get IP
