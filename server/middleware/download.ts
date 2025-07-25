@@ -15,30 +15,23 @@ export default defineEventHandler(async (event) => {
   if (!ip) return;
 
   // define middleware path
-  if (req.url === "/download/Mohamed-Ibrahim.pdf") {
+  switch (req.url) {
+    case "/download/Mohamed-Ibrahim.pdf":
+      // send notification
+      await notification_me(ip, "حد نزل الCV");
+      break;
+
+    default:
+      await notification_me(ip, `وصل هنا ${req.url}`);
   }
-  // send notification
-  await notification_me(ip);
 });
 
-async function notification_me(ip: string) {
+async function notification_me(ip: string, msg: string) {
   // 2) Get location data for IP
   let url = `https://api.ip2location.io/?key=${api_key}&ip=${ip}&format=json`;
   const { data } = await axios.get(url);
 
-  // await useEmail(make_text(data, "حد نزل ملف السيره الذاتيه"));
-  await useEmail(
-    make_text(
-      {
-        ip: "123",
-        region_name: "gap",
-        country_name: "ass",
-        latitude: 1,
-        longitude: 1,
-      },
-      "حد نزل ملف السيره الذاتيه"
-    )
-  );
+  await useEmail(make_text(data, msg));
 }
 
 function make_text(data: any, msg: string) {
