@@ -1,20 +1,75 @@
-# My personal portfolio
+# Nuxt Minimal Starter
 
-This site built for collect all projects in one place to display them in a simpler and easier to access.
+Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
-It contains all the necessary information about me, I am Mohamed Ibrahim, and this application was created to cover the implementation of this purpose and I hope that it will be useful to you.
+## Setup
 
-### Live Demo :
+Make sure to install dependencies:
 
-You can find the demo for this project in [this link](https://portfolio-mohamed-ibrahim.onrender.com/).
+```bash
+# npm
+npm install
 
----
+# pnpm
+pnpm install
 
-> How to use this code
+# yarn
+yarn install
 
-```bat
-λ npm install
-λ npm run dev
+# bun
+bun install
 ```
 
-![Mohamed Ibrahim](https://portfolio-mohamed-ibrahim.onrender.com)
+## Development Server
+
+Start the development server on `http://localhost:3000`:
+
+```bash
+# npm
+npm run dev
+
+# pnpm
+pnpm dev
+
+# yarn
+yarn dev
+
+# bun
+bun run dev
+```
+
+## Production
+
+Build the application for production:
+
+```bash
+# npm
+npm run build
+
+# pnpm
+pnpm build
+
+# yarn
+yarn build
+
+# bun
+bun run build
+```
+
+Locally preview production build:
+
+```bash
+# npm
+npm run preview
+
+# pnpm
+pnpm preview
+
+# yarn
+yarn preview
+
+# bun
+bun run preview
+```
+
+Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.

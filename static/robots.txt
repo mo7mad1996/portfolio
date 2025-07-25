@@ -1,2 +1,0 @@
-User-agent: *
-Sitemap: https://portfolio-mohamed-ibrahim.onrender.com/sitemap.xml
