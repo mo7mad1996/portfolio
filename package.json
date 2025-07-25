@@ -33,8 +33,5 @@
   "engines": {
     "node": "16.18.0",
     "npm": "8.19.2"
-  },
-  "devDependencies": {
-    "tailwindcss": "^3.4.17"
   }
 }
