@@ -5,10 +5,13 @@ import nodemailer from "nodemailer";
 import { getRequestIP } from "h3";
 
 // read .env file
-const api_key = useRuntimeConfig().IP2LOCATION_API_KEY;
+const env = useRuntimeConfig();
+const api_key = env.IP2LOCATION_API_KEY;
 
 export default defineEventHandler(async (event) => {
   const { req } = event.node;
+
+  if (env.NODE_ENV == "development") return;
 
   // 1) Get IP
   const ip = getRequestIP(event);
@@ -57,8 +60,8 @@ const transporter = nodemailer.createTransport({
   port: 465,
   secure: true,
   auth: {
-    user: useRuntimeConfig().EMAIL_USER,
-    pass: useRuntimeConfig().EMAIL_PASS,
+    user: env.EMAIL_USER,
+    pass: env.EMAIL_PASS,
   },
 });
 
