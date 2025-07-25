@@ -9,24 +9,22 @@ const api_key = useRuntimeConfig().IP2LOCATION_API_KEY;
 
 export default defineEventHandler(async (event) => {
   const { req } = event.node;
-  const localIP = getRequestIP(event);
 
-  console.log(localIP);
+  // 1) Get IP
+  const ip = getRequestIP(event);
+  if (!ip) return;
+
   // define middleware path
-  // send notification
-  await notification_me(req);
   if (req.url === "/download/Mohamed-Ibrahim.pdf") {
   }
+  // send notification
+  await notification_me(ip);
 });
 
-async function notification_me(req: IncomingMessage) {
-  // 1) Get IP
-  const ip = requestIP.getClientIp(req);
-
-  console.log({ ip });
+async function notification_me(ip: string) {
   // 2) Get location data for IP
   let url = `https://api.ip2location.io/?key=${api_key}&ip=${ip}&format=json`;
-  //   const { data } = await axios.get(url);
+  const { data } = await axios.get(url);
 
   // await useEmail(make_text(data, "حد نزل ملف السيره الذاتيه"));
   await useEmail(

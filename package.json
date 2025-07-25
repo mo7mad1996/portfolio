@@ -16,5 +16,9 @@
     "request-ip": "^3.3.0",
     "vue": "^3.5.17",
     "vue-router": "^4.5.1"
+  },
+  "devDependencies": {
+    "@types/nodemailer": "^6.4.17",
+    "@types/request-ip": "^0.0.41"
   }
 }
