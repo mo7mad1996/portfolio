@@ -1,0 +1,360 @@
+{
+  "Name": "Mohamed Ibrahim Abd elmoghny",
+  "Date of Birth": "20 May 1996",
+  "Height": 185,
+  "weight": "85",
+  "University degree": "Computer Scince",
+  "driving license": "Private",
+  "military service": "Exemption",
+  "Social status": "Unmarried",
+  "Mobile num": "(+2) 0106 352 5389",
+  "Start learn": 2018,
+  "Smoking": "No",
+  "p_skills": [],
+  "t_skills": [
+    {
+      "name": "HTML",
+      "degree": 10,
+      "image": "https://www.w3.org/html/logo/downloads/HTML5_Logo.svg",
+      "URL": "https://www.w3schools.com/html/html_intro.asp"
+    },
+    {
+      "name": "CSS",
+      "degree": 10,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/CSS.3.svg/730px-CSS.3.svg.png",
+      "URL": "https://www.w3schools.com/css/css_intro.asp"
+    },
+    {
+      "name": "Sass",
+      "degree": 10,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Sass_Logo_Color.svg/2560px-Sass_Logo_Color.svg.png",
+      "URL": "https://sass-lang.com/"
+    },
+    {
+      "name": "tailwindcss",
+      "degree": 10,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/512px-Tailwind_CSS_Logo.svg.png",
+      "URL": "https://tailwindcss.com/"
+    },
+    {
+      "name": "Bootstrap",
+      "degree": 9,
+      "image": "https://cdn.freelogovectors.net/wp-content/uploads/2016/12/bootstrap-logo.png",
+      "URL": "https://getbootstrap.com/"
+    },
+    {
+      "name": "JavaScript",
+      "degree": 10,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1024px-Unofficial_JavaScript_logo_2.svg.png",
+      "URL": "https://www.w3schools.com/js/js_intro.asp"
+    },
+    {
+      "name": "jQuery",
+      "degree": 8,
+      "image": "https://www.joykal.com/wp-content/uploads/2019/09/jquery.png",
+      "URL": "https://jquery.com/"
+    },
+    {
+      "name": "TypeScript",
+      "degree": 10,
+      "image": "https://cdn.worldvectorlogo.com/logos/typescript.svg",
+      "URL": "https://www.typescriptlang.org/"
+    },
+    {
+      "name": "three.js",
+      "degree": 8.8,
+      "image": "https://global.discourse-cdn.com/standard17/uploads/threejs/original/2X/b/be2f75f72751c11cbe1593c69a99a52900bf12cb.svg",
+      "URL": "https://threejs.org/"
+    },
+    {
+      "name": "Ajax & axios",
+      "degree": 10,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/AJAX_logo_by_gengns.svg/1280px-AJAX_logo_by_gengns.svg.png",
+      "URL": "https://www.w3schools.com/js/js_ajax_intro.asp"
+    },
+    {
+      "name": "react.js",
+      "degree": 9,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png",
+      "URL": "https://reactjs.org/"
+    },
+    {
+      "name": "NextJs",
+      "degree": 10,
+      "image": "https://static-00.iconduck.com/assets.00/nextjs-icon-512x309-yynfidez.png",
+      "URL": "https://www.nextjs.org/"
+    },
+    {
+      "name": "Redux",
+      "degree": 8,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/4/49/Redux.png",
+      "URL": "https://redux.js.org/"
+    },
+    {
+      "name": "Vue.js",
+      "degree": 10,
+      "image": "https://ourcodeworld.com/public-media/gallery/vuejs2-5f9f2d1b78215.png",
+      "URL": "https://vuejs.org/"
+    },
+    {
+      "name": "NuxtJs",
+      "degree": 10,
+      "image": "https://nuxtjs.org/design-kit/colored-text.svg",
+      "URL": "https://www.nuxtjs.org/"
+    },
+    {
+      "name": "Vuetify",
+      "degree": 10,
+      "image": "https://cdn.vuetifyjs.com/docs/images/logos/vuetify-logo-light-text.svg",
+      "URL": "https://vuetifyjs.com/"
+    },
+    {
+      "name": "Vuex",
+      "degree": 10,
+      "image": "https://user-images.githubusercontent.com/7110136/29002857-9e802f08-7ab4-11e7-9c31-604b5d0d0c19.png",
+      "URL": "https://vuex.vuejs.org/"
+    },
+    {
+      "name": "Pinia",
+      "degree": 10,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Pinialogo.svg/319px-Pinialogo.svg.png",
+      "URL": "https://pinia.vuejs.org/"
+    },
+    {
+      "name": "Angular",
+      "degree": 7,
+      "image": "https://cdn.worldvectorlogo.com/logos/angular-icon.svg",
+      "URL": "https://angular.dev/"
+    },
+    {
+      "name": "git",
+      "degree": 9.9,
+      "image": "https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png",
+      "URL": "https://git-scm.com/"
+    },
+    {
+      "name": "php",
+      "degree": 6.3,
+      "image": "https://www.php.net/images/logos/php-logo.svg",
+      "URL": "https://www.php.net/"
+    },
+    {
+      "name": "Laravel",
+      "degree": 4.3,
+      "image": "https://laravel.com/img/logomark.min.svg",
+      "URL": "https://laravel.com/"
+    },
+    {
+      "name": "Node.js",
+      "degree": 10,
+      "image": "https://seeklogo.com/images/N/nodejs-logo-FBE122E377-seeklogo.com.png",
+      "URL": "https://nodejs.org/"
+    },
+    {
+      "name": "mongoDB",
+      "degree": 8.8,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/MongoDB_Logo.svg/512px-MongoDB_Logo.svg.png",
+      "URL": "https://www.mongodb.com/"
+    }
+  ],
+  "projects": [
+    {
+      "logo": "~/assets/imgs/projects/proj13/logo.svg",
+
+      "images": [
+        "/proj13/3.png",
+        "/proj13/5.png",
+        "/proj13/1.png",
+        "/proj13/2.png"
+      ],
+      "name": "التحدي الرمضاني",
+      "description": "موقع التحدي الرمضاني هو منصة خيرية تهدف إلى جمع التبرعات ودعم الحملات الإنسانية خلال شهر رمضان. يركز الموقع على مساعدة المجتمعات المحتاجة حول العالم من خلال مبادرات مثل توفير الغذاء، المأوى، والرعاية الصحية للاجئين والمحرومين.",
+      "link": "https://ramadanchallenges.com/",
+      "color1": "#367629",
+      "color2": "#2c5946"
+    },
+    {
+      "logo": "~/assets/imgs/projects/TS/logo.png",
+      "images": [
+        "/TS/1.png",
+        "/TS/2.png",
+        "/TS/3.png",
+        "/TS/4.png",
+        "/TS/5.png"
+      ],
+      "name": "Trading Society",
+      "description": "منصة تعليمية متخصصة في التداول والاستثمار والتنمية الشخصية، تقدم أدوات تحليل وبرامج تدريب وجدول فعاليات للمجتمع.",
+      "link": "https://tradingsociety.net/",
+      "color1": "#000000",
+      "color2": "#d0a61d"
+    },
+    {
+      "logo": "~/assets/imgs/projects/hfs/logo.png",
+      "images": ["/hfs/1.png", "/hfs/2.png", "/hfs/3.png", "/hfs/4.png"],
+      "name": "HFS",
+      "description": "منصة تركز على التسويق الشبكي والتداول وتقديم فرص استثمار عالمية مع دورات تدريبية للمشاريع الرقمية.",
+      "link": "https://www.hfssociety.com/",
+      "color1": "#0b080c",
+      "color2": "#d467ab"
+    },
+    {
+      "logo": "https://eltorgman.vercel.app/images/general/logo.svg",
+      "images": [
+        "/proj1/1.png",
+        "/proj1/2.png",
+        "/proj1/3.png",
+        "/proj1/4.png",
+        "/proj1/5.png",
+        "/proj1/6.png"
+      ],
+      "name": "الترجمان",
+      "description": "موقع عصري لكتابة المقالات والمواضيع المتنوعة مع متابعة أسعار بعض السلع.",
+      "link": "https://eltorgman.vercel.app/",
+      "color1": "#f3f3f3",
+      "color2": "#1a2b6e"
+    },
+    {
+      "logo": "~/assets/imgs/projects/proj2/logo.svg",
+      "images": [
+        "/proj2/1.png",
+        "/proj2/2.png",
+        "/proj2/3.png",
+        "/proj2/4.png",
+        "/proj2/5.png"
+      ],
+      "name": "SNAKEBAR",
+      "description": "لعبة الثعبان التقليدية ولكن بإمكانية اللعب الجماعي.",
+      "link": "https://snakebar.netlify.app/",
+      "color1": "#42158f",
+      "color2": "#9175bf"
+    },
+    {
+      "logo": "~/assets/imgs/projects/proj12/logo.svg",
+      "images": ["/proj12/1.png", "/proj12/2.png", "/proj12/3.png"],
+      "name": "Calculator Drag and Drop",
+      "description": "آلة حاسبة بواجهة مرنة يمكن تحريك مكوناتها وتعديلها بسهولة.",
+      "link": "https://calculator-drag-and-drop.netlify.app/",
+      "color1": "#0099ff",
+      "color2": "#ffffff"
+    },
+    {
+      "logo": "~/assets/imgs/projects/proj11/logo.png",
+      "images": [
+        "/proj11/1.png",
+        "/proj11/2.png",
+        "/proj11/3.png",
+        "/proj11/4.png",
+        "/proj11/5.png"
+      ],
+      "name": "دردشات ومكالمات",
+      "description": "موقع للدردشة الجماعية مع دعم المكالمات الصوتية والرسائل الصوتية بعدة لغات.",
+      "link": "https://java.drdsh.net/",
+      "color1": "#ffc1c2",
+      "color2": "#3986b7"
+    },
+    {
+      "logo": "~/assets/imgs/projects/proj3/logo.png",
+      "images": ["/proj3/1.png", "/proj3/2.png", "/proj3/3.png"],
+      "name": "دردشة",
+      "description": "تطبيق دردشة آمن وسري بدون تسجيل دخول، لا يحتفظ بأي بيانات.",
+      "link": "https://caht.vercel.app/",
+      "color1": "#69e1ba",
+      "color2": "#e3e3e3"
+    },
+    {
+      "logo": "https://aimm-2.netlify.app/favicon.ico",
+      "images": [
+        "/proj4/1.png",
+        "/proj4/2.png",
+        "/proj4/3.png",
+        "/proj4/4.png",
+        "/proj4/5.png"
+      ],
+      "name": "Aimm",
+      "description": "مشروع CSS بسيط بتصميم جمالي متناسق.",
+      "link": "https://aimm-2.netlify.app/",
+      "color1": "#c1a5d3",
+      "color2": "#66afe0"
+    },
+    {
+      "logo": "https://todo-mohamed.netlify.app/favicon.ico",
+      "images": ["/proj10/1.png", "/proj10/2.png", "/proj10/3.png"],
+      "name": "Todo",
+      "description": "تطبيق قائمة مهام بسيط باستخدام React مع تخزين البيانات في localStorage.",
+      "link": "https://todo-mohamed.netlify.app/",
+      "color1": "#e99e97",
+      "color2": "#59498c"
+    },
+    {
+      "logo": "https://isometric.netlify.app/img/isometric__logo.png",
+      "images": [
+        "/proj5/1.png",
+        "/proj5/2.png",
+        "/proj5/3.png",
+        "/proj5/4.png"
+      ],
+      "name": "Isometric",
+      "description": "مشروع CSS بسيط يعتمد على التصميم الإيزومتري.",
+      "link": "https://isometric.netlify.app/",
+      "color1": "#b4b4ff",
+      "color2": "#031cb1"
+    },
+    {
+      "logo": "https://admiring-khorana-290474.netlify.app/Integration-logo.png",
+      "images": ["/proj6/1.png", "/proj6/2.png", "/proj6/3.png"],
+      "name": "Integration",
+      "description": "واجهة عرض تفاعلية لدورات تدريبية باستخدام مجسمات ثلاثية الأبعاد.",
+      "link": "https://admiring-khorana-290474.netlify.app/",
+      "color1": "#034047",
+      "color2": "#261e23"
+    },
+    {
+      "logo": "https://d33wubrfki0l68.cloudfront.net/f1f475a6fda1c2c4be4cac04033db5c3293032b4/513a4/assets/images/markdown-mark-white.svg",
+      "images": [
+        "/proj9/1.png",
+        "/proj9/2.png",
+        "/proj9/3.png",
+        "/proj9/4.png"
+      ],
+      "name": "Preview Markdown",
+      "description": "أداة لعرض ملفات Markdown بشكل مباشر كما تظهر في GitHub.",
+      "link": "https://preview-markdown-1.netlify.app/",
+      "color1": "#ffffff",
+      "color2": "#f1f5f8"
+    },
+    {
+      "logo": "https://numlock.vercel.app/imgs/9.jpg",
+      "images": [
+        "/proj8/1.png",
+        "/proj8/2.png",
+        "/proj8/3.png",
+        "/proj8/4.png",
+        "/proj8/5.png",
+        "/proj8/6.png"
+      ],
+      "name": "Numlock",
+      "description": "موقع لتحويل هاتفك إلى لوحة أرقام تعمل مع أي جهاز لا يحتوي على Numpad.",
+      "link": "https://numlock.vercel.app/",
+      "color1": "#64046f",
+      "color2": "#64046f"
+    },
+    {
+      "logo": "~/assets/imgs/projects/proj7/logo.png",
+      "images": [
+        "/proj7/1.jpeg",
+        "/proj7/2.jpeg",
+        "/proj7/3.jpeg",
+        "/proj7/4.jpeg",
+        "/proj7/5.jpeg",
+        "/proj7/6.jpeg",
+        "/proj7/7.jpeg",
+        "/proj7/8.jpeg"
+      ],
+      "name": "برنامج الفحص",
+      "description": "نظام متخصص في تسجيل تقارير فحص السيارات ومتابعة حركتها داخل المركز.",
+      "link": "",
+      "color1": "#01bebb",
+      "color2": "#323298"
+    }
+  ]
+}
