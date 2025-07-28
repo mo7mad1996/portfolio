@@ -1,3 +1,14 @@
+<script setup lang="ts">
+defineProps(["path"]);
+
+const intro = ref<HTMLElement | null>(null);
+
+const scroll = () =>
+  intro.value?.nextElementSibling?.scrollIntoView({
+    behavior: "smooth",
+  });
+</script>
+
 <template>
   <div class="profile_interface" ref="intro" @click="scroll">
     <ProfileClouds>
@@ -10,22 +21,6 @@
     <Scroller />
   </div>
 </template>
-
-<script>
-export default {
-  name: "ProfileInterface",
-  props: ["path"],
-  methods: {
-    scroll() {
-      if (import.meta.client) {
-        this.$refs.intro.nextElementSibling.scrollIntoView({
-          behavior: "smooth",
-        });
-      }
-    },
-  },
-};
-</script>
 
 <style lang="scss" scoped>
 .profile_interface {

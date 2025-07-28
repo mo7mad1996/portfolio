@@ -5,15 +5,6 @@ import { Mousewheel, Pagination, EffectCreative } from "swiper/modules";
 import type { CreativeEffectTransform } from "swiper/types";
 
 const api = useApi();
-const logos = import.meta.glob("~/assets/imgs/projects/**/logo.{svg,png}", {
-  import: "default",
-  eager: true,
-});
-const images = import.meta.glob("/**/*", {
-  import: "default",
-  eager: true,
-  base: "/assets/imgs/projects",
-});
 
 const {
   data: projects,
@@ -27,7 +18,7 @@ const {
       return projects.map((project: any) => {
         if (!project.logo.startsWith("~")) return project;
 
-        const logo = logos[project.logo.replace("~", "")];
+        const logo = useAsset(project.logo);
         return { ...project, logo };
       });
     })
@@ -107,7 +98,7 @@ definePageMeta({
                 </span> -->
                 </div>
 
-                <div>
+                <!-- <div>
                   <swiper
                     :slides-per-view="1.5"
                     :space-between="20"
@@ -122,10 +113,10 @@ definePageMeta({
                       class="card"
                     >
                       <div class="bg-blue-40 p-2 rounded-md">{{ img }}</div>
-                      <!-- <img :src="img" /> -->
+                      <img :src="img" />
                     </swiper-slide>
                   </swiper>
-                </div>
+                </div> -->
               </main>
             </div>
             <div class="glow"></div>
@@ -141,8 +132,6 @@ definePageMeta({
 </template>
 
 <style lang="scss" scoped>
-@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Cairo:wght@400;600;900&display=swap");
-
 .sections-container {
   background: linear-gradient(
     to bottom,

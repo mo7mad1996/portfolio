@@ -30,6 +30,7 @@ export default defineNuxtConfig({
         "mobile-alt",
         "envelope-open-text",
         "paper-plane",
+        "download",
       ],
       brands: ["github", "whatsapp", "whatsapp", "linkedin", "buffer"],
       regular: [],
@@ -37,7 +38,6 @@ export default defineNuxtConfig({
   },
 
   // for axios issue
-
   build: {
     transpile: ["form-data"],
   },
@@ -88,6 +88,23 @@ export default defineNuxtConfig({
           async: true,
         },
       ],
+    },
+  },
+
+  vite: {
+    server: {
+      fs: {
+        strict: false,
+      },
+    },
+    build: {
+      // Increase timeout for module loading
+      modulePreload: {
+        polyfill: true,
+      },
+    },
+    optimizeDeps: {
+      entries: [],
     },
   },
 });

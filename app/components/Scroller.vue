@@ -1,40 +1,40 @@
-<template>
-  <div class="scroller" v-if="active"></div>
-</template>
+<script setup lang="ts">
+const active = ref(false);
 
-<script>
-export default {
-  name: "Scroller",
-  data() {
-    return {
-      active: false,
-    };
-  },
-  mounted() {
-    this.active = true;
-    addEventListener("scroll", this.scroll);
-  },
-  beforeDestroy() {
-    removeEventListener("scroll", this.scroll);
-  },
-  methods: {
-    scroll() {
-      this.active = false;
-    },
-  },
+// methods
+const scroll = () => {
+  clearInterval(interval.value);
+  active.value = false;
 };
+const interval: any = ref("");
+
+onMounted(() => {
+  document.addEventListener("scroll", scroll);
+  active.value = true;
+
+  interval.value = setInterval(() => {
+    active.value = true;
+
+    setTimeout(() => (active.value = false), 3000);
+  }, 5000);
+});
+onBeforeUnmount(() => {
+  document.removeEventListener("scroll", scroll);
+});
 </script>
+
+<template>
+  <div class="fixed bottom-0 w-full">
+    <div class="scroller bg-gray-200/20" v-if="active"></div>
+  </div>
+</template>
 
 <style lang="scss" scoped>
 .scroller {
   width: 2px;
   height: 100px;
-  position: absolute;
-  bottom: 0;
-  right: calc(50vw - 1px);
+  margin: auto;
   overflow: hidden;
-  animation: scrollerContainer 7s 3s;
-  background: transparent;
 
   &::after {
     content: "";
@@ -42,8 +42,8 @@ export default {
     background: white;
     width: 100%;
     display: block;
-    transform: translateY(-30px);
-    animation: scroller ease 1s 4s 5;
+    transform: translateY(-40px);
+    animation: scroller ease 1s infinite;
   }
 }
 </style>

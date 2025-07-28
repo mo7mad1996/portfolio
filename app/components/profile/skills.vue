@@ -1,8 +1,42 @@
-<template>
-  <div class="container">
-    <h2 class="title">Skills</h2>
+<script setup lang="ts">
+const props = defineProps(["skills"]);
 
-    <div class="skills" @mousemove="parent_mousemove">
+// methods
+const mouseMove = (e: any) => {
+  const target: HTMLElement = e.currentTarget;
+
+  if (!target) return;
+  const rect = target.getBoundingClientRect();
+
+  const x = e.clientX - rect.left;
+  const y = e.clientY - rect.top;
+
+  target.style.setProperty("--mouse-x", `${x}px`);
+  target.style.setProperty("--mouse-y", `${y}px`);
+};
+
+const parent_mousemove = (e: any) => {
+  const { currentTarget: target } = e;
+
+  for (const skill of target.querySelectorAll(".skill")) {
+    const rect = skill.getBoundingClientRect();
+
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    skill.style.setProperty("--mouse-x", `${x}px`);
+    skill.style.setProperty("--mouse-y", `${y}px`);
+  }
+};
+</script>
+
+<template>
+  <div class="skills" @mousemove="parent_mousemove">
+    <div class="container">
+      <h2 class="title">Skills</h2>
+    </div>
+
+    <div class="container grid grid-cols-4 gap-1.5">
       <a
         @mousemove="mouseMove"
         v-for="skill in skills"
@@ -20,9 +54,16 @@
             loading="lazy"
           />
 
-          <div class="d-flex">
-            <h3>{{ skill.name }}</h3>
-            <span>{{ skill.degree * 10 }}%</span>
+          <div class="flex p-2 gap-2 flex-col h-full justify-end relative z-10">
+            <h3 class="cairo opacity-100 !font-bold text-violet-400">
+              {{ skill.name }}
+            </h3>
+            <div class="bg-gray-600 p-px rounded-3xl">
+              <span
+                class="h-1 bg-violet-300 block rounded-3xl"
+                :style="`width: ${skill.degree * 10}%`"
+              ></span>
+            </div>
           </div>
         </div>
       </a>
@@ -30,83 +71,38 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: "ProfileSkills",
-  props: ["skills"],
-  methods: {
-    mouseMove(e) {
-      const { currentTarget: target } = e;
-
-      const rect = target.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      target.style.setProperty("--mouse-x", `${x}px`);
-      target.style.setProperty("--mouse-y", `${y}px`);
-    },
-    parent_mousemove(e) {
-      const { currentTarget: target } = e;
-
-      for (const skill of target.querySelectorAll(".skill")) {
-        const rect = skill.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-
-        skill.style.setProperty("--mouse-x", `${x}px`);
-        skill.style.setProperty("--mouse-y", `${y}px`);
-      }
-    },
-  },
-};
-</script>
-
 <style scoped lang="scss">
 .skills {
-  margin-bottom: 50px;
-  padding: 1em 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 6px;
-  flex-wrap: wrap;
+  @apply mb-12 px-0 py-4;
 
   .skill {
-    display: block;
-    width: 320px;
-    height: 200px;
-    background-color: rgba($color: #000, $alpha: 0.1);
-    border-radius: 10px;
-    position: relative;
+    @apply block relative rounded-lg bg-black/10 h-52;
 
     .border,
     &::before {
       content: "";
-      border-radius: inherit;
-      height: 100%;
-      width: 100%;
-      pointer-events: none;
-      position: absolute;
-      top: 0;
-      left: 0;
-
-      opacity: 0;
-      transition: opacity 500ms;
+      @apply rounded-lg h-full w-full pointer-events-none absolute top-0 left-0 opacity-0 transition-opacity;
     }
+
     .border {
       background-image: radial-gradient(
-        400px circle at var(--mouse-x) var(--mouse-y),
-        rgba($color: #fdffff, $alpha: 1),
+        500px circle at var(--mouse-x) var(--mouse-y),
+        #fff,
         transparent 40%
       );
+
+      border: none;
       z-index: 1;
     }
 
     &::before {
       background-image: radial-gradient(
         100px circle at var(--mouse-x) var(--mouse-y),
-        rgba($color: #fafafa, $alpha: 0.1),
+        rgba($color: #fff, $alpha: 0.7),
+        transparent,
         transparent
       );
+      @apply blur-3xl;
       z-index: 3;
     }
     &:hover::before {
@@ -133,6 +129,7 @@ export default {
         transform: translate(-50%, -50%);
         top: 50%;
         left: 50%;
+        filter: drop-shadow(0 0 1px #b29ad9);
         text-align: center;
         position: absolute;
 
@@ -140,37 +137,11 @@ export default {
           padding: 30px;
         }
       }
-
-      .d-flex {
-        display: flex;
-        justify-content: flex-end;
-        padding: 1em;
-        flex-direction: column;
-        height: 100%;
-        background-image: linear-gradient(
-          transparent 60%,
-          rgba($color: #926acd, $alpha: 0.5)
-        );
-        transition: transform 0.4s;
-        transform: translateY(100%);
-        position: relative;
-        color: #27072b;
-
-        h3 {
-          margin-bottom: 0.6em;
-          color: white;
-          font-weight: 100;
-        }
-      }
-
-      &:hover .d-flex {
-        transform: translateY(0);
-      }
     }
   }
   // &:hover > .skill::before {
-  &:hover > .skill > .border {
-    opacity: 1;
+  &:hover .border {
+    opacity: 1 !important;
   }
 }
 </style>

@@ -1,17 +1,28 @@
-@import url("http://fonts.cdnfonts.com/css/futura-lt");
+@import url("https://fonts.cdnfonts.com/css/noto-sans-hk");
+@import url("https://fonts.cdnfonts.com/css/vw-headline-book");
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Cairo:wght@400;600;900&display=swap");
 
+body {
+  font-family: "VW Headline Book", sans-serif;
+}
+
+.cairo {
+  font-family: cairo;
+}
+
+.not-sans {
+  font-family: "Noto Sans HK", sans-serif;
+}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   color: inherit;
   list-style: none;
-  font-family: "Futura LT", sans-serif;
   text-decoration: none;
   scrollbar-width: none;
   cursor: none;
 }
-
 input {
   background: saddlebrown;
 }

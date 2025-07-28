@@ -1,8 +1,8 @@
 html,
 body {
-  &:not(:has(.email)) {
-    overflow: hidden;
-  }
+  // &:not(:has(.email)) {
+  //   overflow: hidden;
+  // }
 
   &:not(:hover) .pointer {
     top: -20px !important;
@@ -112,6 +112,7 @@ section {
 
     a.btn {
       background: #ff2e3c;
+      font-family: "Noto Sans HK", sans-serif;
       text-align: center;
       display: inline-block;
       border-radius: 2em;

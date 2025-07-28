@@ -65,22 +65,13 @@
 }
 
 @keyframes scroller {
-  to {
-    transform: translateY(200px);
+  20%,
+  from {
+    transform: translateY(-100px);
   }
-}
 
-@keyframes scrollerContainer {
-  0% {
-    background: transparent;
-  }
-  5% {
-    background: gray;
-  }
-  95% {
-    background: gray;
-  }
-  100% {
-    background: transparent;
+  70%,
+  to {
+    transform: translateY(100px);
   }
 }

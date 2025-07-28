@@ -74,7 +74,7 @@
     },
     {
       "name": "react.js",
-      "degree": 9,
+      "degree": 10,
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png",
       "URL": "https://reactjs.org/"
     },
@@ -86,7 +86,7 @@
     },
     {
       "name": "Redux",
-      "degree": 8,
+      "degree": 10,
       "image": "https://upload.wikimedia.org/wikipedia/commons/4/49/Redux.png",
       "URL": "https://redux.js.org/"
     },
@@ -99,8 +99,8 @@
     {
       "name": "NuxtJs",
       "degree": 10,
-      "image": "https://nuxtjs.org/design-kit/colored-text.svg",
-      "URL": "https://www.nuxtjs.org/"
+      "image": "https://nuxt.com/assets/design-kit/icon-green.svg",
+      "URL": "https://www.nuxtjs.com/"
     },
     {
       "name": "Vuetify",
@@ -152,7 +152,7 @@
     },
     {
       "name": "mongoDB",
-      "degree": 8.8,
+      "degree": 10,
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/MongoDB_Logo.svg/512px-MongoDB_Logo.svg.png",
       "URL": "https://www.mongodb.com/"
     }
