@@ -41,7 +41,6 @@ export default defineNuxtConfig({
   build: {
     transpile: ["form-data"],
   },
-
   app: {
     head: {
       titleTemplate: "%s | Mohamed Ibrahim",
@@ -72,7 +71,7 @@ export default defineNuxtConfig({
         // google seo
         {
           name: "google-site-verification",
-          content: "cOJq1Ce5BlzFFqOji8aC1Sy_602TuQVawU6Uib6bSE0",
+          content: "ddFoy-9QqEQyv049MCCtvf3l7NpRS0NBfwhuATdhX0k",
         },
       ],
       link: [
