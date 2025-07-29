@@ -1,5 +1,6 @@
 import axios from "axios";
 import nodemailer from "nodemailer";
+import requestIp from "request-ip";
 
 // read .env file
 const env = useRuntimeConfig();
@@ -10,8 +11,8 @@ export default defineEventHandler(async (event) => {
   if (env.NODE_ENV == "development") return;
 
   // 1) Get IP
-  const ip = getRequestIP(event);
-  if (!ip) return;
+  const ip = requestIp.getClientIp(req);
+  if (!ip && req.method != "GET") return;
 
   // define middleware path
   switch (req.url) {
