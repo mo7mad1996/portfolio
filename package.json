@@ -10,6 +10,8 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@nuxtjs/robots": "^5.4.0",
+    "@nuxtjs/sitemap": "^7.4.3",
     "@nuxtjs/tailwindcss": "^6.14.0",
     "@vesp/nuxt-fontawesome": "^2.0.0-rc.2",
     "axios": "^1.11.0",

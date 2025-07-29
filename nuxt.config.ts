@@ -20,7 +20,7 @@ export default defineNuxtConfig({
   // loading: "~/components/LoadingBar.vue",
   spaLoadingTemplate: true,
 
-  modules: ["nuxt-toast", "@nuxtjs/tailwindcss", "@vesp/nuxt-fontawesome"],
+  modules: ["nuxt-toast", "@nuxtjs/tailwindcss", "@vesp/nuxt-fontawesome", "@nuxtjs/robots", "@nuxtjs/sitemap"],
 
   fontawesome: {
     component: "fa",
