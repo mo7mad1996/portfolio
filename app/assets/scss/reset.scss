@@ -2,8 +2,14 @@
 @import url("https://fonts.cdnfonts.com/css/vw-headline-book");
 @import url("https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Cairo:wght@400;600;900&display=swap");
 
+html,
 body {
   font-family: "VW Headline Book", sans-serif;
+
+  // home page
+  &:has(.portfolio) {
+    overflow: hidden;
+  }
 }
 
 .cairo {

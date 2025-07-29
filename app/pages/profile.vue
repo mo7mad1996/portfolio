@@ -38,7 +38,7 @@ definePageMeta({
 </script>
 
 <template>
-  <div class="profile-page">
+  <div class="profile-page" v-if="data">
     <LazyProfileInterface :path="img" />
     <ProfileResume />
     <ProfileInfo :info="info" :data="data" />

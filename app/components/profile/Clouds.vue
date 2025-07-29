@@ -1,9 +1,9 @@
 <template>
   <div class="Clouds">
-    <div class="cloud"><img src="/land/cloud1.svg" /></div>
-    <div class="cloud"><img src="/land/cloud2.svg" /></div>
+    <div class="cloud"><img src="~/assets/imgs/land/cloud1.svg" /></div>
+    <div class="cloud"><img src="~/assets/imgs/land/cloud2.svg" /></div>
     <slot></slot>
-    <div class="cloud"><img src="/land/cloud3.svg" /></div>
+    <div class="cloud"><img src="~/assets/imgs/land/cloud3.svg" /></div>
   </div>
 </template>
 

@@ -22,7 +22,7 @@ export default defineEventHandler(async (event) => {
       break;
 
     default:
-      await notification_me(ip, `وصل هنا ${req.url}`);
+    // await notification_me(ip, `وصل هنا ${req.url}`);
   }
 });
 

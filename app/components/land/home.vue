@@ -1,80 +1,74 @@
 <template>
-  <section id="home" :class="{ active: $route.query.section == 'home' }">
-    <div class="text">
-      <h1 @animationend="animationend">
-        Mohamed <br />
-        Ibrahim
-      </h1>
+  <section
+    id="home"
+    class="overflow-visible p-0 flex h-dvh max-md:flex-col-reverse"
+    :class="{ active: $route.query.section == 'home' }"
+  >
+    <div class="flex-1 relative text" @animationend="animationend">
+      <div class="overflow-hidden">
+        <h1 class="max-md:!text-2xl max-md:!p-2">
+          Mohamed <br />
+          Ibrahim
+        </h1>
 
-      <p>
-        web developer / <br />
-        full stack web developer.
-      </p>
+        <p class="max-md:!text-lg">
+          web developer / <br />
+          full stack web developer.
+        </p>
+      </div>
     </div>
 
-    <div class="moon-img">
-      <div
-        class="cloud one"
+    <div class="flex-1 relative pointer-events-none select-none">
+      <img
         :style="`transform: translate(${mouse.x / 20}px, ${mouse.y / 20}px)`"
-      >
-        <img src="/land/cloud1.svg" alt="cloud" />
-      </div>
-      <div
-        class="image"
-        :style="`transform: translate(${-mouse.x / 50}px, ${-mouse.y / 50}px)`"
-      >
-        <div class="moon"><img src="/land/moon.svg" alt="moon" /></div>
-      </div>
-      <div
-        class="cloud two"
-        :style="`transform: translate(${-mouse.x / 20}px, ${mouse.y / 20}px)`"
-      >
-        <img src="/land/cloud2.svg" alt="cloud" />
-      </div>
+        src="~/assets/imgs/land/cloud2.svg"
+        class="absolute cloud top-1/4 right-10 max-md:hidden"
+        alt="cloud"
+      />
 
-      <!-- start word -->
+      <div
+        :style="`transform: translate(${-mouse.x / 50}px, ${-mouse.y / 50}px)`"
+        class="h-full relative w-full"
+      >
+        <img
+          alt="moon"
+          class="max-h-full block h-1/3 top-1/2 image absolute right-1/2 translate-x-1/3 -translate-y-1/2 max-md:h-full"
+          src="~/assets/imgs/land/moon.svg"
+        />
+      </div>
+      <img
+        :style="`transform: translate(${mouse.x / 20}px, ${mouse.y / 20}px)`"
+        src="~/assets/imgs/land/cloud2.svg"
+        class="absolute cloud right-28 bottom-1/4 max-md:hidden"
+        alt="cloud"
+      />
+      <img
+        src="~/assets/imgs/land/cloud1.svg"
+        alt="cloud"
+        class="absolute cloud bottom-1/4 -left-28 fromBottom max-md:hidden"
+        :style="`transform: translate(${mouse.x / -12}px, ${mouse.y / 12}px)`"
+      />
+
       <span
-        :style="`transform: translate(${mouse.x / 100}px, ${mouse.y / 100}px)`"
-        class="t"
+        class="absolute top-1/2 left-0 text-rose-500 font-bold tracking-[1.5px] text-xl uppercase"
       >
         portfolio
-      </span>
-      <!-- end word -->
 
-      <div
-        class="cloud three"
-        :style="`transform: translate(${mouse.x / 30}px, ${-mouse.y / 30}px)`"
-      >
-        <img src="/land/cloud3.svg" alt="cloud" />
-      </div>
+        <br />
+
+        {{ $route.query }}
+      </span>
     </div>
   </section>
 </template>
 
-<script>
-export default {
-  props: ["mouse"],
-  name: "Home",
-  methods: {
-    animationend() {
-      this.$emit("animation");
-    },
-  },
-};
+<script setup>
+const props = defineProps(["mouse"]);
+const emit = defineEmits(["animation"]);
+const animationend = () => emit("animation");
 </script>
 
 <style lang="scss" scoped>
-section {
-  padding: 0;
-  overflow: visible;
-
-  .text h1 {
-    @media (max-width: 578px) {
-      text-shadow: 0 0 4px #333;
-    }
-  }
-}
-
 .active {
   .image {
     animation: fromRight 1.4s ease;
@@ -82,129 +76,9 @@ section {
   .cloud {
     animation: fromRight 1s ease;
   }
-}
 
-.image {
-  height: 100%;
-  position: absolute;
-  right: 10vw;
-  top: 6vw;
-
-  @media (max-width: 578px) {
-    top: 1vw;
-    width: 100vw;
-    height: 100%;
-    right: 0;
-  }
-
-  .moon {
-    height: 30vw;
-    position: relative;
-    top: 42px;
-
-    img {
-      height: 100%;
-      display: block;
-
-      @media (max-width: 578px) {
-        position: absolute;
-        left: 50%;
-        height: 100%;
-        transform: translatex(-50%);
-      }
-    }
-  }
-}
-
-.moon-img {
-  flex: 1;
-
-  @media (max-width: 578px) {
-    position: absolute;
-    height: 100dvh;
-    width: 100%;
-  }
-
-  .cloud {
-    position: absolute;
-    width: 40vw;
-    transition: 0.3s ease-out;
-
-    @media (max-width: 578px) {
-      display: block;
-
-      img {
-        height: 140px;
-      }
-    }
-
-    @media (max-width: 420px) {
-      img {
-        height: 90px;
-      }
-    }
-
-    &.one {
-      top: 10vw;
-      right: 30dvh;
-    }
-
-    &.two {
-      bottom: 0;
-      right: 0;
-      filter: contrast(0.6);
-
-      @media (max-width: 578px) {
-        right: 30%;
-        bottom: auto;
-        top: 40dvh;
-      }
-    }
-
-    &.three {
-      top: 1px;
-      right: 20px;
-      filter: contrast(0.3);
-
-      @media (max-width: 578px) {
-        top: 30dvh;
-        right: 20vw;
-      }
-
-      @media (max-width: 420px) {
-        top: 15dvh;
-        right: 15vw;
-      }
-    }
-  }
-}
-
-span.t {
-  display: flex;
-  align-items: center;
-  height: 100%;
-  position: relative;
-  color: #ff4d5a;
-  font-weight: 800;
-  // background: blue;
-  letter-spacing: 1.5px;
-  font-size: 30px;
-  z-index: 2;
-  text-transform: uppercase;
-
-  @media (max-width: 578px) {
-    justify-content: end;
-    padding: 10px;
-    font-size: 20px;
-
-    height: 40%;
-    bottom: 0;
-    justify-content: start;
-    width: 100dvw;
-    position: absolute;
-  }
-  @media (max-width: 370px) {
-    display: none;
+  .fromBottom {
+    animation: fromBottom 1s ease;
   }
 }
 </style>

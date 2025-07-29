@@ -1,7 +1,7 @@
 <template>
   <header>
-    <div class="logo">
-      <nuxt-link to="/#home">Mohamed Ibrahim</nuxt-link>
+    <div class="logo backdrop-blur-sm">
+      <nuxt-link to="/?section=home">Mohamed Ibrahim</nuxt-link>
     </div>
 
     <MenuComponent />

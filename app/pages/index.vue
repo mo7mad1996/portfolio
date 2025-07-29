@@ -78,11 +78,12 @@ function startScroll() {
   if (!target_section) return;
   const scroll_to = target_section.offsetTop;
 
-  gsap.to(contentRef.value, {
-    scrollTop: scroll_to,
-    duration: 0.5,
-    ease: "expoScale(0.5,7,none)",
-  });
+  if (contentRef.value)
+    gsap.to(contentRef.value, {
+      scrollTop: scroll_to,
+      duration: 0.5,
+      ease: "expoScale(0.5,7,none)",
+    });
 }
 
 function changeQuery() {
@@ -122,6 +123,9 @@ watch(
   { immediate: true }
 );
 
+onMounted(() => {
+  document.addEventListener("click", (e) => alert(e.target.tagName));
+});
 definePageMeta({
   title: "Home",
 });
@@ -135,19 +139,24 @@ definePageMeta({
     @touchend="touchend"
     @wheel="scroll"
   >
-    <div class="bg">
-      <div
-        class="stars"
-        :style="`transform: translate(${mouse.x / 100}px, ${mouse.y / 100}px)`"
-      >
-        <img src="/background/star.svg" class="stars" alt="" />
-      </div>
+    <div
+      class="h-full absolute w-full pointer-events-none"
+      :style="`transform: translate(${-mouse.x / 50}px, ${-mouse.y / 50}px)`"
+    >
+      <img
+        src="~/assets/imgs/background/moonlight.svg"
+        class="w-1/2 absolute right-0 h-dvh max-md:w-full max-md:-top-11"
+        alt="moonlight"
+      />
+    </div>
+    <div
+      class="bg pointer-events-none"
+      :style="`transform: translate(${mouse.x / 100}px, ${mouse.y / 100}px)`"
+    >
       <div
         class="moonlight"
         :style="`transform: translate(${-mouse.x / 50}px, ${-mouse.y / 50}px)`"
-      >
-        <img src="/background/moonlight.svg" alt="moonlight" />
-      </div>
+      ></div>
     </div>
     <!-- start content -->
     <div class="content">
@@ -185,7 +194,10 @@ definePageMeta({
     top: 0;
     right: 0;
     position: fixed;
+    background: url(~/assets/imgs/background/star.svg);
     pointer-events: none;
+    background-size: 60%;
+    width: 100%;
 
     @media (max-width: 578px) {
       right: 50%;
@@ -230,7 +242,6 @@ definePageMeta({
 
     main {
       flex: 1;
-      overflow: hidden;
       overscroll-behavior: contain;
       // scroll-behavior: smooth;
     }

@@ -1,6 +1,12 @@
 import { createTransport } from "nodemailer";
 import { readFileSync } from "fs";
-import { join } from "path";
+
+import { fileURLToPath } from "url";
+import { dirname, join } from "path";
+
+// simulate __dirname
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 export default defineEventHandler(async (event) => {
   const config = useRuntimeConfig();
@@ -16,7 +22,7 @@ export default defineEventHandler(async (event) => {
     },
   });
 
-  const templatePath = join(process.cwd(), "template.html");
+  const templatePath = join(__dirname, "template.html");
   const html = readFileSync(templatePath, "utf-8");
 
   const info = await transporter.sendMail({
@@ -29,7 +35,7 @@ export default defineEventHandler(async (event) => {
       {
         filename: "Mohamed-Ibrahim.pdf",
         contentType: "application/pdf",
-        path: join(process.cwd(), "public/download/Mohamed-Ibrahim.pdf"),
+        path: join(__dirname, "public/download/Mohamed-Ibrahim.pdf"),
       },
     ],
   });
