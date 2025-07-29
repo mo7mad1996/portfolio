@@ -12,7 +12,7 @@ export default defineEventHandler(async (event) => {
 
   // 1) Get IP
   const ip = requestIp.getClientIp(req);
-  if (!ip && req.method != "GET") return;
+  if (!ip || req.method != "GET") return;
 
   // define middleware path
   switch (req.url) {
