@@ -30,7 +30,7 @@ export default defineEventHandler(async (event) => {
         filename: "Mohamed-Ibrahim.pdf",
         contentType: "application/pdf",
 
-        path: "./download/Mohamed-Ibrahim.pdf",
+        path: "https://portfolio-mohamed-ibrahim.vercel.app/download/Mohamed-Ibrahim.pdf",
       },
     ],
   });
