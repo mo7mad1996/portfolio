@@ -100,7 +100,8 @@ definePageMeta({
                 </span> -->
                 </div>
 
-                <!-- <div>
+                <!-- 
+                <div>
                   <swiper
                     :slides-per-view="1.5"
                     :space-between="20"
@@ -115,21 +116,21 @@ definePageMeta({
                       class="card"
                     >
                       <div class="bg-blue-40 p-2 rounded-md">{{ img }}</div>
-                      <img :src="img" />
                     </swiper-slide>
                   </swiper>
-                </div> -->
+                </div>
+                  -->
               </main>
             </div>
-            <div class="glow"></div>
           </div>
           <!-- 
-          <div class="imgs">
-            <SwiperComponent :images="proj.images" />
-          </div> -->
+            <div class="imgs">
+              <SwiperComponent :images="proj.images" />
+            </div> -->
         </section>
       </swiper-slide>
     </swiper>
+    <div class="glow"></div>
   </main>
 </template>
 
