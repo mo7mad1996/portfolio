@@ -73,17 +73,16 @@ function animationend() {
 }
 
 function startScroll() {
-  if (!import.meta.client) return;
+  if (!import.meta.client || !contentRef.value) return;
   const target_section = document.getElementById(target_id.value);
   if (!target_section) return;
   const scroll_to = target_section.offsetTop;
 
-  if (contentRef.value)
-    gsap.to(contentRef.value, {
-      scrollTop: scroll_to,
-      duration: 0.5,
-      ease: "expoScale(0.5,7,none)",
-    });
+  gsap.to(contentRef.value, {
+    scrollTop: scroll_to,
+    duration: 0.5,
+    ease: "expoScale(0.5,7,none)",
+  });
 }
 
 function changeQuery() {
@@ -123,9 +122,6 @@ watch(
   { immediate: true }
 );
 
-onMounted(() => {
-  document.addEventListener("click", (e) => alert(e.target.tagName));
-});
 definePageMeta({
   title: "Home",
 });
@@ -162,7 +158,7 @@ definePageMeta({
     <div class="content">
       <layoutAside />
 
-      <main ref="contentRef">
+      <main ref="contentRef" class="overflow-auto">
         <LandHome :mouse="mouse" @animation="animationend" />
         <LandWorks @animation="animationend" />
         <LandAbout @animation="animationend" />

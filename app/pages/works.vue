@@ -10,18 +10,17 @@ const {
   data: projects,
   status,
   error,
-} = useAsyncData("data.projects", () =>
-  api
-    .get("/data.json")
-    .then((res) => res.data.projects)
-    .then((projects) => {
-      return projects.map((project: any) => {
-        if (!project.logo.startsWith("~")) return project;
+} = useAsyncData(
+  "data.projects",
+  () => api.get("/data.json").then((res) => res.data.projects)
+  // .then((projects) => {
+  //   return projects.map(async (project: any) => {
+  //     if (!project.logo.startsWith("~")) return project;
 
-        const logo = useAsset(project.logo);
-        return { ...project, logo };
-      });
-    })
+  //     const logo = await useAsset(project.logo);
+  //     return { ...project, logo };
+  //   });
+  // })
 );
 
 definePageMeta({
@@ -44,7 +43,8 @@ definePageMeta({
           translate: [0, 0, -800],
         },
         next: {
-          translate: [0, '100%', -800],
+          translate: [0, '100%', 300],
+          rotate: [90, 0, 0],
         },
       }"
       :modules="[Mousewheel, EffectCreative]"
@@ -61,12 +61,12 @@ definePageMeta({
           <div
             class="absolute z-0 inset-0 flex justify-center items-center bg-gray-800 bg-opacity-90"
           >
-            <img
+            <!-- <img
               :src="proj.logo"
               :aly="proj.name"
               class="block aspect-square object-contain max-w-screen-md w-full max-h-full"
               loading="lazy"
-            />
+            /> -->
           </div>
 
           <div class="w-full h-full flex justify-center items-center">
@@ -77,6 +77,8 @@ definePageMeta({
                 <div class="relative">
                   <h2 class="text-center text-3xl leading-loose title">
                     {{ proj.name }}
+
+                    <!-- {{ proj.logo }}/ -->
                   </h2>
                   <p
                     v-text="proj.description"

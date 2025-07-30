@@ -53,10 +53,6 @@
         class="absolute top-1/2 left-0 text-rose-500 font-bold tracking-[1.5px] text-xl uppercase"
       >
         portfolio
-
-        <br />
-
-        {{ $route.query }}
       </span>
     </div>
   </section>
