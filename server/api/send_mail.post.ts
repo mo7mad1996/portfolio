@@ -1,6 +1,6 @@
 import { createTransport } from "nodemailer";
 import { readFileSync } from "fs";
-import { join } from "path";
+import { join, dirname, extname } from "path";
 
 export default defineEventHandler(async (event) => {
   const config = useRuntimeConfig();
@@ -15,28 +15,31 @@ export default defineEventHandler(async (event) => {
       pass: config.EMAIL_PASS,
     },
   });
+  console.clear();
+  console.log(import.meta.url);
+  // const templatePath = join("template.html");
+  // const html = readFileSync(templatePath, "utf-8");
 
-  const templatePath = "./template.html";
-  const html = readFileSync(templatePath, "utf-8");
+  // const info = await transporter.sendMail({
+  //   from: '"Mohamed Ibrahim 🙋‍♂️" <mo7mad369@gmail.com>',
+  //   to: body.emails,
 
-  const info = await transporter.sendMail({
-    from: '"Mohamed Ibrahim 🙋‍♂️" <mo7mad369@gmail.com>',
-    to: body.emails,
-    subject: "Front-end web developer ✔",
-    text: "Front-end developer",
-    html,
-    attachments: [
-      {
-        filename: "Mohamed-Ibrahim.pdf",
-        contentType: "application/pdf",
+  //   subject: "Front-end web developer ✔",
+  //   text: "Front-end developer",
+  //   html,
 
-        path: "https://portfolio-mohamed-ibrahim.vercel.app/download/Mohamed-Ibrahim.pdf",
-      },
-    ],
-  });
+  //   attachments: [
+  //     {
+  //       filename: "Mohamed-Ibrahim.pdf",
+  //       contentType: "application/pdf",
+  //       path: "https://portfolio-mohamed-ibrahim.vercel.app/download/Mohamed-Ibrahim.pdf",
+  //     },
+  //   ],
+  // });
 
+  return { accepted: [], rejected: [] };
   return {
-    accepted: info.accepted,
-    rejected: info.rejected,
+    // accepted: info.accepted,
+    // rejected: info.rejected,
   };
 });
