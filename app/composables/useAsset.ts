@@ -31,7 +31,7 @@ export const useAsset = async (path: string) => {
       // Vite will handle this during build
       return new URL(`../${assetPath}`, import.meta.url).href;
     } catch (error) {
-      console.warn("Asset not found:", path);
+      console.error("error:", error);
       return path;
     }
   }

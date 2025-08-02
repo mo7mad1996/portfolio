@@ -81,7 +81,7 @@
     {
       "name": "NextJs",
       "degree": 10,
-      "image": "https://static-00.iconduck.com/assets.00/nextjs-icon-512x309-yynfidez.png",
+      "image": "https://www.svgrepo.com/show/354112/nextjs.svg",
       "URL": "https://www.nextjs.org/"
     },
     {
@@ -198,7 +198,7 @@
       "color2": "#d467ab"
     },
     {
-      "logo": "https://eltorgman.vercel.app/images/general/logo.svg",
+      "logo": "https://eltorgman.onrender.com/images/general/logo.svg",
       "images": [
         "/proj1/1.png",
         "/proj1/2.png",
@@ -209,7 +209,7 @@
       ],
       "name": "الترجمان",
       "description": "موقع عصري لكتابة المقالات والمواضيع المتنوعة مع متابعة أسعار بعض السلع.",
-      "link": "https://eltorgman.vercel.app/",
+      "link": "https://eltorgman.onrender.com/",
       "color1": "#f3f3f3",
       "color2": "#1a2b6e"
     },
@@ -257,7 +257,7 @@
       "images": ["/proj3/1.png", "/proj3/2.png", "/proj3/3.png"],
       "name": "دردشة",
       "description": "تطبيق دردشة آمن وسري بدون تسجيل دخول، لا يحتفظ بأي بيانات.",
-      "link": "https://caht.vercel.app/",
+      "link": "https://caht.onrender.com/",
       "color1": "#69e1ba",
       "color2": "#e3e3e3"
     },
@@ -323,7 +323,7 @@
       "color2": "#f1f5f8"
     },
     {
-      "logo": "https://numlock.vercel.app/imgs/9.jpg",
+      "logo": "https://numlock.onrender.com/imgs/9.jpg",
       "images": [
         "/proj8/1.png",
         "/proj8/2.png",
@@ -334,7 +334,7 @@
       ],
       "name": "Numlock",
       "description": "موقع لتحويل هاتفك إلى لوحة أرقام تعمل مع أي جهاز لا يحتوي على Numpad.",
-      "link": "https://numlock.vercel.app/",
+      "link": "https://numlock.onrender.com/",
       "color1": "#64046f",
       "color2": "#64046f"
     },

@@ -1,5 +1,17 @@
 <script setup lang="ts">
 const props = defineProps(["skills"]);
+const off = ref(false);
+
+const effect = () => {
+  setTimeout(() => {
+    off.value = !off.value;
+    effect();
+  }, Math.max(Math.random() * 1000, 100));
+};
+
+onMounted(() => {
+  effect();
+});
 
 // methods
 const mouseMove = (e: any) => {
@@ -33,45 +45,58 @@ const parent_mousemove = (e: any) => {
 <template>
   <div class="skills" @mousemove="parent_mousemove">
     <div class="container">
-      <h2 class="title">Skills</h2>
+      <h2 class="title" :class="{ off }">Skills</h2>
+      <div
+        :class="!off && `shadow-[0px_0px_300px_40px_rgb(220,187,197)]`"
+      ></div>
     </div>
 
-    <div class="container grid grid-cols-4 gap-1.5">
-      <a
-        @mousemove="mouseMove"
-        v-for="skill in skills"
-        :href="skill.URL"
-        target="_blank"
-        class="skill"
-        :key="skill.name"
-      >
-        <div class="border"></div>
-        <div class="content">
-          <img
-            :src="skill.image"
-            :alt="skill.name"
-            class="img"
-            loading="lazy"
-          />
+    <div class="container">
+      <div class="grid md:grid-cols-4 max-md:grid-cols-2 gap-1.5">
+        <a
+          @mousemove="mouseMove"
+          v-for="skill in skills"
+          :href="skill.URL"
+          target="_blank"
+          class="skill"
+          :key="skill.name"
+        >
+          <div class="border"></div>
+          <div class="content">
+            <img
+              :src="skill.image"
+              :alt="skill.name"
+              class="img"
+              loading="lazy"
+            />
 
-          <div class="flex p-2 gap-2 flex-col h-full justify-end relative z-10">
-            <h3 class="cairo opacity-100 !font-bold text-violet-400">
-              {{ skill.name }}
-            </h3>
-            <div class="bg-gray-600 p-px rounded-3xl">
-              <span
-                class="h-1 bg-violet-300 block rounded-3xl"
-                :style="`width: ${skill.degree * 10}%`"
-              ></span>
+            <div
+              class="flex p-2 gap-2 flex-col h-full justify-end relative z-10"
+            >
+              <h3 class="cairo opacity-100 !font-bold text-violet-400">
+                {{ skill.name }}
+              </h3>
+              <div class="bg-gray-600 p-px rounded-3xl">
+                <span
+                  class="h-1 bg-violet-300 block rounded-3xl"
+                  :style="`width: ${skill.degree * 10}%`"
+                ></span>
+              </div>
             </div>
           </div>
-        </div>
-      </a>
+        </a>
+      </div>
+
+      <div class="shadow-[0px_0px_300px_40px_rgb(220,187,197)]"></div>
     </div>
   </div>
 </template>
 
 <style scoped lang="scss">
+.off {
+  -webkit-text-stroke: 0.5px #328181 !important;
+  text-shadow: none !important;
+}
 .skills {
   @apply mb-12 px-0 py-4;
 

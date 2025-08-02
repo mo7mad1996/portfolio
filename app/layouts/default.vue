@@ -1,7 +1,9 @@
 <template>
   <LayoutPointer>
-    <LayoutHeader />
+    <template v-slot="{ mouse }">
+      <LayoutHeader />
 
-    <NuxtPage />
+      <NuxtPage :mouse="mouse" />
+    </template>
   </LayoutPointer>
 </template>

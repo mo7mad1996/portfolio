@@ -100,14 +100,18 @@ a {
 
   text-shadow: 0 0 22px #ff005a;
   text-decoration: none;
-  border: 2px solid;
   background: transparent;
   padding: 10px 40px;
   font-size: 14px;
   font-weight: 700;
+  border: 2px solid transparent;
+  border-image: linear-gradient(-40deg, #ff005a, #8400ff);
+  border-image-slice: 1;
   transition: 0.2s all;
+
   &:hover {
-    text-shadow: 0 0 22px #8400ff;
+    text-shadow: 0 0 12px #8400ff;
+
     color: #8400ff;
   }
 }

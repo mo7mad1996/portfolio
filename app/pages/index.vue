@@ -7,25 +7,21 @@ const router = useRouter();
 
 // data
 const links = ["home", "works", "about", "contact"];
-const mouse = reactive({
-  x: -1,
-  y: -1,
-});
+const props = defineProps(["mouse"]);
+
+const mouse = props.mouse;
 const touch = reactive({
   start: 0,
   end: 0,
 });
 const is_in_animation = ref(false);
-const section = ref(Math.max(0, links.indexOf(route.query.section as string)));
 const showScroller = ref(true);
 const contentRef = ref<HTMLElement | null>(null); // HTML Ref
+const canScroll = ref(false);
 const target_id = computed(() => links[section.value] || "");
+const section = ref(Math.max(0, links.indexOf(route.query.section as string)));
 
 // methods
-function mousemove(e: MouseEvent) {
-  mouse.x = e.clientX;
-  mouse.y = e.clientY;
-}
 
 function scroll(e: WheelEvent) {
   if (e.deltaY > 0) scroll_down();
@@ -98,9 +94,7 @@ function changeQuery() {
 }
 
 onMounted(() => {
-  mouse.x = 0;
-  mouse.y = 0;
-
+  canScroll.value = true;
   startScroll();
 });
 
@@ -130,7 +124,6 @@ definePageMeta({
 <template>
   <div
     class="portfolio"
-    @mousemove="mousemove"
     @touchstart="touchstart"
     @touchend="touchend"
     @wheel="scroll"
@@ -158,7 +151,7 @@ definePageMeta({
     <div class="content">
       <layoutAside />
 
-      <main ref="contentRef" class="overflow-auto">
+      <main ref="contentRef" :class="{ 'overflow-auto': canScroll }">
         <LandHome :mouse="mouse" @animation="animationend" />
         <LandWorks @animation="animationend" />
         <LandAbout @animation="animationend" />

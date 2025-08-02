@@ -7,6 +7,9 @@ const mouse = reactive({
   y: 0,
 });
 
+const isMounted = ref(false);
+
+onMounted(() => (isMounted.value = true));
 // methods
 function mousemove(e: MouseEvent) {
   mouse.opacity = true;
@@ -34,8 +37,8 @@ function touchstart() {
     @pointerdown="pointerdown"
     @touchstart="touchstart"
   >
-    <div class="app min-h-dvh">
-      <slot />
+    <div class="app min-h-dvh" :class="{ 'cursor-none': isMounted }">
+      <slot :mouse="mouse" />
     </div>
 
     <div
@@ -47,6 +50,9 @@ function touchstart() {
 </template>
 
 <style scoped lang="scss">
+.cursor-none * {
+  cursor: none !important;
+}
 .pointer_area {
   // inset: 0;
   // z-index: 999;

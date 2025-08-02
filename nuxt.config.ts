@@ -27,7 +27,9 @@ export default defineNuxtConfig({
     "@nuxtjs/robots",
     "@nuxtjs/sitemap",
   ],
-
+  /**
+   * Modules
+   * */
   fontawesome: {
     component: "fa",
     icons: {
@@ -37,6 +39,9 @@ export default defineNuxtConfig({
         "envelope-open-text",
         "paper-plane",
         "download",
+        "chevron-left",
+        "chevron-right",
+        "xmark",
       ],
       brands: ["github", "whatsapp", "whatsapp", "linkedin", "buffer"],
       regular: [],
@@ -96,14 +101,6 @@ export default defineNuxtConfig({
     },
   },
 
-  nitro: {
-    publicAssets: [
-      {
-        baseURL: "/",
-        dir: "public",
-      },
-    ],
-  },
   vite: {
     server: {
       fs: {
